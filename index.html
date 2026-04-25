@@ -134,6 +134,58 @@ p { color:var(--muted); }
     radial-gradient(circle at 25% 20%, rgba(255,255,255,.45), transparent 12rem),
     linear-gradient(135deg, var(--accent), var(--accent-2));
   margin-bottom: 22px; }
+.artifact-preview {
+  position: relative;
+  min-height: 220px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--accent) 20%, transparent), transparent 32%),
+    linear-gradient(135deg, color-mix(in srgb, var(--panel) 96%, transparent), color-mix(in srgb, var(--panel-2) 92%, transparent));
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  margin: 0;
+  padding: 22px; }
+.artifact-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  color: var(--text);
+  font-size: .82rem;
+  font-weight: 850;
+  letter-spacing: .08em; }
+.faif-lenses {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 22px; }
+.faif-lenses span {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--bg) 58%, transparent);
+  color: var(--muted);
+  font-size: .82rem;
+  font-weight: 750; }
+.faif-pathway {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px; }
+.faif-pathway span {
+  flex: 1 1 92px;
+  text-align: center;
+  padding: 12px 10px;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--accent) 14%, var(--panel));
+  border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--line));
+  color: var(--text);
+  font-size: .88rem;
+  font-weight: 850; }
 .about,.contact { display:grid; grid-template-columns:.9fr 1.1fr; gap:28px; align-items:start; }
 .step { display:grid; grid-template-columns:54px 1fr; gap:16px; margin-bottom:14px; }
 .step-number { width:54px; height:54px; display:grid; place-items:center; border-radius:18px; color:#fff; background:var(--accent); font-weight:900; }
@@ -690,8 +742,24 @@ button:focus-visible {
       </div>
       <div class="grid" id="projectGrid">
         <article class="card project-card" data-category="frameworks">
-          <div class="project-art" aria-hidden="true"></div>
-          <h3>FAIF</h3>
+          <figure class="artifact-preview faif-preview" role="img" aria-label="FAIF decision pathway preview: adopt, adapt, pause, or redesign, evaluated through trust, context, accountability, and long-term public impact.">
+            <div class="artifact-badge" aria-hidden="true">FAIF</div>
+          
+            <div class="faif-lenses" aria-hidden="true">
+              <span>Trust</span>
+              <span>Context</span>
+              <span>Accountability</span>
+              <span>Public impact</span>
+            </div>
+          
+            <div class="faif-pathway" aria-hidden="true">
+              <span>Adopt</span>
+              <span>Adapt</span>
+              <span>Pause</span>
+              <span>Redesign</span>
+            </div>
+          </figure>
+          <h3>Flourishing AI Integrity Framework</h3>
         
           <p class="project-meta">
             Framework · Creator / strategist · In development
