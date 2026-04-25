@@ -75,6 +75,205 @@ footer { padding:32px 0 46px; color:var(--muted); }
   .section-head,.contact-panel { display:grid; }
   .nav-links { display:none; }
 }
+/* --- Portfolio polish pass --- */
+
+:root {
+  --max: 1180px;
+}
+
+/* Slightly stronger base readability */
+body {
+  font-size: 16px;
+}
+
+/* Navigation feels tiny right now */
+.nav {
+  min-height: 76px;
+}
+
+.brand {
+  font-size: 1rem;
+}
+
+.nav-links {
+  font-size: .98rem;
+  gap: 24px;
+}
+
+/* Better button presence */
+.button {
+  min-height: 46px;
+  padding: 0 20px;
+  font-size: .95rem;
+}
+
+/* More controlled hero scale */
+.hero {
+  padding: 96px 0 72px;
+}
+
+.hero-grid {
+  grid-template-columns: minmax(0, 1.08fr) minmax(340px, .72fr);
+  gap: clamp(36px, 7vw, 96px);
+}
+
+h1 {
+  max-width: 760px;
+  font-size: clamp(3.4rem, 7vw, 6.4rem);
+  line-height: .96;
+}
+
+.lead {
+  max-width: 640px;
+}
+
+/* Feature card should feel like a deliberate object */
+.feature-card {
+  max-width: 430px;
+  justify-self: end;
+}
+
+.feature-inner {
+  min-height: 330px;
+}
+
+/* Section spacing: still airy, slightly less loose */
+.section {
+  padding: 76px 0;
+}
+
+/* Section headers become more balanced */
+.section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(260px, .8fr);
+  align-items: end;
+  gap: 48px;
+}
+
+.section-head p {
+  justify-self: end;
+  max-width: 390px;
+}
+
+/* Cards need slightly more readable body text */
+.card {
+  padding: 26px;
+}
+
+.card p {
+  font-size: .98rem;
+}
+
+/* Project cards benefit from a little more structure */
+.project-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card h3 {
+  margin-bottom: 8px;
+}
+
+.project-art {
+  height: 156px;
+}
+
+/* Process cards currently feel a bit stretched horizontally */
+.step {
+  align-items: start;
+  grid-template-columns: 58px 1fr;
+  padding: 24px;
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+}
+
+/* About section alignment */
+.about {
+  align-items: stretch;
+}
+
+.quote {
+  margin: 0;
+}
+
+/* Contact block: stronger contrast and better button spacing */
+.contact-panel {
+  min-height: 220px;
+}
+
+.contact-panel h2 {
+  max-width: 680px;
+}
+
+.contact-panel .button {
+  white-space: nowrap;
+}
+
+/* Keyboard accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent) 45%, white);
+  outline-offset: 4px;
+}
+
+/* Tablet */
+@media (max-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    justify-self: start;
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .section-head {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .section-head p {
+    justify-self: start;
+    max-width: 620px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 680px) {
+  .container {
+    width: min(100% - 24px, var(--max));
+  }
+
+  .hero {
+    padding: 64px 0 48px;
+  }
+
+  h1 {
+    font-size: clamp(2.8rem, 16vw, 4.6rem);
+  }
+
+  h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .grid,
+  #projectGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-panel {
+    padding: 28px;
+  }
+
+  .footer-row {
+    flex-direction: column;
+  }
+}
 </style>
 </head>
 <body>
@@ -99,8 +298,8 @@ footer { padding:32px 0 46px; color:var(--muted); }
     <div class="container hero-grid">
       <div>
         <div class="eyebrow">Portfolio / Studio / Practice</div>
-        <h1>Designing useful things with care, clarity, and imagination.</h1>
-        <p class="lead">Replace this with your one-sentence thesis: who you serve, what you build, and why the work matters now.</p>
+        <h1>Designing thoughtful digital systems for people, teams, and public-good futures.</h1>
+        <p class="lead">We shape portfolios, prototypes, research artifacts, and strategy systems that help ideas become usable, trustworthy, and ready for real-world adoption.</p>
         <div class="hero-actions">
           <a class="button primary" href="#work">View selected work</a>
           <a class="button" href="mailto:hello@example.com">Start a conversation</a>
