@@ -85,6 +85,23 @@ p { color:var(--muted); }
   border-left: 3px solid var(--accent);
   color: var(--muted);
   font-size: .98rem; }
+.evidence-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 720px;
+  margin: 24px 0 0; }
+.evidence-strip span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--panel) 88%, transparent);
+  color: var(--muted);
+  font-size: .85rem;
+  font-weight: 750; }
 .hero-actions,.tag-row,.filters { display:flex; flex-wrap:wrap; gap:10px; }
 .hero-actions { margin-top:30px; }
 .feature-card { min-height:390px; border:1px solid var(--line); border-radius:32px; padding:24px; background:linear-gradient(160deg,var(--panel),color-mix(in srgb,var(--accent) 12%,var(--panel))); box-shadow:var(--shadow); }
@@ -283,10 +300,23 @@ h1 {
   letter-spacing: 0;
 }
 
-.project-card > p:not(.project-meta) {
+.project-card > p:not(.project-meta):not(.project-meta-detail) {
   margin: 0;
   font-size: 1rem;
   line-height: 1.65;
+}
+
+.project-meta-detail {
+  margin: 16px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+.project-meta-detail strong {
+  color: var(--text);
 }
 
 .project-card {
@@ -587,7 +617,14 @@ button:focus-visible {
       <p class="credibility-line">
         Currently Director of Innovation at Responsible Innovation Lab, where I develop approaches for governing, designing, and implementing AI in ways grounded in context, accountability, and long-term public value.
       </p>
-
+      
+      <div class="evidence-strip" aria-label="Practice evidence">
+        <span>Responsible Innovation Lab</span>
+        <span>AI governance & implementation</span>
+        <span>Research on AI, learning & agency</span>
+        <span>Frameworks, fieldwork & reflective tools</span>
+      </div>
+      
       <div class="hero-actions">
         <a class="button primary" href="#work">Explore the work</a>
         <a class="button" href="#contact">Start a conversation</a>
@@ -663,6 +700,10 @@ button:focus-visible {
           <p>
             A decision framework for examining whether an AI-enabled system should be adopted, adapted, paused, or redesigned. It keeps affected people, communities, and institutions in view alongside trust, context, accountability, and long-term public impact before systems scale.
           </p>
+
+          <p class="project-meta-detail">
+            <strong>Use context:</strong> AI adoption decisions, governance review, and responsible scaling.
+          </p>
         
           <div class="project-actions">
             <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20FAIF">Discuss the framework</a>
@@ -684,6 +725,10 @@ button:focus-visible {
         
           <p>
             A fieldwork model for gathering situated insight before design and implementation choices become difficult to change. It centers affected people, communities, and institutions while surfacing ethical tensions, adoption barriers, and implementation risks.
+          </p>
+
+          <p class="project-meta-detail">
+            <strong>Use context:</strong> Fieldwork planning, implementation inquiry, and early risk discovery.
           </p>
         
           <div class="project-actions">
@@ -707,6 +752,10 @@ button:focus-visible {
           <p>
             A human–AI co-creation concept for moments when people are clarifying purpose, direction, or a consequential choice. It is designed to support reflection, protect agency, strengthen judgment, and invite decisions that account for relationships, responsibilities, and consequences.
           </p>
+
+          <p class="project-meta-detail">
+            <strong>Use context:</strong> Reflection, judgment, and consequential human–AI co-creation.
+          </p>
         
           <div class="project-actions">
             <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20Vireo">Discuss the concept</a>
@@ -728,6 +777,10 @@ button:focus-visible {
         
           <p>
             A reflective framework for helping people clarify identity, purpose, contribution, and the kind of future they want their work to serve. It gives language and structure to questions that are often felt before they are named.
+          </p>
+
+          <p class="project-meta-detail">
+            <strong>Use context:</strong> Identity, purpose, contribution, and reflective life or work design.
           </p>
         
           <div class="project-actions">
@@ -883,6 +936,35 @@ button:focus-visible {
       </div>
     </div>
   </section>
+
+  <section class="section" id="engagements">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Engagements</div>
+          <h2>Teaching, talks, and public engagement.</h2>
+        </div>
+        <p>Selected ways this practice is shared through teaching, facilitation, writing, and public-interest collaboration.</p>
+      </div>
+  
+      <div class="grid">
+        <article class="card">
+          <h3>Teaching & learning</h3>
+          <p>Learning experiences that help people examine AI, agency, ethics, and responsible innovation in context.</p>
+        </article>
+  
+        <article class="card">
+          <h3>Talks & facilitation</h3>
+          <p>Invited conversations, workshops, and convenings that make tradeoffs, responsibilities, and possible futures easier to examine together.</p>
+        </article>
+  
+        <article class="card">
+          <h3>Service & public contribution</h3>
+          <p>Contributions to research, review, governance, and public-interest efforts that strengthen accountability around emerging technology.</p>
+        </article>
+      </div>
+    </div>
+  </section>
   
   <section class="section" id="principles">
     <div class="container">
@@ -965,6 +1047,44 @@ button:focus-visible {
           <span class="tag">Public Good</span>
         </div>
       </article>
+    </div>
+  </section>
+  <section class="section" id="collaborate">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Ways to collaborate</div>
+          <h2>Where this work can contribute.</h2>
+        </div>
+        <p>For research, design, strategy, and public-interest efforts that need grounded inquiry, relational accountability, and responsible direction.</p>
+      </div>
+  
+      <div class="grid">
+        <article class="card">
+          <h3>Responsible AI strategy</h3>
+          <p>Clarifying governance, adoption, implementation, and accountability questions before AI-enabled systems scale.</p>
+        </article>
+  
+        <article class="card">
+          <h3>Research & publication collaboration</h3>
+          <p>Developing manuscripts, frameworks, and research artifacts across AI, learning, agency, ethics, and design practice.</p>
+        </article>
+  
+        <article class="card">
+          <h3>Fieldwork & community inquiry</h3>
+          <p>Learning from affected people, communities, and institutions before design and implementation choices harden.</p>
+        </article>
+  
+        <article class="card">
+          <h3>Framework development</h3>
+          <p>Turning complex concerns into decision frameworks, methods, narratives, and strategic artifacts that support accountable action.</p>
+        </article>
+  
+        <article class="card">
+          <h3>Reflective tools for agency</h3>
+          <p>Creating reflective practices and human–AI concepts that support purpose, judgment, learning, and long-term responsibility.</p>
+        </article>
+      </div>
     </div>
   </section>
   <section class="section" id="contact">
