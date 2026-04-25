@@ -35,6 +35,22 @@ header { position:sticky; top:0; z-index:10; backdrop-filter:blur(16px); backgro
 .logo { width:38px; height:38px; border-radius:13px; display:grid; place-items:center; color:#fff; background:linear-gradient(135deg,var(--accent),var(--accent-2)); box-shadow:var(--shadow); }
 .nav-links { display:flex; align-items:center; gap:18px; color:var(--muted); font-size:.95rem; }
 .nav-links a:hover { color:var(--text); }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.theme-button {
+  box-shadow: none;
+}
+
+.nav-contact {
+  white-space: nowrap;
+}
+
 .button { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0 18px; border:1px solid var(--line); border-radius:999px; background:var(--panel); color:var(--text); font-weight:750; cursor:pointer; box-shadow:0 8px 24px rgba(31,41,51,.06); }
 .button.primary { border-color:transparent; background:var(--accent); color:#fff; }
 .button:hover,.card:hover { transform:translateY(-2px); }
@@ -73,7 +89,33 @@ footer { padding:32px 0 46px; color:var(--muted); }
   .hero-grid,.about,.contact { grid-template-columns:1fr; }
   .grid { grid-template-columns:1fr; }
   .section-head,.contact-panel { display:grid; }
-  .nav-links { display:none; }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav {
+    gap: 12px;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+
+  .nav-actions .button {
+    min-height: 40px;
+    padding: 0 13px;
+    font-size: .88rem;
+  }
+}
+@media (max-width: 430px) {
+  .brand-name {
+    display: none;
+  }
+
+  .nav-actions .button {
+    padding: 0 11px;
+  }
 }
 /* --- Portfolio polish pass --- */
 
@@ -281,26 +323,38 @@ button:focus-visible {
 <header>
   <nav class="container nav" aria-label="Primary navigation">
     <a class="brand" href="#top" aria-label="Home">
-      <span class="logo" aria-hidden="true">YN</span>
-      <span>Your Name</span>
+      <span class="logo" aria-hidden="true">MA</span>
+      <span class="brand-name">Matthew Agustin</span>
     </a>
+  
     <div class="nav-links">
       <a href="#work">Work</a>
       <a href="#principles">Principles</a>
       <a href="#process">Process</a>
       <a href="#about">About</a>
     </div>
-    <button class="button" id="themeToggle" type="button">Theme</button>
+  
+    <div class="nav-actions">
+      <a class="button primary nav-contact" href="#contact">Contact</a>
+      <button class="button theme-button" id="themeToggle" type="button" aria-label="Switch to dark mode">
+        Dark mode
+      </button>
+    </div>
   </nav>
 </header>
 <main id="main">
   <section class="hero" id="top">
     <div class="container hero-grid">
       <div>
-        <div class="eyebrow">Portfolio / Studio / Practice</div>
-        <h1>Designing responsible innovation systems for human–AI futures.</h1>
-        <p class="lead">
-  We help teams turn emerging technologies, complex ideas, and ethical commitments into practical tools, strategies, and systems that people can understand, trust, and use.</p>
+        <div class="eyebrow">Matthew Agustin / Responsible AI / Human–AI Futures</div>
+        <h1>Designing human–AI systems with trust, care, and public purpose.</h1>
+        <p class="lead">I build frameworks, workshop tools, research artifacts, and decision systems that help teams ask better questions before emerging technologies become infrastructure.</p>
+        
+        <div class="hero-actions">
+          <a class="button primary" href="#work">Explore the work</a>
+          <a class="button" href="mailto:hello@example.com">Start a conversation</a>
+        </div>
+        <p>Shaping principled approaches to responsible AI, relational technology, and public-good innovation.</p>
         <div class="hero-actions">
           <a class="button primary" href="#work">Explore the work</a>
           <a class="button" href="mailto:hello@example.com">Start a conversation</a>
@@ -313,8 +367,8 @@ button:focus-visible {
             <h2>Relational human–AI tools</h2>
           </div>
           <div>
-            <div class="metric">4</div>
-            <p>Core practice areas: responsible AI strategy, ethical product design, human–AI co-creation, and public-good innovation.</p>
+            <div class="metric">AI × Society</div>
+            <p>My work sits where responsible AI, ethical design, strategic foresight, and public-good innovation meet.</p>
           </div>
         </div>
       </aside>
@@ -323,12 +377,12 @@ button:focus-visible {
   <section class="section">
     <div class="container grid">
       <article class="card">
-        <h3>What we shape</h3>
+        <h3>What I shape</h3>
         <p>Frameworks, prototypes, research artifacts, strategy systems, and narratives for responsible innovation.</p>
       </article>
       
       <article class="card">
-        <h3>How we work</h3>
+        <h3>How I work</h3>
         <p>Through reflective inquiry, participatory design, ethical foresight, and careful translation between ideas and implementation.</p>
       </article>
       
@@ -357,7 +411,8 @@ button:focus-visible {
         <article class="card project-card" data-category="frameworks">
           <div class="project-art" aria-hidden="true"></div>
           <h3>FAIF</h3>
-          <p>A framework for thinking through responsible AI adoption with attention to trust, context, accountability, and long-term impact.</p>
+          <p>A responsible AI adoption framework for helping teams examine trust, context, accountability, and long-term impact before scaling AI-enabled systems.</p>
+          <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20FAIF">Ask about this work</a>
           <div class="tag-row">
             <span class="tag">Framework</span>
             <span class="tag">Responsible AI</span>
@@ -403,7 +458,7 @@ button:focus-visible {
           <div class="eyebrow">Principles</div>
           <h2>Principles for work that earns trust.</h2>
         </div>
-        <p>These commitments guide how we approach technology, strategy, collaboration, and long-term public impact.</p>
+        <p>These commitments guide how I approach technology, strategy, collaboration, and long-term public impact.</p>
       </div>
       <div class="grid">
         <article class="card">
@@ -428,7 +483,7 @@ button:focus-visible {
       <div>
         <div class="eyebrow">Responsible Innovation / Human–AI Systems / Public Good</div>
         <h2>From emerging questions to responsible direction.</h2>
-        <p class="lead">A flexible path for helping teams clarify what they are building, who it affects, and what responsibility requires.</p>
+        <p class="lead">My process helps teams slow down at the right moments: to clarify what they are building, who it affects, what could go wrong, and what responsibility asks of them next.</p>
       </div>
       <div>
         <article class="card step">
@@ -463,14 +518,16 @@ button:focus-visible {
         <p class="quote">“Responsible innovation is not only about what we can build. It is about the relationships, responsibilities, and futures our work makes possible.”</p>
       </article>
       <article class="card">
-        <h2>About the practice</h2>
-        <p>We work at the intersection of responsible AI, innovation strategy, and human–AI co-creation. Our practice helps people and organizations move from possibility to principled action — shaping tools, frameworks, and strategies that are useful, trustworthy, and aligned with long-term public good.</p>
+        <h2>About Matthew</h2>
+        <p>I work at the intersection of responsible AI, innovation strategy, and human–AI co-creation. My practice helps people and organizations move from possibility to principled action — shaping tools, frameworks, and strategies that are useful, trustworthy, and aligned with long-term public good.</p>
         <div class="tag-row">
           <span class="tag">Responsible AI</span>
           <span class="tag">Innovation Strategy</span>
           <span class="tag">Human–AI Co-creation</span>
           <span class="tag">Public Good</span>
         </div>
+      </article>
+    </div>
   </section>
   <section class="section" id="contact">
     <div class="container contact">
@@ -495,11 +552,28 @@ button:focus-visible {
 const root = document.documentElement;
 const themeToggle = document.querySelector("#themeToggle");
 const savedTheme = localStorage.getItem("theme");
-if (savedTheme) root.dataset.theme = savedTheme;
+
+if (savedTheme) {
+  root.dataset.theme = savedTheme;
+}
+
+function updateThemeButton() {
+  const isDark = root.dataset.theme === "dark";
+
+  themeToggle.textContent = isDark ? "Light mode" : "Dark mode";
+  themeToggle.setAttribute(
+    "aria-label",
+    isDark ? "Switch to light mode" : "Switch to dark mode"
+  );
+}
+
+updateThemeButton();
+
 themeToggle.addEventListener("click", () => {
   const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
   root.dataset.theme = nextTheme;
   localStorage.setItem("theme", nextTheme);
+  updateThemeButton();
 });
 document.querySelector("#year").textContent = new Date().getFullYear();
 const filters = document.querySelectorAll(".filter");
