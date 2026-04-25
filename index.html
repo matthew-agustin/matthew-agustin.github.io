@@ -306,6 +306,57 @@ h1 {
   background: color-mix(in srgb, var(--accent) 8%, var(--panel));
 }
 
+.research-list {
+  display: grid;
+  gap: 16px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.research-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: start;
+  padding: 28px;
+}
+
+.research-card h3 {
+  margin: 0 0 10px;
+}
+
+.research-meta {
+  margin: 0 0 10px;
+  color: var(--accent-2);
+  font-size: .78rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.research-card p:not(.research-meta) {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.research-tags {
+  margin-top: 16px;
+}
+
+.research-actions {
+  display: flex;
+  justify-content: flex-end;
+  min-width: 180px;
+}
+
+.research-actions .button {
+  min-height: 42px;
+  font-size: .9rem;
+  box-shadow: none;
+  white-space: nowrap;
+}
+
 /* Process cards currently feel a bit stretched horizontally */
 .step {
   align-items: start;
@@ -371,7 +422,15 @@ button:focus-visible {
 @media (max-width: 680px) {
   .container {
     width: min(100% - 24px, var(--max));
+  .research-card {
+    grid-template-columns: 1fr;
   }
+
+  .research-actions {
+    justify-content: flex-start;
+    min-width: 0;
+  }
+}
 
   .hero {
     padding: 64px 0 48px;
@@ -411,6 +470,7 @@ button:focus-visible {
   
     <div class="nav-links">
       <a href="#work">Work</a>
+      <a href="#research">Research</a>
       <a href="#principles">Principles</a>
       <a href="#process">Process</a>
       <a href="#about">About</a>
@@ -493,8 +553,10 @@ button:focus-visible {
         <div>
           <div class="eyebrow">Selected work</div>
           <h2>Frameworks, tools, and strategies for responsible human–AI futures.</h2>
-          <p>Work across responsible AI, innovation strategy, human–AI collaboration, and systems stewardship.</p>
+        </div>
+        <p>Work across responsible AI, innovation strategy, human–AI collaboration, and systems stewardship.</p>
       </div>
+      
       <div class="filters" aria-label="Project filters">
         <button class="filter active" data-filter="all">All</button>
         <button class="filter" data-filter="frameworks">Frameworks</button>
@@ -592,6 +654,75 @@ button:focus-visible {
       </div>
     </div>
   </section>
+
+  <section class="section" id="research">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Research & Publications</div>
+          <h2>Writing and research that ground the practice.</h2>
+        </div>
+        <p>Selected publications, essays, and research artifacts exploring responsible AI, human–AI collaboration, and public-good innovation.</p>
+      </div>
+
+      <div class="research-list">
+        <article class="card research-card">
+          <div>
+            <p class="research-meta">Publication · Placeholder venue · 2026</p>
+            <h3>Responsible AI Adoption as a Stewardship Practice</h3>
+            <p>
+              A placeholder publication summary exploring how organizations can approach AI adoption through trust, context, accountability, and long-term care.
+            </p>
+            <div class="tag-row research-tags">
+              <span class="tag">Responsible AI</span>
+              <span class="tag">Adoption</span>
+              <span class="tag">Stewardship</span>
+            </div>
+          </div>
+          <div class="research-actions">
+            <a class="button" href="https://example.com" target="_blank" rel="noopener noreferrer">Read publication</a>
+          </div>
+        </article>
+
+        <article class="card research-card">
+          <div>
+            <p class="research-meta">Essay · Placeholder publication · 2025</p>
+            <h3>Relational Human–AI Co-Creation</h3>
+            <p>
+              A placeholder essay on how human–AI tools can support reflection, agency, judgment, and more responsible forms of collaboration.
+            </p>
+            <div class="tag-row research-tags">
+              <span class="tag">Human–AI</span>
+              <span class="tag">Co-creation</span>
+              <span class="tag">Agency</span>
+            </div>
+          </div>
+          <div class="research-actions">
+            <a class="button" href="https://example.com" target="_blank" rel="noopener noreferrer">Read publication</a>
+          </div>
+        </article>
+
+        <article class="card research-card">
+          <div>
+            <p class="research-meta">Research artifact · Placeholder project · 2025</p>
+            <h3>Design Fieldwork for Responsible AI</h3>
+            <p>
+              A placeholder research artifact describing methods for surfacing stakeholder needs, ethical tensions, implementation risks, and adoption barriers before AI systems scale.
+            </p>
+            <div class="tag-row research-tags">
+              <span class="tag">Fieldwork</span>
+              <span class="tag">Stakeholders</span>
+              <span class="tag">Risk Discovery</span>
+            </div>
+          </div>
+          <div class="research-actions">
+            <a class="button" href="https://example.com" target="_blank" rel="noopener noreferrer">Read publication</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  
   <section class="section" id="principles">
     <div class="container">
       <div class="section-head">
