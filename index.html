@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Portfolio starter site for GitHub Pages." />
+<title>Your Name — Portfolio</title>
+<style>
+:root {
+  --bg:#fbfaf7; --panel:#fff; --text:#1f2933; --muted:#637083;
+  --line:#e7e0d6; --accent:#315f72; --accent-2:#a16a4a;
+  --shadow:0 18px 50px rgba(31,41,51,.09); --radius:22px; --max:1120px;
+}
+[data-theme="dark"] {
+  --bg:#101820; --panel:#172330; --text:#f5f0e8; --muted:#bac5d1;
+  --line:#2d3b48; --accent:#8ecae6; --accent-2:#f4a261;
+  --shadow:0 18px 50px rgba(0,0,0,.28);
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0; color:var(--text); line-height:1.6;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:radial-gradient(circle at top left,rgba(49,95,114,.13),transparent 32rem),
+  radial-gradient(circle at bottom right,rgba(161,106,74,.13),transparent 30rem),var(--bg);
+}
+a { color:inherit; text-decoration:none; }
+button { font:inherit; }
+.container { width:min(100% - 32px,var(--max)); margin:0 auto; }
+.skip-link { position:absolute; left:-999px; top:8px; padding:10px 14px; background:var(--panel); border:1px solid var(--line); border-radius:999px; }
+.skip-link:focus { left:16px; z-index:20; }
+header { position:sticky; top:0; z-index:10; backdrop-filter:blur(16px); background:color-mix(in srgb,var(--bg) 84%,transparent); border-bottom:1px solid var(--line); }
+.nav { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+.brand { display:flex; align-items:center; gap:12px; font-weight:850; letter-spacing:-.03em; }
+.logo { width:38px; height:38px; border-radius:13px; display:grid; place-items:center; color:#fff; background:linear-gradient(135deg,var(--accent),var(--accent-2)); box-shadow:var(--shadow); }
+.nav-links { display:flex; align-items:center; gap:18px; color:var(--muted); font-size:.95rem; }
+.nav-links a:hover { color:var(--text); }
+.button { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0 18px; border:1px solid var(--line); border-radius:999px; background:var(--panel); color:var(--text); font-weight:750; cursor:pointer; box-shadow:0 8px 24px rgba(31,41,51,.06); }
+.button.primary { border-color:transparent; background:var(--accent); color:#fff; }
+.button:hover,.card:hover { transform:translateY(-2px); }
+.hero { padding:90px 0 56px; }
+.hero-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:34px; align-items:center; }
+.eyebrow { margin-bottom:12px; color:var(--accent-2); font-size:.78rem; font-weight:850; letter-spacing:.12em; text-transform:uppercase; }
+h1,h2,h3 { margin:0; line-height:1.08; letter-spacing:-.04em; }
+h1 { font-size:clamp(2.8rem,8vw,6.2rem); }
+h2 { font-size:clamp(2rem,5vw,3.4rem); }
+h3 { font-size:1.22rem; }
+p { color:var(--muted); }
+.lead { max-width:720px; margin:24px 0 0; font-size:clamp(1.05rem,2vw,1.26rem); }
+.hero-actions,.tag-row,.filters { display:flex; flex-wrap:wrap; gap:10px; }
+.hero-actions { margin-top:30px; }
+.feature-card { min-height:390px; border:1px solid var(--line); border-radius:32px; padding:24px; background:linear-gradient(160deg,var(--panel),color-mix(in srgb,var(--accent) 12%,var(--panel))); box-shadow:var(--shadow); }
+.feature-inner { height:100%; border:1px solid var(--line); border-radius:var(--radius); padding:28px; display:flex; flex-direction:column; justify-content:space-between; background:repeating-linear-gradient(135deg,rgba(49,95,114,.11) 0 2px,transparent 2px 18px); }
+.metric { font-size:3rem; font-weight:900; letter-spacing:-.06em; }
+.section { padding:72px 0; }
+.section-head { display:flex; justify-content:space-between; align-items:end; gap:24px; margin-bottom:26px; }
+.section-head p { max-width:560px; margin:0; }
+.grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.card { border:1px solid var(--line); border-radius:var(--radius); padding:24px; background:color-mix(in srgb,var(--panel) 95%,transparent); box-shadow:0 10px 32px rgba(31,41,51,.05); transition:transform 180ms ease; }
+.tag,.filter { border:1px solid var(--line); border-radius:999px; padding:7px 11px; background:var(--panel); color:var(--muted); font-size:.87rem; }
+.filter { cursor:pointer; }
+.filter.active { background:var(--accent); color:#fff; border-color:transparent; }
+.project-art { height:145px; border-radius:18px; background:radial-gradient(circle at 25% 20%,rgba(255,255,255,.45),transparent 12rem),linear-gradient(135deg,var(--accent),var(--accent-2)); margin-bottom:18px; }
+.about,.contact { display:grid; grid-template-columns:.9fr 1.1fr; gap:28px; align-items:start; }
+.step { display:grid; grid-template-columns:54px 1fr; gap:16px; margin-bottom:14px; }
+.step-number { width:54px; height:54px; display:grid; place-items:center; border-radius:18px; color:#fff; background:var(--accent); font-weight:900; }
+.quote { color:var(--text); font-size:1.35rem; line-height:1.35; }
+.contact-panel { grid-column:1/-1; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:34px; border-radius:30px; color:var(--bg); background:var(--text); }
+.contact-panel p { max-width:620px; color:color-mix(in srgb,var(--bg) 78%,transparent); }
+footer { padding:32px 0 46px; color:var(--muted); }
+.footer-row { display:flex; justify-content:space-between; gap:18px; padding-top:22px; border-top:1px solid var(--line); }
+@media (max-width:860px) {
+  .hero-grid,.about,.contact { grid-template-columns:1fr; }
+  .grid { grid-template-columns:1fr; }
+  .section-head,.contact-panel { display:grid; }
+  .nav-links { display:none; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header>
+  <nav class="container nav" aria-label="Primary navigation">
+    <a class="brand" href="#top" aria-label="Home">
+      <span class="logo" aria-hidden="true">YN</span>
+      <span>Your Name</span>
+    </a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#principles">Principles</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+    </div>
+    <button class="button" id="themeToggle" type="button">Theme</button>
+  </nav>
+</header>
+<main id="main">
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Portfolio / Studio / Practice</div>
+        <h1>Designing useful things with care, clarity, and imagination.</h1>
+        <p class="lead">Replace this with your one-sentence thesis: who you serve, what you build, and why the work matters now.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#work">View selected work</a>
+          <a class="button" href="mailto:hello@example.com">Start a conversation</a>
+        </div>
+      </div>
+      <aside class="feature-card" aria-label="Portfolio highlight">
+        <div class="feature-inner">
+          <div>
+            <p class="eyebrow">Current focus</p>
+            <h2>Human-centered systems</h2>
+          </div>
+          <div>
+            <div class="metric">12+</div>
+            <p>Projects across strategy, product, research, and storytelling.</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container grid">
+      <article class="card">
+        <h3>What we make</h3>
+        <p>Websites, prototypes, research artifacts, strategy decks, tools, and stories.</p>
+      </article>
+      <article class="card">
+        <h3>How we work</h3>
+        <p>Collaborative discovery, principled experimentation, and accessible delivery.</p>
+      </article>
+      <article class="card">
+        <h3>What we value</h3>
+        <p>Trust, usefulness, long-term thinking, and the people affected by the work.</p>
+      </article>
+    </div>
+  </section>
+  <section class="section" id="work">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Selected work</div>
+          <h2>Case studies that show the shape of the practice.</h2>
+        </div>
+        <p>Use these cards for projects, publications, experiments, or client work.</p>
+      </div>
+      <div class="filters" aria-label="Project filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="strategy">Strategy</button>
+        <button class="filter" data-filter="product">Product</button>
+        <button class="filter" data-filter="research">Research</button>
+      </div>
+      <div class="grid" id="projectGrid">
+        <article class="card project-card" data-category="strategy">
+          <div class="project-art" aria-hidden="true"></div>
+          <h3>Portfolio Project One</h3>
+          <p>A short outcome-focused description of the project and its impact.</p>
+          <div class="tag-row"><span class="tag">Strategy</span><span class="tag">Roadmap</span></div>
+        </article>
+        <article class="card project-card" data-category="product">
+          <div class="project-art" aria-hidden="true"></div>
+          <h3>Portfolio Project Two</h3>
+          <p>A product, prototype, or service concept grounded in a clear user need.</p>
+          <div class="tag-row"><span class="tag">Product</span><span class="tag">Prototype</span></div>
+        </article>
+        <article class="card project-card" data-category="research">
+          <div class="project-art" aria-hidden="true"></div>
+          <h3>Portfolio Project Three</h3>
+          <p>A research effort that shaped decisions, language, or direction.</p>
+          <div class="tag-row"><span class="tag">Research</span><span class="tag">Insights</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="principles">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Principles</div>
+          <h2>A simple working philosophy.</h2>
+        </div>
+        <p>Swap these for the values, standards, or design commitments that guide your work.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>Start with context</h3><p>Listen for needs, constraints, incentives, histories, and lived experience.</p></article>
+        <article class="card"><h3>Make choices visible</h3><p>Name tradeoffs, assumptions, open questions, and risks while they can still shape the work.</p></article>
+        <article class="card"><h3>Build for stewardship</h3><p>Consider maintenance, ownership, accessibility, and future effects from the beginning.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="process">
+    <div class="container about">
+      <div>
+        <div class="eyebrow">Process</div>
+        <h2>From uncertainty to useful direction.</h2>
+        <p class="lead">A flexible path for turning early questions into tangible work.</p>
+      </div>
+      <div>
+        <article class="card step"><span class="step-number">1</span><div><h3>Frame</h3><p>Clarify the challenge, audience, desired change, and responsible boundaries.</p></div></article>
+        <article class="card step"><span class="step-number">2</span><div><h3>Explore</h3><p>Gather signals, generate options, and test what deserves more attention.</p></div></article>
+        <article class="card step"><span class="step-number">3</span><div><h3>Shape</h3><p>Turn the strongest direction into a story, system, prototype, or launch plan.</p></div></article>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="about">
+    <div class="container about">
+      <article class="card">
+        <p class="quote">“Use this space for a short founder note, practice statement, or guiding belief.”</p>
+      </article>
+      <article class="card">
+        <h2>About the practice</h2>
+        <p>Introduce the people behind the work. Share relevant background, capabilities, collaborators, and the kinds of problems you are prepared to hold.</p>
+        <div class="tag-row"><span class="tag">Design</span><span class="tag">Innovation</span><span class="tag">Research</span><span class="tag">Storytelling</span></div>
+      </article>
+    </div>
+  </section>
+  <section class="section" id="contact">
+    <div class="container contact">
+      <div class="contact-panel">
+        <div>
+          <div class="eyebrow">Contact</div>
+          <h2>Have a project worth shaping carefully?</h2>
+          <p>Share a little context, and replace the email below with your preferred contact path.</p>
+        </div>
+        <a class="button" href="mailto:hello@example.com">hello@example.com</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="container footer-row">
+    <span>© <span id="year"></span> Your Name. All rights reserved.</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+<script>
+const root = document.documentElement;
+const themeToggle = document.querySelector("#themeToggle");
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) root.dataset.theme = savedTheme;
+themeToggle.addEventListener("click", () => {
+  const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+  root.dataset.theme = nextTheme;
+  localStorage.setItem("theme", nextTheme);
+});
+document.querySelector("#year").textContent = new Date().getFullYear();
+const filters = document.querySelectorAll(".filter");
+const projects = document.querySelectorAll("[data-category]");
+filters.forEach((button) => {
+  button.addEventListener("click", () => {
+    filters.forEach((item) => item.classList.remove("active"));
+    button.classList.add("active");
+    const selected = button.dataset.filter;
+    projects.forEach((project) => {
+      project.hidden = selected !== "all" && project.dataset.category !== selected;
+    });
+  });
+});
+</script>
+</body>
+</html>
