@@ -81,9 +81,18 @@ p { color:var(--muted); }
 .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
 #projectGrid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: 920px; }
+  max-width: 920px;
+  margin: 0 auto; }
 .card { border:1px solid var(--line); border-radius:var(--radius); padding:24px; background:color-mix(in srgb,var(--panel) 95%,transparent); box-shadow:0 10px 32px rgba(31,41,51,.05); transition:transform 180ms ease; }
-.tag,.filter { border:1px solid var(--line); border-radius:999px; padding:7px 11px; background:var(--panel); color:var(--muted); font-size:.87rem; }
+.tag,.filter { 
+  border:1px solid var(--line); 
+  border-radius:999px; 
+  padding:7px 11px; 
+  background:var(--panel); 
+  color:var(--muted); 
+  font-size:.87rem; }
+.filters {
+  margin-bottom: 18px; }
 .filter { cursor:pointer; }
 .filter.active { background:var(--accent); color:#fff; border-color:transparent; }
 .project-art {
@@ -107,7 +116,7 @@ p { color:var(--muted); }
   margin: 0;
   max-width: 760px;
   color: var(--text);
-  font-size: clamp(1.65rem, 3vw, 2.55rem);
+  font-size: clamp(1.55rem, 2.7vw, 2.35rem);
   line-height: 1.08;
   letter-spacing: -.055em;
   font-weight: 900; }
@@ -374,12 +383,10 @@ button:focus-visible {
     font-size: clamp(2rem, 10vw, 3rem);
   }
 
-@media (max-width: 680px) {
   .grid,
   #projectGrid {
     grid-template-columns: 1fr;
   }
-}
 
   .contact-panel {
     padding: 28px;
@@ -657,7 +664,7 @@ button:focus-visible {
       </article>
       <article class="card about-card">
         <h2>About Matthew</h2>
-        <p>  I work at the intersection of responsible AI, innovation strategy, and human–AI co-creation. My portfolio brings together frameworks, tools, and strategic artifacts that help people move from possibility to principled action — with attention to trust, accountability, relational context, and long-term public good.</p>
+        <p>I work at the intersection of responsible AI, innovation strategy, and human–AI co-creation. My portfolio brings together frameworks, tools, and strategic artifacts that help people move from possibility to principled action — with attention to trust, accountability, relational context, and long-term public good.</p>
         <div class="tag-row">
           <span class="tag">Responsible AI</span>
           <span class="tag">Innovation Strategy</span>
