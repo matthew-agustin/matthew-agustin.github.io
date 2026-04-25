@@ -357,6 +357,71 @@ h1 {
   white-space: nowrap;
 }
 
+.research-subsection {
+  max-width: 920px;
+  margin: 48px auto 0;
+}
+
+.research-subsection-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, .55fr);
+  gap: 28px;
+  align-items: end;
+  margin-bottom: 18px;
+}
+
+.research-subsection-head p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.manuscript-list {
+  display: grid;
+  gap: 14px;
+}
+
+.manuscript-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 22px;
+  align-items: start;
+  padding: 22px 24px;
+}
+
+.manuscript-item h3 {
+  margin: 0 0 8px;
+  font-size: 1.08rem;
+  line-height: 1.25;
+  letter-spacing: -.025em;
+}
+
+.manuscript-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: .94rem;
+  line-height: 1.55;
+}
+
+.manuscript-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--accent);
+  background: var(--panel);
+  font-size: .8rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.title-note {
+  color: var(--accent-2);
+  font-weight: 800;
+}
+
 /* Process cards currently feel a bit stretched horizontally */
 .step {
   align-items: start;
@@ -430,6 +495,15 @@ button:focus-visible {
     justify-content: flex-start;
     min-width: 0;
   }
+}
+
+.research-subsection-head,
+.manuscript-item {
+  grid-template-columns: 1fr;
+}
+
+.manuscript-status {
+  justify-self: start;
 }
 
   .hero {
@@ -719,6 +793,74 @@ button:focus-visible {
             <a class="button" href="https://example.com" target="_blank" rel="noopener noreferrer">Read publication</a>
           </div>
         </article>
+      </div>
+
+      <div class="research-subsection">
+        <div class="research-subsection-head">
+          <div>
+            <div class="eyebrow">Manuscripts in development</div>
+            <h2>Research currently being developed for special issues and journals.</h2>
+          </div>
+          <p>
+            A selected pipeline of manuscripts moving through abstract review, full manuscript development, journal review, revision, and publication stages.
+            <br><em>Abstract in development
+            <br>Awaiting abstract decision
+            <br>Manuscript in development
+            <br>Submitted for review
+            <br>Revisions in progress
+            <br>Accepted; awaiting publication</em>
+          </p>
+        </div>
+      
+        <div class="manuscript-list">
+          <article class="card manuscript-item">
+            <div>
+              <h3>Placeholder official title on responsible AI and learning systems</h3>
+              <p class="manuscript-meta">
+                <strong>Journal:</strong> Placeholder Journal Name ·
+                <strong>Issue:</strong> Placeholder Special Issue Name ·
+                <span class="title-note">Official title</span>
+              </p>
+            </div>
+            <span class="manuscript-status">Abstract approved</span>
+          </article>
+      
+          <article class="card manuscript-item">
+            <div>
+              <h3>Placeholder working title on relational human–AI co-creation</h3>
+              <p class="manuscript-meta">
+                <strong>Journal:</strong> Placeholder Journal Name ·
+                <strong>Issue:</strong> Placeholder Issue on Human–AI Collaboration ·
+                <span class="title-note">Working title</span>
+              </p>
+            </div>
+            <span class="manuscript-status">Full manuscript requested</span>
+          </article>
+      
+          <article class="card manuscript-item">
+            <div>
+              <h3>Placeholder official title on AI literacy, agency, and public-good innovation</h3>
+              <p class="manuscript-meta">
+                <strong>Journal:</strong> Placeholder Journal Name ·
+                <strong>Issue:</strong> Placeholder Special Issue Name ·
+                <span class="title-note">Official title</span>
+              </p>
+            </div>
+            <span class="manuscript-status">Manuscript in development</span>
+          </article>
+      
+          <article class="card manuscript-item">
+            <div>
+              <h3>Placeholder working title on responsible innovation fieldwork</h3>
+              <p class="manuscript-meta">
+                <strong>Journal:</strong> Placeholder Journal Name ·
+                <strong>Issue:</strong> Placeholder Issue on Ethics, Design, and Emerging Technology ·
+                <span class="title-note">Working title</span>
+              </p>
+            </div>
+            <span class="manuscript-status">Abstract approved</span>
+          </article>
+        </div>
       </div>
     </div>
   </section>
