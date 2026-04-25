@@ -63,6 +63,13 @@ h2 { font-size:clamp(2rem,5vw,3.4rem); }
 h3 { font-size:1.22rem; }
 p { color:var(--muted); }
 .lead { max-width:720px; margin:24px 0 0; font-size:clamp(1.05rem,2vw,1.26rem); }
+.credibility-line {
+  max-width: 620px;
+  margin: 18px 0 0;
+  padding-left: 16px;
+  border-left: 3px solid var(--accent);
+  color: var(--muted);
+  font-size: .98rem; }
 .hero-actions,.tag-row,.filters { display:flex; flex-wrap:wrap; gap:10px; }
 .hero-actions { margin-top:30px; }
 .feature-card { min-height:390px; border:1px solid var(--line); border-radius:32px; padding:24px; background:linear-gradient(160deg,var(--panel),color-mix(in srgb,var(--accent) 12%,var(--panel))); box-shadow:var(--shadow); }
@@ -80,7 +87,17 @@ p { color:var(--muted); }
 .about,.contact { display:grid; grid-template-columns:.9fr 1.1fr; gap:28px; align-items:start; }
 .step { display:grid; grid-template-columns:54px 1fr; gap:16px; margin-bottom:14px; }
 .step-number { width:54px; height:54px; display:grid; place-items:center; border-radius:18px; color:#fff; background:var(--accent); font-weight:900; }
-.quote { color:var(--text); font-size:1.35rem; line-height:1.35; }
+.quote-card {
+  display: flex;
+  align-items: center;
+  min-height: 260px; }
+.quote {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(1.45rem, 2.4vw, 2.15rem);
+  line-height: 1.18;
+  letter-spacing: -.045em;
+  font-weight: 850; }
 .contact-panel { grid-column:1/-1; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:34px; border-radius:30px; color:var(--bg); background:var(--text); }
 .contact-panel p { max-width:620px; color:color-mix(in srgb,var(--bg) 78%,transparent); }
 footer { padding:32px 0 46px; color:var(--muted); }
@@ -220,6 +237,30 @@ h1 {
   height: 156px;
 }
 
+.project-meta {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: .84rem;
+  line-height: 1.55;
+}
+
+.project-meta strong {
+  color: var(--text);
+  font-weight: 800;
+}
+
+.project-actions {
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.project-actions .button {
+  width: 100%;
+  min-height: 40px;
+  font-size: .88rem;
+  box-shadow: none;
+}
+
 /* Process cards currently feel a bit stretched horizontally */
 .step {
   align-items: start;
@@ -344,51 +385,64 @@ button:focus-visible {
 </header>
 <main id="main">
   <section class="hero" id="top">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">Matthew Agustin / Responsible AI / Human–AI Futures</div>
-        <h1>Designing human–AI systems with trust, care, and public purpose.</h1>
-        <p class="lead">I build frameworks, workshop tools, research artifacts, and decision systems that help teams ask better questions before emerging technologies become infrastructure.</p>
-        
-        <div class="hero-actions">
-          <a class="button primary" href="#work">Explore the work</a>
-          <a class="button" href="mailto:hello@example.com">Start a conversation</a>
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Matthew Agustin / Responsible AI / Human–AI Futures</div>
+
+      <h1>Designing human–AI systems with trust, care, and public purpose.</h1>
+
+      <p class="lead">
+        I build frameworks, workshop tools, research artifacts, and decision systems that help teams ask better questions before emerging technologies become infrastructure.
+      </p>
+
+      <p class="credibility-line">
+        Currently Director of Innovation at Responsible Innovation Lab, where I help shape responsible AI approaches grounded in context, accountability, and long-term public good.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button primary" href="#work">Explore the work</a>
+        <a class="button" href="#contact">Start a conversation</a>
+      </div>
+    </div>
+
+    <aside class="feature-card" aria-label="Portfolio highlight">
+      <div class="feature-inner">
+        <div>
+          <p class="eyebrow">Current focus</p>
+          <h2>Relational human–AI tools</h2>
         </div>
-        <p>Shaping principled approaches to responsible AI, relational technology, and public-good innovation.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#work">Explore the work</a>
-          <a class="button" href="mailto:hello@example.com">Start a conversation</a>
+
+        <div>
+          <div class="metric">AI × Society</div>
+          <p>
+            My work sits where responsible AI, ethical design, strategic foresight, and public-good innovation meet.
+          </p>
         </div>
       </div>
-      <aside class="feature-card" aria-label="Portfolio highlight">
-        <div class="feature-inner">
-          <div>
-            <p class="eyebrow">Current focus</p>
-            <h2>Relational human–AI tools</h2>
-          </div>
-          <div>
-            <div class="metric">AI × Society</div>
-            <p>My work sits where responsible AI, ethical design, strategic foresight, and public-good innovation meet.</p>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </section>
+    </aside>
+  </div>
+</section>
   <section class="section">
     <div class="container grid">
       <article class="card">
-        <h3>What I shape</h3>
-        <p>Frameworks, prototypes, research artifacts, strategy systems, and narratives for responsible innovation.</p>
+        <h3>What I notice</h3>
+        <p>
+          I look for the moments when technical possibility starts becoming social infrastructure — where assumptions, incentives, and relationships begin to shape the future.
+        </p>
       </article>
       
       <article class="card">
-        <h3>How I work</h3>
-        <p>Through reflective inquiry, participatory design, ethical foresight, and careful translation between ideas and implementation.</p>
+        <h3>What I make</h3>
+        <p>
+          Frameworks, prototypes, research artifacts, workshop tools, strategy systems, and narratives that help people move from abstract concern to responsible action.
+        </p>
       </article>
       
       <article class="card">
-        <h3>Why it matters</h3>
-        <p>Because emerging technologies do not just solve problems — they reshape relationships, choices, institutions, and futures.</p>
+        <h3>How it helps</h3>
+        <p>
+          My work helps teams clarify what they are building, who it affects, what responsibility requires, and how to steward decisions beyond launch.
+        </p>
       </article>
     </div>
   </section>
@@ -411,8 +465,19 @@ button:focus-visible {
         <article class="card project-card" data-category="frameworks">
           <div class="project-art" aria-hidden="true"></div>
           <h3>FAIF</h3>
-          <p>A responsible AI adoption framework for helping teams examine trust, context, accountability, and long-term impact before scaling AI-enabled systems.</p>
-          <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20FAIF">Ask about this work</a>
+        
+          <p class="project-meta">
+            <strong>Format:</strong> Framework · <strong>Role:</strong> Creator / strategist · <strong>Status:</strong> In development
+          </p>
+        
+          <p>
+            A responsible AI adoption framework for helping teams examine trust, context, accountability, and long-term impact before scaling AI-enabled systems.
+          </p>
+        
+          <div class="project-actions">
+            <a class="button" href="mailto:hello@example.com?subject=Interested%20in%20FAIF">Ask about this work</a>
+          </div>
+        
           <div class="tag-row">
             <span class="tag">Framework</span>
             <span class="tag">Responsible AI</span>
@@ -422,17 +487,41 @@ button:focus-visible {
         <article class="card project-card" data-category="strategy">
           <div class="project-art" aria-hidden="true"></div>
           <h3>Responsible AI Design Fieldwork</h3>
-          <p>A practice model for surfacing stakeholder needs, ethical tensions, and implementation risks before systems are scaled.</p>
+        
+          <p class="project-meta">
+            <strong>Format:</strong> Fieldwork method · <strong>Role:</strong> Research / design strategy · <strong>Status:</strong> Practice model
+          </p>
+        
+          <p>
+            A practice model for surfacing stakeholder needs, ethical tensions, implementation risks, and adoption barriers before AI systems are scaled.
+          </p>
+        
+          <div class="project-actions">
+            <a class="button" href="mailto:hello@example.com?subject=Interested%20in%20Responsible%20AI%20Design%20Fieldwork">Ask about this work</a>
+          </div>
+        
           <div class="tag-row">
             <span class="tag">Strategy</span>
             <span class="tag">Fieldwork</span>
           </div>
         </article>
-        
+
         <article class="card project-card" data-category="tools">
           <div class="project-art" aria-hidden="true"></div>
           <h3>Vireo</h3>
-          <p>A human–AI co-creation concept exploring how intelligent tools can support reflection, agency, and relational decision-making.</p>
+        
+          <p class="project-meta">
+            <strong>Format:</strong> Human–AI tool concept · <strong>Role:</strong> Product thinking / co-creation · <strong>Status:</strong> Exploratory
+          </p>
+        
+          <p>
+            A human–AI co-creation concept exploring how intelligent tools can support reflection, agency, judgment, and relational decision-making.
+          </p>
+        
+          <div class="project-actions">
+            <a class="button" href="mailto:hello@example.com?subject=Interested%20in%20Vireo">Ask about this work</a>
+          </div>
+        
           <div class="tag-row">
             <span class="tag">Tool</span>
             <span class="tag">Human–AI</span>
@@ -442,7 +531,19 @@ button:focus-visible {
         <article class="card project-card" data-category="frameworks">
           <div class="project-art" aria-hidden="true"></div>
           <h3>The Work of You</h3>
-          <p>A reflective framework for helping people clarify identity, purpose, contribution, and the kind of future they want their work to serve.</p>
+        
+          <p class="project-meta">
+            <strong>Format:</strong> Reflective framework · <strong>Role:</strong> Author / facilitator · <strong>Status:</strong> Developing
+          </p>
+        
+          <p>
+            A reflective framework for helping people clarify identity, purpose, contribution, and the kind of future they want their work to serve.
+          </p>
+        
+          <div class="project-actions">
+            <a class="button" href="mailto:hello@example.com?subject=Interested%20in%20The%20Work%20of%20You">Ask about this work</a>
+          </div>
+        
           <div class="tag-row">
             <span class="tag">Reflection</span>
             <span class="tag">Purpose</span>
@@ -514,12 +615,17 @@ button:focus-visible {
   </section>
   <section class="section" id="about">
     <div class="container about">
-      <article class="card">
-        <p class="quote">“Responsible innovation is not only about what we can build. It is about the relationships, responsibilities, and futures our work makes possible.”</p>
+      <article class="card quote-card">
+        <div>
+          <p class="eyebrow">Working thesis</p>
+          <p class="quote">
+            “Responsible innovation is not only about what we can build. It is about the relationships, responsibilities, and futures our work makes possible.”
+          </p>
+        </div>
       </article>
       <article class="card">
         <h2>About Matthew</h2>
-        <p>I work at the intersection of responsible AI, innovation strategy, and human–AI co-creation. My practice helps people and organizations move from possibility to principled action — shaping tools, frameworks, and strategies that are useful, trustworthy, and aligned with long-term public good.</p>
+        <p>  I work at the intersection of responsible AI, innovation strategy, and human–AI co-creation. My portfolio brings together frameworks, tools, and strategic artifacts that help people move from possibility to principled action — with attention to trust, accountability, relational context, and long-term public good.</p>
         <div class="tag-row">
           <span class="tag">Responsible AI</span>
           <span class="tag">Innovation Strategy</span>
