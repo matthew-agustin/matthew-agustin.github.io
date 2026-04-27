@@ -190,7 +190,9 @@ p { color:var(--muted); }
 .project-card[data-project="the-work-of-you"] .artifact-preview::before,
 .project-card[data-project="course-architect-pro"] .artifact-preview::before,
 .project-card[data-project="youth-futures-suite"] .artifact-preview::before,
-.project-card[data-project="ai-governance-simulation-lab"] .artifact-preview::before {
+.project-card[data-project="ai-governance-simulation-lab"] .artifact-preview::before,
+.project-card[data-project="scis"] .artifact-preview::before,
+.project-card[data-project="ai-transparency-challenge"] .artifact-preview::before {
   content: "";
   position: absolute;
   inset: auto 22px 22px 22px;
@@ -343,6 +345,31 @@ p { color:var(--muted); }
   font-weight: 800;
   letter-spacing: .04em;
 }
+
+.project-card[data-project="scis"] .artifact-preview::after {
+  content: "Systems · Context · Integrity · Stewardship";
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 54px;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.project-card[data-project="ai-transparency-challenge"] .artifact-preview::after {
+  content: "Clarity · Evidence · Limits · Trust";
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 54px;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
 .about,.contact { display:grid; grid-template-columns:.9fr 1.1fr; gap:28px; align-items:start; }
 .step { display:grid; grid-template-columns:54px 1fr; gap:16px; margin-bottom:14px; }
 .step-number { width:54px; height:54px; display:grid; place-items:center; border-radius:18px; color:#fff; background:var(--accent); font-weight:900; }
@@ -895,7 +922,7 @@ button:focus-visible {
         <button class="filter active" data-filter="featured" aria-pressed="true">Featured</button>
         <button class="filter" data-filter="learning" aria-pressed="false">Learning Futures</button>
         <button class="filter" data-filter="relational" aria-pressed="false">Relational AI</button>
-        <button class="filter" data-filter="governance" aria-pressed="false" hidden>Governance &amp; Trust</button>
+        <button class="filter" data-filter="governance" aria-pressed="false">Governance &amp; Trust</button>
         <button class="filter" data-filter="prototypes" aria-pressed="false" hidden>Tools &amp; Prototypes</button>
         <button class="filter" data-filter="emerging" aria-pressed="false" hidden>Emerging Directions</button>
       </div>
@@ -1328,6 +1355,70 @@ button:focus-visible {
           <div class="tag-row">
             <span class="tag">Governance</span>
             <span class="tag">Simulation</span>
+          </div>
+        </article>
+
+        <article
+          class="card project-card"
+          data-project="scis"
+          data-filters="governance"
+        >
+          <figure class="artifact-preview" role="img" aria-label="SCIS Framework preview: a governance framework connecting systems, context, integrity, and stewardship.">
+            <div class="artifact-badge" aria-hidden="true">SCIS</div>
+          </figure>
+          <h3>SCIS Framework</h3>
+
+          <p class="project-meta">
+            Framework · Systems context, integrity, and stewardship · In development
+          </p>
+
+          <p>
+            A framework for examining how AI-enabled decisions sit inside larger social, institutional, and technical systems. It helps teams surface structural conditions, affected relationships, integrity risks, and stewardship responsibilities before governance choices become normalized.
+          </p>
+
+          <p class="project-meta-detail">
+            <strong>Use context:</strong> Governance review, sociotechnical risk analysis, institutional accountability, and responsible implementation planning.
+          </p>
+
+          <div class="project-actions">
+            <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20SCIS%20Framework">Discuss the framework</a>
+          </div>
+
+          <div class="tag-row">
+            <span class="tag">Governance</span>
+            <span class="tag">Systems Integrity</span>
+          </div>
+        </article>
+
+        <article
+          class="card project-card"
+          data-project="ai-transparency-challenge"
+          data-filters="governance prototypes"
+        >
+          <figure class="artifact-preview" role="img" aria-label="AI Transparency Challenge preview: a participatory exercise for examining clarity, evidence, limits, and trust in AI-enabled systems.">
+            <div class="artifact-badge" aria-hidden="true">Transparency</div>
+          </figure>
+          <h3>AI Transparency Challenge</h3>
+
+          <p class="project-meta">
+            Participatory exercise · Transparency, accountability, and trust · Prototype
+          </p>
+
+          <p>
+            A lightweight challenge for helping teams examine whether an AI-enabled system can be meaningfully understood, questioned, and trusted by the people affected by it. It focuses attention on what is disclosed, what evidence is available, what limits remain, and where accountability needs to be strengthened.
+          </p>
+
+          <p class="project-meta-detail">
+            <strong>Use context:</strong> AI transparency review, team workshops, governance conversations, and responsible implementation planning.
+          </p>
+
+          <div class="project-actions">
+            <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20AI%20Transparency%20Challenge">Discuss the challenge</a>
+          </div>
+
+          <div class="tag-row">
+            <span class="tag">Transparency</span>
+            <span class="tag">Governance</span>
           </div>
         </article>
       </div>
