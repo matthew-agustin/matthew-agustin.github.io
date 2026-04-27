@@ -219,7 +219,7 @@ p { color:var(--muted); }
 }
 
 .project-card[data-project="riaf"] .artifact-preview::after {
-  content: "Values → Context → Responsibility → Stewardship";
+  content: "Bounded · Agency · Meaning · Trust";
   position: absolute;
   left: 34px;
   right: 34px;
@@ -255,7 +255,7 @@ p { color:var(--muted); }
 }
 
 .project-card[data-project="vireo"] .artifact-preview::after {
-  content: "Purpose · Direction · Judgment · Consequence";
+  content: "Voice · Plurality · Values · Attribution";
   position: absolute;
   left: 34px;
   right: 34px;
@@ -279,7 +279,7 @@ p { color:var(--muted); }
 }
 
 .project-card[data-project="ai-for-principled-innovators"] .artifact-preview::after {
-  content: "Principles · Judgment · Adoption · Public Value";
+  content: "Mindset · MVP · Foresight · Stewardship";
   position: absolute;
   left: 34px;
   right: 34px;
@@ -327,7 +327,7 @@ p { color:var(--muted); }
 }
 
 .project-card[data-project="youth-futures-suite"] .artifact-preview::after {
-  content: "Agency · Imagination · Futures · Public Good";
+  content: "Agency · Imagination · Readiness · Futures";
   position: absolute;
   left: 34px;
   right: 34px;
@@ -979,7 +979,7 @@ button:focus-visible {
         <button class="filter" data-filter="emerging" aria-pressed="false">Emerging Directions</button>
       </div>
 
-      <div class="grid" id="projectGrid">
+      <div class="grid" id="projectGrid" aria-live="polite">
         <article
           class="card project-card"
           data-project="faif"
@@ -1031,7 +1031,7 @@ button:focus-visible {
           data-project="radf"
           data-filters="relational governance"
         >
-          <figure class="artifact-preview" role="img" aria-label="RADF preview: a relational AI diagnostic framework connecting relationship, agency, design choices, and accountability.">
+          <figure class="artifact-preview" role="img" aria-label="RADF preview: a relational AI depth framework for examining engagement depth, agency, authorship, and responsibility.">
             <div class="artifact-badge" aria-hidden="true">RADF</div>
           </figure>
           <h3>Relational AI Depth Framework</h3>
@@ -1063,7 +1063,7 @@ button:focus-visible {
           data-project="riaf"
           data-filters="featured relational governance"
         >
-          <figure class="artifact-preview" role="img" aria-label="RIAF preview: a relational integrity framework connecting values, context, responsibility, and implementation choices.">
+          <figure class="artifact-preview" role="img" aria-label="RIAF preview: a relational integrity framework for bounded support, agency preservation, meaning-making, and trust.">
             <div class="artifact-badge" aria-hidden="true">RIAF</div>
           </figure>
           <h3>Relational Integrity in AI Framework</h3>
@@ -1095,7 +1095,7 @@ button:focus-visible {
           data-project="textwalk"
           data-filters="featured learning relational prototypes"
         >
-          <figure class="artifact-preview" role="img" aria-label="TextWalk preview: a guided path for reading, reflection, interpretation, and agency-aware learning.">
+          <figure class="artifact-preview" role="img" aria-label="TextWalk preview: a co-reader path for mapping structure, clarifying ideas, supporting close reading, and preserving learner-led interpretation.">
             <div class="artifact-badge" aria-hidden="true">TextWalk</div>
           </figure>
           <h3>TextWalk</h3>
@@ -1127,7 +1127,7 @@ button:focus-visible {
           data-project="ro"
           data-filters="featured relational prototypes"
         >
-          <figure class="artifact-preview" role="img" aria-label="Ro preview: a relational AI dialogue space for reflection, agency, and careful decision-making.">
+          <figure class="artifact-preview" role="img" aria-label="Ro preview: a Socratic AI coach for reflection, metacognition, civic reasoning, and ethical decision-making.">
             <div class="artifact-badge" aria-hidden="true">Ro</div>
           </figure>
           <h3>Ro</h3>
@@ -1159,7 +1159,7 @@ button:focus-visible {
           data-project="vireo"
           data-filters="featured relational prototypes"
         >
-          <figure class="artifact-preview" role="img" aria-label="Vireo preview: a co-creation concept for purpose, judgment, and consequential choices.">
+          <figure class="artifact-preview" role="img" aria-label="Vireo preview: a reflective thought partner for voice, plurality, values reflection, and transparent human–AI co-creation.">
             <div class="artifact-badge" aria-hidden="true">Vireo</div>
           </figure>
           <h3>Vireo</h3>
@@ -1191,7 +1191,7 @@ button:focus-visible {
           data-project="human-centered-ai-literacy-course"
           data-filters="featured learning"
         >
-          <figure class="artifact-preview" role="img" aria-label="Human-Centered AI Literacy Course preview: a learning pathway for AI literacy, agency, ethics, and responsible use.">
+          <figure class="artifact-preview" role="img" aria-label="Human-Centered AI Literacy Course preview: an interpretive learning pathway for AI literacy, discernment, epistemic self-trust, and responsible use.">
             <div class="artifact-badge" aria-hidden="true">AI Literacy</div>
           </figure>
           <h3>Human-Centered AI Literacy Course</h3>
@@ -1223,7 +1223,7 @@ button:focus-visible {
           data-project="ai-for-principled-innovators"
           data-filters="learning"
         >
-          <figure class="artifact-preview" role="img" aria-label="AI for Principled Innovators preview: a learning experience connecting responsible innovation, AI literacy, judgment, and public value.">
+          <figure class="artifact-preview" role="img" aria-label="AI for Principled Innovators preview: a learning experience for mindset-to-MVP practice, foresight, disciplined scoping, and stewardship.">
             <div class="artifact-badge" aria-hidden="true">Principled AI</div>
           </figure>
           <h3>AI for Principled Innovators</h3>
@@ -1351,7 +1351,7 @@ button:focus-visible {
           data-project="youth-futures-suite"
           data-filters="learning emerging"
         >
-          <figure class="artifact-preview" role="img" aria-label="Youth Futures Suite preview: a learning and imagination suite for youth agency, future-building, and responsible technology reflection.">
+          <figure class="artifact-preview" role="img" aria-label="Youth Futures Suite preview: a modular curriculum for youth agency, imagination, readiness, and future-building.">
             <div class="artifact-badge" aria-hidden="true">Youth Futures</div>
           </figure>
           <h3>Youth Futures Suite</h3>
@@ -1383,7 +1383,7 @@ button:focus-visible {
           data-project="ai-literacy-media-lab-echo-26"
           data-filters="emerging"
         >
-          <figure class="artifact-preview" role="img" aria-label="AI Literacy Media Lab / Echo ’26 preview: an emerging media and storytelling direction for AI literacy, public imagination, and responsible technology culture.">
+          <figure class="artifact-preview" role="img" aria-label="AI Literacy Media Lab / Echo ’26 preview: a participatory media lab where learners create public AI literacy resources through storytelling, reflection, and civic learning.">
             <div class="artifact-badge" aria-hidden="true">Echo ’26</div>
           </figure>
           <h3>AI Literacy Media Lab / Echo ’26</h3>
@@ -1415,7 +1415,7 @@ button:focus-visible {
           data-project="decision-loom"
           data-filters="emerging"
         >
-          <figure class="artifact-preview" role="img" aria-label="Decision Loom preview: an emerging decision-support concept for tracing choices, consequences, values, and accountability.">
+          <figure class="artifact-preview" role="img" aria-label="Decision Loom preview: a values-in-the-loop simulator for tradeoffs, pressure, integrity, and responsible decision-making.">
             <div class="artifact-badge" aria-hidden="true">Decision Loom</div>
           </figure>
           <h3>Decision Loom</h3>
@@ -1447,7 +1447,7 @@ button:focus-visible {
           data-project="co-creation-stack"
           data-filters="emerging"
         >
-          <figure class="artifact-preview" role="img" aria-label="Co-Creation Stack preview: an emerging stack for structuring human–AI collaboration, reflection, judgment, and responsible practice.">
+          <figure class="artifact-preview" role="img" aria-label="Co-Creation Stack preview: an implementation architecture for relational readiness, governance, guardrails, and responsible AI adoption.">
             <div class="artifact-badge" aria-hidden="true">Co-Creation</div>
           </figure>
           <h3>Co-Creation Stack</h3>
@@ -1479,7 +1479,7 @@ button:focus-visible {
           data-project="little-responsible-innovators"
           data-filters="emerging"
         >
-          <figure class="artifact-preview" role="img" aria-label="Little Responsible Innovators preview: an emerging youth-centered learning concept for responsibility, creativity, and future-building.">
+          <figure class="artifact-preview" role="img" aria-label="Little Responsible Innovators preview: a children’s book series for curiosity, fairness, inclusion, stewardship, and ethical imagination.">
             <div class="artifact-badge" aria-hidden="true">Little RI</div>
           </figure>
           <h3>Little Responsible Innovators</h3>
