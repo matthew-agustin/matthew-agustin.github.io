@@ -179,6 +179,7 @@ p { color:var(--muted); }
   color: var(--text);
   font-size: .88rem;
   font-weight: 850; }
+.project-card[data-project="radf"] .artifact-preview::before,
 .project-card[data-project="riaf"] .artifact-preview::before,
 .project-card[data-project="textwalk"] .artifact-preview::before,
 .project-card[data-project="ro"] .artifact-preview::before,
@@ -197,6 +198,18 @@ p { color:var(--muted); }
   border-radius: 18px;
   border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--line));
   background: color-mix(in srgb, var(--panel) 70%, transparent);
+}
+
+.project-card[data-project="radf"] .artifact-preview::after {
+  content: "Relationship · Agency · Design · Accountability";
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 54px;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .04em;
 }
 
 .project-card[data-project="riaf"] .artifact-preview::after {
@@ -881,7 +894,7 @@ button:focus-visible {
       <div class="filters" aria-label="Project filters">
         <button class="filter active" data-filter="featured" aria-pressed="true">Featured</button>
         <button class="filter" data-filter="learning" aria-pressed="false">Learning Futures</button>
-        <button class="filter" data-filter="relational" aria-pressed="false" hidden>Relational AI</button>
+        <button class="filter" data-filter="relational" aria-pressed="false">Relational AI</button>
         <button class="filter" data-filter="governance" aria-pressed="false" hidden>Governance &amp; Trust</button>
         <button class="filter" data-filter="prototypes" aria-pressed="false" hidden>Tools &amp; Prototypes</button>
         <button class="filter" data-filter="emerging" aria-pressed="false" hidden>Emerging Directions</button>
@@ -931,6 +944,38 @@ button:focus-visible {
           <div class="tag-row">
             <span class="tag">Framework</span>
             <span class="tag">AI Governance</span>
+          </div>
+        </article>
+
+        <article
+          class="card project-card"
+          data-project="radf"
+          data-filters="relational governance"
+        >
+          <figure class="artifact-preview" role="img" aria-label="RADF preview: a relational AI design framework connecting relationship, agency, design choices, and accountability.">
+            <div class="artifact-badge" aria-hidden="true">RADF</div>
+          </figure>
+          <h3>Relational AI Design Framework</h3>
+
+          <p class="project-meta">
+            Framework · Relational design, agency, and accountability · In development
+          </p>
+
+          <p>
+            A design framework for shaping AI-enabled interactions around relationship, agency, context, and accountability. It helps teams examine how an AI system participates in human decisions, learning, reflection, and institutional practice before design choices harden into defaults.
+          </p>
+
+          <p class="project-meta-detail">
+            <strong>Use context:</strong> Relational AI design review, human–AI interaction strategy, and accountable system development.
+          </p>
+
+          <div class="project-actions">
+            <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20RADF">Discuss the framework</a>
+          </div>
+
+          <div class="tag-row">
+            <span class="tag">Relational AI</span>
+            <span class="tag">Design Framework</span>
           </div>
         </article>
 
