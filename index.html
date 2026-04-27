@@ -151,34 +151,7 @@ p { color:var(--muted); }
   font-size: .82rem;
   font-weight: 850;
   letter-spacing: .08em; }
-.faif-lenses {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
-  margin-top: 22px; }
-.faif-lenses span {
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: color-mix(in srgb, var(--bg) 58%, transparent);
-  color: var(--muted);
-  font-size: .82rem;
-  font-weight: 750; }
-.faif-pathway {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 20px; }
-.faif-pathway span {
-  flex: 1 1 92px;
-  text-align: center;
-  padding: 12px 10px;
-  border-radius: 16px;
-  background: color-mix(in srgb, var(--accent) 14%, var(--panel));
-  border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--line));
-  color: var(--text);
-  font-size: .88rem;
-  font-weight: 850; }
+.project-card[data-project="faif"] .artifact-preview::before,
 .project-card[data-project="radf"] .artifact-preview::before,
 .project-card[data-project="riaf"] .artifact-preview::before,
 .project-card[data-project="textwalk"] .artifact-preview::before,
@@ -204,6 +177,18 @@ p { color:var(--muted); }
   border-radius: 18px;
   border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--line));
   background: color-mix(in srgb, var(--panel) 70%, transparent);
+}
+
+.project-card[data-project="faif"] .artifact-preview::after {
+  content: "Trust · Dignity · Stewardship · Impact";
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 54px;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .04em;
 }
 
 .project-card[data-project="radf"] .artifact-preview::after {
@@ -985,23 +970,10 @@ button:focus-visible {
           data-project="faif"
           data-filters="featured governance"
         >
-          <figure class="artifact-preview faif-preview" role="img" aria-label="FAIF decision pathway preview: adopt, adapt, pause, or redesign, evaluated through trust, context, accountability, and long-term public impact.">
+          <figure class="artifact-preview" role="img" aria-label="FAIF preview: a flourishing-centered AI integrity framework for trust, dignity, stewardship, and long-term impact.">
             <div class="artifact-badge" aria-hidden="true">FAIF</div>
-
-            <div class="faif-lenses" aria-hidden="true">
-              <span>Trust</span>
-              <span>Context</span>
-              <span>Accountability</span>
-              <span>Public impact</span>
-            </div>
-
-            <div class="faif-pathway" aria-hidden="true">
-              <span>Adopt</span>
-              <span>Adapt</span>
-              <span>Pause</span>
-              <span>Redesign</span>
-            </div>
           </figure>
+          
           <h3>Flourishing AI Integrity Framework</h3>
 
           <p class="project-meta">
