@@ -184,7 +184,11 @@ p { color:var(--muted); }
 .project-card[data-project="ro"] .artifact-preview::before,
 .project-card[data-project="vireo"] .artifact-preview::before,
 .project-card[data-project="human-centered-ai-literacy-course"] .artifact-preview::before,
+.project-card[data-project="ai-for-principled-innovators"] .artifact-preview::before,
+.project-card[data-project="ai-wisdom-education"] .artifact-preview::before,
 .project-card[data-project="the-work-of-you"] .artifact-preview::before,
+.project-card[data-project="course-architect-pro"] .artifact-preview::before,
+.project-card[data-project="youth-futures-suite"] .artifact-preview::before,
 .project-card[data-project="ai-governance-simulation-lab"] .artifact-preview::before {
   content: "";
   position: absolute;
@@ -255,8 +259,56 @@ p { color:var(--muted); }
   letter-spacing: .04em;
 }
 
+.project-card[data-project="ai-for-principled-innovators"] .artifact-preview::after {
+  content: "Principles · Judgment · Adoption · Public Value";
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 54px;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.project-card[data-project="ai-wisdom-education"] .artifact-preview::after {
+  content: "Discernment · Judgment · Consequence · Care";
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 54px;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
 .project-card[data-project="the-work-of-you"] .artifact-preview::after {
   content: "Identity · Purpose · Contribution · Future";
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 54px;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.project-card[data-project="course-architect-pro"] .artifact-preview::after {
+  content: "Outcomes · Modules · Activities · Reflection";
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 54px;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.project-card[data-project="youth-futures-suite"] .artifact-preview::after {
+  content: "Agency · Imagination · Futures · Public Good";
   position: absolute;
   left: 34px;
   right: 34px;
@@ -1044,6 +1096,70 @@ button:focus-visible {
 
         <article
           class="card project-card"
+          data-project="ai-for-principled-innovators"
+          data-filters="learning"
+        >
+          <figure class="artifact-preview" role="img" aria-label="AI for Principled Innovators preview: a learning experience connecting responsible innovation, AI literacy, judgment, and public value.">
+            <div class="artifact-badge" aria-hidden="true">Principled AI</div>
+          </figure>
+          <h3>AI for Principled Innovators</h3>
+
+          <p class="project-meta">
+            Learning experience · Responsible innovation and AI practice · In development
+          </p>
+
+          <p>
+            A learning experience for innovators who need to work with AI without losing sight of responsibility, context, and public value. It helps learners connect practical AI use with principled judgment, ethical reflection, and the social consequences of implementation choices.
+          </p>
+
+          <p class="project-meta-detail">
+            <strong>Use context:</strong> Responsible innovation education, AI strategy learning, and principled adoption practice.
+          </p>
+
+          <div class="project-actions">
+            <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20AI%20for%20Principled%20Innovators">Discuss the learning experience</a>
+          </div>
+
+          <div class="tag-row">
+            <span class="tag">Learning</span>
+            <span class="tag">Responsible Innovation</span>
+          </div>
+        </article>
+
+        <article
+          class="card project-card"
+          data-project="ai-wisdom-education"
+          data-filters="learning"
+        >
+          <figure class="artifact-preview" role="img" aria-label="AI Wisdom Education preview: a learning direction connecting AI literacy, discernment, judgment, and wise action.">
+            <div class="artifact-badge" aria-hidden="true">AI Wisdom</div>
+          </figure>
+          <h3>AI Wisdom Education</h3>
+
+          <p class="project-meta">
+            Learning framework · Discernment, judgment, and wise AI use · In development
+          </p>
+
+          <p>
+            A learning direction for helping people move beyond AI literacy toward discernment, judgment, and wise action. It explores how learners can ask better questions, recognize consequences, and use AI in ways that strengthen agency, responsibility, and care.
+          </p>
+
+          <p class="project-meta-detail">
+            <strong>Use context:</strong> AI education, reflective learning, ethical discernment, and wisdom-oriented technology practice.
+          </p>
+
+          <div class="project-actions">
+            <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20AI%20Wisdom%20Education">Discuss the learning framework</a>
+          </div>
+
+          <div class="tag-row">
+            <span class="tag">Learning</span>
+            <span class="tag">Wisdom</span>
+          </div>
+        </article>
+
+        <article
+          class="card project-card"
           data-project="the-work-of-you"
           data-filters="featured learning relational prototypes"
         >
@@ -1071,6 +1187,70 @@ button:focus-visible {
           <div class="tag-row">
             <span class="tag">Reflection</span>
             <span class="tag">Purpose</span>
+          </div>
+        </article>
+
+        <article
+          class="card project-card"
+          data-project="course-architect-pro"
+          data-filters="learning prototypes"
+        >
+          <figure class="artifact-preview" role="img" aria-label="Course Architect Pro preview: a learning design tool for shaping courses, modules, outcomes, and reflective learning pathways.">
+            <div class="artifact-badge" aria-hidden="true">Course Architect</div>
+          </figure>
+          <h3>Course Architect Pro</h3>
+
+          <p class="project-meta">
+            Learning design tool · Course architecture and responsible AI education · Prototype
+          </p>
+
+          <p>
+            A course design tool for shaping learning experiences with clearer outcomes, stronger structure, and more intentional reflection. It supports educators and program designers as they translate complex ideas into modules, activities, assessments, and learning pathways.
+          </p>
+
+          <p class="project-meta-detail">
+            <strong>Use context:</strong> Course design, curriculum strategy, AI literacy programs, and responsible innovation learning experiences.
+          </p>
+
+          <div class="project-actions">
+            <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20Course%20Architect%20Pro">Discuss the course architect</a>
+          </div>
+
+          <div class="tag-row">
+            <span class="tag">Learning Design</span>
+            <span class="tag">Prototype</span>
+          </div>
+        </article>
+
+        <article
+          class="card project-card"
+          data-project="youth-futures-suite"
+          data-filters="learning emerging"
+        >
+          <figure class="artifact-preview" role="img" aria-label="Youth Futures Suite preview: a learning and imagination suite for youth agency, future-building, and responsible technology reflection.">
+            <div class="artifact-badge" aria-hidden="true">Youth Futures</div>
+          </figure>
+          <h3>Youth Futures Suite</h3>
+
+          <p class="project-meta">
+            Emerging learning suite · Youth agency, imagination, and future-building · Concept
+          </p>
+
+          <p>
+            A suite of emerging learning experiences for helping young people imagine, question, and shape possible futures with agency. It invites youth to explore technology, responsibility, creativity, and public good without reducing their futures to prediction or workforce preparation alone.
+          </p>
+
+          <p class="project-meta-detail">
+            <strong>Use context:</strong> Youth learning, futures literacy, civic imagination, responsible technology education, and public-good innovation.
+          </p>
+
+          <div class="project-actions">
+            <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20Youth%20Futures%20Suite">Discuss the youth futures suite</a>
+          </div>
+
+          <div class="tag-row">
+            <span class="tag">Youth Futures</span>
+            <span class="tag">Emerging</span>
           </div>
         </article>
 
