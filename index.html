@@ -8,13 +8,13 @@
 <style>
 :root {
   --bg:#fbfaf7; --panel:#fff; --text:#1f2933; --muted:#637083;
-  --line:#e7e0d6; --accent:#315f72; --accent-2:#a16a4a;
-  --shadow:0 18px 50px rgba(31,41,51,.09); --radius:22px; --max:1120px;
+  --line:#e7e0d6; --accent:#315f72; --accent-2:#a16a4a; --panel-2:#f6f0e8;
+  --shadow:0 18px 50px rgba(31,41,51,.09); --shadow-soft:0 10px 32px rgba(31,41,51,.05); --radius:22px; --radius-lg:22px; --max:1120px;
 }
 [data-theme="dark"] {
   --bg:#101820; --panel:#172330; --text:#f5f0e8; --muted:#bac5d1;
-  --line:#2d3b48; --accent:#8ecae6; --accent-2:#f4a261;
-  --shadow:0 18px 50px rgba(0,0,0,.28);
+  --line:#2d3b48; --accent:#8ecae6; --accent-2:#f4a261; --panel-2:#1f2f3d;
+  --shadow:0 18px 50px rgba(0,0,0,.28); --shadow-soft:0 10px 32px rgba(0,0,0,.18);
 }
 * { box-sizing:border-box; }
 [hidden] {
@@ -127,13 +127,6 @@ p { color:var(--muted); }
   margin-bottom: 18px; }
 .filter { cursor:pointer; }
 .filter.active { background:var(--accent); color:#fff; border-color:transparent; }
-.project-art {
-  height: 168px;
-  border-radius: 18px;
-  background:
-    radial-gradient(circle at 25% 20%, rgba(255,255,255,.45), transparent 12rem),
-    linear-gradient(135deg, var(--accent), var(--accent-2));
-  margin-bottom: 22px; }
 .artifact-preview {
   position: relative;
   min-height: 220px;
@@ -144,7 +137,7 @@ p { color:var(--muted); }
     linear-gradient(135deg, color-mix(in srgb, var(--panel) 96%, transparent), color-mix(in srgb, var(--panel-2) 92%, transparent));
   box-shadow: var(--shadow-soft);
   overflow: hidden;
-  margin: 0;
+  margin: 0 0 22px;
   padding: 22px; }
 .artifact-badge {
   display: inline-flex;
@@ -186,6 +179,105 @@ p { color:var(--muted); }
   color: var(--text);
   font-size: .88rem;
   font-weight: 850; }
+.project-card[data-project="riaf"] .artifact-preview::before,
+.project-card[data-project="textwalk"] .artifact-preview::before,
+.project-card[data-project="ro"] .artifact-preview::before,
+.project-card[data-project="vireo"] .artifact-preview::before,
+.project-card[data-project="human-centered-ai-literacy-course"] .artifact-preview::before,
+.project-card[data-project="the-work-of-you"] .artifact-preview::before,
+.project-card[data-project="ai-governance-simulation-lab"] .artifact-preview::before {
+  content: "";
+  position: absolute;
+  inset: auto 22px 22px 22px;
+  height: 92px;
+  border-radius: 18px;
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--line));
+  background: color-mix(in srgb, var(--panel) 70%, transparent);
+}
+
+.project-card[data-project="riaf"] .artifact-preview::after {
+  content: "Values → Context → Responsibility → Stewardship";
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 54px;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.project-card[data-project="textwalk"] .artifact-preview::after {
+  content: "Read · Reflect · Interpret · Respond";
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 54px;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.project-card[data-project="ro"] .artifact-preview::after {
+  content: "Pause · Clarify · Discern · Choose";
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 54px;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.project-card[data-project="vireo"] .artifact-preview::after {
+  content: "Purpose · Direction · Judgment · Consequence";
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 54px;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.project-card[data-project="human-centered-ai-literacy-course"] .artifact-preview::after {
+  content: "AI Literacy · Agency · Ethics · Practice";
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 54px;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.project-card[data-project="the-work-of-you"] .artifact-preview::after {
+  content: "Identity · Purpose · Contribution · Future";
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 54px;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.project-card[data-project="ai-governance-simulation-lab"] .artifact-preview::after {
+  content: "Scenario · Tradeoff · Accountability · Trust";
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 54px;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
 .about,.contact { display:grid; grid-template-columns:.9fr 1.1fr; gap:28px; align-items:start; }
 .step { display:grid; grid-template-columns:54px 1fr; gap:16px; margin-bottom:14px; }
 .step-number { width:54px; height:54px; display:grid; place-items:center; border-radius:18px; color:#fff; background:var(--accent); font-weight:900; }
@@ -382,8 +474,8 @@ h1 {
 }
 
 .project-actions {
-  margin-top: 24px;
-  padding-top: 0;
+  margin-top: auto;
+  padding-top: 24px;
 }
 
 .project-actions .button {
@@ -735,23 +827,30 @@ button:focus-visible {
       </div>
       
       <div class="filters" aria-label="Project filters">
-        <button class="filter active" data-filter="all">All</button>
-        <button class="filter" data-filter="frameworks">Frameworks</button>
-        <button class="filter" data-filter="tools">Tools</button>
-        <button class="filter" data-filter="strategy">Strategy</button>
+        <button class="filter active" data-filter="featured" aria-pressed="true">Featured</button>
+        <button class="filter" data-filter="learning" aria-pressed="false" hidden>Learning Futures</button>
+        <button class="filter" data-filter="relational" aria-pressed="false" hidden>Relational AI</button>
+        <button class="filter" data-filter="governance" aria-pressed="false" hidden>Governance &amp; Trust</button>
+        <button class="filter" data-filter="prototypes" aria-pressed="false" hidden>Tools &amp; Prototypes</button>
+        <button class="filter" data-filter="emerging" aria-pressed="false" hidden>Emerging Directions</button>
       </div>
+
       <div class="grid" id="projectGrid">
-        <article class="card project-card" data-category="frameworks">
+        <article
+          class="card project-card"
+          data-project="faif"
+          data-filters="featured governance"
+        >
           <figure class="artifact-preview faif-preview" role="img" aria-label="FAIF decision pathway preview: adopt, adapt, pause, or redesign, evaluated through trust, context, accountability, and long-term public impact.">
             <div class="artifact-badge" aria-hidden="true">FAIF</div>
-          
+
             <div class="faif-lenses" aria-hidden="true">
               <span>Trust</span>
               <span>Context</span>
               <span>Accountability</span>
               <span>Public impact</span>
             </div>
-          
+
             <div class="faif-pathway" aria-hidden="true">
               <span>Adopt</span>
               <span>Adapt</span>
@@ -760,11 +859,11 @@ button:focus-visible {
             </div>
           </figure>
           <h3>Flourishing AI Integrity Framework</h3>
-        
+
           <p class="project-meta">
             Framework · Creator / strategist · In development
           </p>
-        
+
           <p>
             A decision framework for examining whether an AI-enabled system should be adopted, adapted, paused, or redesigned. It keeps affected people, communities, and institutions in view alongside trust, context, accountability, and long-term public impact before systems scale.
           </p>
@@ -772,51 +871,127 @@ button:focus-visible {
           <p class="project-meta-detail">
             <strong>Use context:</strong> AI adoption decisions, governance review, and responsible scaling.
           </p>
-        
+
           <div class="project-actions">
             <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20FAIF">Discuss the framework</a>
           </div>
-        
+
           <div class="tag-row">
             <span class="tag">Framework</span>
             <span class="tag">AI Governance</span>
           </div>
         </article>
-        
-        <article class="card project-card" data-category="strategy">
-          <div class="project-art" aria-hidden="true"></div>
-          <h3>Design Fieldwork for Responsible AI</h3>
-        
+
+        <article
+          class="card project-card"
+          data-project="riaf"
+          data-filters="featured relational governance"
+        >
+          <figure class="artifact-preview" role="img" aria-label="RIAF preview: a relational integrity framework connecting values, context, responsibility, and implementation choices.">
+            <div class="artifact-badge" aria-hidden="true">RIAF</div>
+          </figure>
+          <h3>Relational Integrity Alignment Framework</h3>
+
           <p class="project-meta">
-            Fieldwork method · Research and design practice · Practice model
+            Framework · Relational integrity and alignment · In development
           </p>
-        
+
           <p>
-            A fieldwork model for gathering situated insight before design and implementation choices become difficult to change. It centers affected people, communities, and institutions while surfacing ethical tensions, adoption barriers, and implementation risks.
+            A framework for aligning AI-enabled work with the relationships, responsibilities, and contexts it touches. It helps translate values into design, governance, and implementation choices that can be examined before they become infrastructure.
           </p>
 
           <p class="project-meta-detail">
-            <strong>Use context:</strong> Fieldwork planning, implementation inquiry, and early risk discovery.
+            <strong>Use context:</strong> Responsible AI alignment, relational design review, and implementation stewardship.
           </p>
-        
+
           <div class="project-actions">
-            <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20Design%20Fieldwork%20for%20Responsible%20AI">Discuss the method</a>
+            <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20RIAF">Discuss the framework</a>
           </div>
-        
+
           <div class="tag-row">
-            <span class="tag">Strategy</span>
-            <span class="tag">Fieldwork</span>
+            <span class="tag">Framework</span>
+            <span class="tag">Relational Integrity</span>
           </div>
         </article>
 
-        <article class="card project-card" data-category="tools">
-          <div class="project-art" aria-hidden="true"></div>
+        <article
+          class="card project-card"
+          data-project="textwalk"
+          data-filters="featured learning relational prototypes"
+        >
+          <figure class="artifact-preview" role="img" aria-label="TextWalk preview: a guided path for reading, reflection, interpretation, and agency-aware learning.">
+            <div class="artifact-badge" aria-hidden="true">TextWalk</div>
+          </figure>
+          <h3>TextWalk</h3>
+
+          <p class="project-meta">
+            Reflective tool · Interpretation, learning, and agency · Prototype
+          </p>
+
+          <p>
+            A guided reading and reflection tool for helping people move through complex texts with greater agency. It supports interpretation, sensemaking, and learning integrity without collapsing the learner’s judgment into an automated answer.
+          </p>
+
+          <p class="project-meta-detail">
+            <strong>Use context:</strong> Learning, close reading, reflective interpretation, and AI-supported sensemaking.
+          </p>
+
+          <div class="project-actions">
+            <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20TextWalk">Discuss the tool</a>
+          </div>
+
+          <div class="tag-row">
+            <span class="tag">Tool</span>
+            <span class="tag">Learning</span>
+          </div>
+        </article>
+
+        <article
+          class="card project-card"
+          data-project="ro"
+          data-filters="featured relational prototypes"
+        >
+          <figure class="artifact-preview" role="img" aria-label="Ro preview: a relational AI dialogue space for reflection, agency, and careful decision-making.">
+            <div class="artifact-badge" aria-hidden="true">Ro</div>
+          </figure>
+          <h3>Ro</h3>
+
+          <p class="project-meta">
+            Relational AI tool · Reflection and dialogue · Prototype
+          </p>
+
+          <p>
+            A reflective dialogue tool designed to help people slow down, clarify what matters, and remain present to their own judgment. It supports relational reflection without pretending that AI can replace human discernment, responsibility, or lived context.
+          </p>
+
+          <p class="project-meta-detail">
+            <strong>Use context:</strong> Reflection, sensemaking, personal agency, and relational human–AI dialogue.
+          </p>
+
+          <div class="project-actions">
+            <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20Ro">Discuss the tool</a>
+          </div>
+
+          <div class="tag-row">
+            <span class="tag">Relational AI</span>
+            <span class="tag">Reflection</span>
+          </div>
+        </article>
+
+        <article
+          class="card project-card"
+          data-project="vireo"
+          data-filters="featured relational prototypes"
+        >
+          <figure class="artifact-preview" role="img" aria-label="Vireo preview: a co-creation concept for purpose, judgment, and consequential choices.">
+            <div class="artifact-badge" aria-hidden="true">Vireo</div>
+          </figure>
           <h3>Vireo</h3>
-        
+
           <p class="project-meta">
             Co-creation concept · Relational design · Exploratory
           </p>
-        
+
           <p>
             A human–AI co-creation concept for moments when people are clarifying purpose, direction, or a consequential choice. It is designed to support reflection, protect agency, strengthen judgment, and invite decisions that account for relationships, responsibilities, and consequences.
           </p>
@@ -824,25 +999,63 @@ button:focus-visible {
           <p class="project-meta-detail">
             <strong>Use context:</strong> Reflection, judgment, and consequential human–AI co-creation.
           </p>
-        
+
           <div class="project-actions">
             <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20Vireo">Discuss the concept</a>
           </div>
-        
+
           <div class="tag-row">
             <span class="tag">Tool</span>
             <span class="tag">Agency</span>
           </div>
         </article>
 
-        <article class="card project-card" data-category="frameworks">
-          <div class="project-art" aria-hidden="true"></div>
+        <article
+          class="card project-card"
+          data-project="human-centered-ai-literacy-course"
+          data-filters="featured learning"
+        >
+          <figure class="artifact-preview" role="img" aria-label="Human-Centered AI Literacy Course preview: a learning pathway for AI literacy, agency, ethics, and responsible use.">
+            <div class="artifact-badge" aria-hidden="true">AI Literacy</div>
+          </figure>
+          <h3>Human-Centered AI Literacy Course</h3>
+
+          <p class="project-meta">
+            Learning experience · AI literacy and responsible practice · Complete / polishing
+          </p>
+
+          <p>
+            A learning experience that helps people understand AI through agency, ethics, context, and responsible use. It moves beyond tool fluency toward judgment, reflection, and the capacity to ask better questions before adopting AI into consequential settings.
+          </p>
+
+          <p class="project-meta-detail">
+            <strong>Use context:</strong> AI literacy, professional learning, responsible adoption, and human-centered education.
+          </p>
+
+          <div class="project-actions">
+            <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20Human-Centered%20AI%20Literacy%20Course">Discuss the course</a>
+          </div>
+
+          <div class="tag-row">
+            <span class="tag">Learning</span>
+            <span class="tag">AI Literacy</span>
+          </div>
+        </article>
+
+        <article
+          class="card project-card"
+          data-project="the-work-of-you"
+          data-filters="featured learning relational prototypes"
+        >
+          <figure class="artifact-preview" role="img" aria-label="The Work of You preview: a reflective framework for identity, purpose, contribution, and future-oriented agency.">
+            <div class="artifact-badge" aria-hidden="true">Work of You</div>
+          </figure>
           <h3>The Work of You</h3>
-        
+
           <p class="project-meta">
             Reflective framework · Identity, purpose, and contribution · Developing
           </p>
-        
+
           <p>
             A reflective framework for helping people clarify identity, purpose, contribution, and the kind of future they want their work to serve. It gives language and structure to questions that are often felt before they are named.
           </p>
@@ -850,14 +1063,46 @@ button:focus-visible {
           <p class="project-meta-detail">
             <strong>Use context:</strong> Identity, purpose, contribution, and reflective life or work design.
           </p>
-        
+
           <div class="project-actions">
             <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20The%20Work%20of%20You">Discuss the reflection framework</a>
           </div>
-        
+
           <div class="tag-row">
             <span class="tag">Reflection</span>
             <span class="tag">Purpose</span>
+          </div>
+        </article>
+
+        <article
+          class="card project-card"
+          data-project="ai-governance-simulation-lab"
+          data-filters="featured governance prototypes"
+        >
+          <figure class="artifact-preview" role="img" aria-label="AI Governance Simulation Lab preview: scenario-based governance practice for tradeoffs, accountability, and institutional trust.">
+            <div class="artifact-badge" aria-hidden="true">Gov Lab</div>
+          </figure>
+          <h3>AI Governance Simulation Lab</h3>
+
+          <p class="project-meta">
+            Simulation lab · Scenario reasoning and governance practice · Prototype
+          </p>
+
+          <p>
+            A scenario-based prototype for practicing AI governance decisions before they become real-world commitments. It helps teams examine tradeoffs, affected stakeholders, accountability paths, and the institutional trust required to steward AI responsibly.
+          </p>
+
+          <p class="project-meta-detail">
+            <strong>Use context:</strong> Governance training, scenario planning, adoption review, and institutional decision-making.
+          </p>
+
+          <div class="project-actions">
+            <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20AI%20Governance%20Simulation%20Lab">Discuss the simulation lab</a>
+          </div>
+
+          <div class="tag-row">
+            <span class="tag">Governance</span>
+            <span class="tag">Simulation</span>
           </div>
         </article>
       </div>
@@ -1203,17 +1448,106 @@ themeToggle.addEventListener("click", () => {
 });
 document.querySelector("#year").textContent = new Date().getFullYear();
 const filters = document.querySelectorAll(".filter");
-const projects = document.querySelectorAll("[data-category]");
+const projectGrid = document.querySelector("#projectGrid");
+const projects = Array.from(document.querySelectorAll("[data-project]"));
+
+const projectOrders = {
+  featured: [
+    "faif",
+    "riaf",
+    "textwalk",
+    "ro",
+    "vireo",
+    "human-centered-ai-literacy-course",
+    "the-work-of-you",
+    "ai-governance-simulation-lab"
+  ],
+  learning: [
+    "human-centered-ai-literacy-course",
+    "ai-for-principled-innovators",
+    "ai-wisdom-education",
+    "textwalk",
+    "the-work-of-you",
+    "course-architect-pro",
+    "youth-futures-suite"
+  ],
+  relational: [
+    "ro",
+    "vireo",
+    "textwalk",
+    "the-work-of-you",
+    "radf",
+    "riaf"
+  ],
+  governance: [
+    "faif",
+    "riaf",
+    "radf",
+    "ai-governance-simulation-lab",
+    "scis",
+    "ai-transparency-challenge"
+  ],
+  prototypes: [
+    "textwalk",
+    "ro",
+    "vireo",
+    "course-architect-pro",
+    "the-work-of-you",
+    "ai-governance-simulation-lab",
+    "ai-transparency-challenge"
+  ],
+  emerging: [
+    "youth-futures-suite",
+    "ai-literacy-media-lab-echo-26",
+    "decision-loom",
+    "co-creation-stack",
+    "little-responsible-innovators",
+    "relational-operationalization-framework"
+  ]
+};
+
+function applyProjectFilter(selectedFilter) {
+  const orderedProjectIds = projectOrders[selectedFilter] || [];
+  const projectsById = new Map(
+    projects.map((project) => [project.dataset.project, project])
+  );
+
+  projects.forEach((project) => {
+    project.hidden = true;
+  });
+
+  orderedProjectIds.forEach((projectId) => {
+    const project = projectsById.get(projectId);
+
+    if (!project) {
+      return;
+    }
+
+    const projectFilters = project.dataset.filters.split(/\s+/);
+    const shouldShow = projectFilters.includes(selectedFilter);
+
+    project.hidden = !shouldShow;
+
+    if (shouldShow) {
+      projectGrid.appendChild(project);
+    }
+  });
+}
+
 filters.forEach((button) => {
   button.addEventListener("click", () => {
-    filters.forEach((item) => item.classList.remove("active"));
-    button.classList.add("active");
-    const selected = button.dataset.filter;
-    projects.forEach((project) => {
-      project.hidden = selected !== "all" && project.dataset.category !== selected;
+    filters.forEach((item) => {
+      item.classList.remove("active");
+      item.setAttribute("aria-pressed", "false");
     });
+
+    button.classList.add("active");
+    button.setAttribute("aria-pressed", "true");
+    applyProjectFilter(button.dataset.filter);
   });
 });
+
+applyProjectFilter("featured");
 </script>
 </body>
 </html>
