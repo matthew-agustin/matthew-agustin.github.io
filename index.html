@@ -1516,9 +1516,16 @@ button:focus-visible {
             <br>Accepted; awaiting publication</em>
           </p>
         </div>
-      
-        <div class="manuscript-list">
-          <article class="card manuscript-item">
+
+        <div class="filters manuscript-filters" aria-label="Manuscript filters">
+          <button class="filter active" type="button" data-manuscript-filter="featured" aria-pressed="true">Featured</button>
+          <button class="filter" type="button" data-manuscript-filter="forthcoming" aria-pressed="false">Forthcoming</button>
+          <button class="filter" type="button" data-manuscript-filter="development" aria-pressed="false">In Development</button>
+          <button class="filter" type="button" data-manuscript-filter="review" aria-pressed="false">Under Review</button>
+        </div>
+
+        <div class="manuscript-list" data-manuscript-grid>
+          <article class="card manuscript-item manuscript-card" data-manuscript="radf" data-manuscript-filters="featured development">
             <div>
               <h3>Placeholder official title on AI and learning systems</h3>
               <p class="manuscript-meta">
@@ -1531,7 +1538,7 @@ button:focus-visible {
             <span class="manuscript-status">Abstract approved</span>
           </article>
       
-          <article class="card manuscript-item">
+          <article class="card manuscript-item manuscript-card" data-manuscript="legitimacy-under-algorithmic-authority" data-manuscript-filters="featured forthcoming">
             <div>
               <h3>Placeholder working title on relational co-creation with AI</h3>
               <p class="manuscript-meta">
@@ -1544,7 +1551,7 @@ button:focus-visible {
             <span class="manuscript-status">Full manuscript requested</span>
           </article>
       
-          <article class="card manuscript-item">
+          <article class="card manuscript-item manuscript-card" data-manuscript="epistemic-guardrails" data-manuscript-filters="featured forthcoming">
             <div>
               <h3>Placeholder official title on AI literacy, agency, and public-interest innovation</h3>
               <p class="manuscript-meta">
@@ -1771,7 +1778,7 @@ themeToggle.addEventListener("click", () => {
   updateThemeButton();
 });
 document.querySelector("#year").textContent = new Date().getFullYear();
-const filters = document.querySelectorAll(".filter");
+const projectFilters = document.querySelectorAll("[data-filter]");
 const projectGrid = document.querySelector("#projectGrid");
 const projects = Array.from(document.querySelectorAll("[data-project]"));
 
@@ -1857,9 +1864,9 @@ function applyProjectFilter(selectedFilter) {
   });
 }
 
-filters.forEach((button) => {
+projectFilters.forEach((button) => {
   button.addEventListener("click", () => {
-    filters.forEach((item) => {
+    projectFilters.forEach((item) => {
       item.classList.remove("active");
       item.setAttribute("aria-pressed", "false");
     });
@@ -1871,6 +1878,81 @@ filters.forEach((button) => {
 });
 
 applyProjectFilter("featured");
+
+const manuscriptFilters = document.querySelectorAll("[data-manuscript-filter]");
+const manuscriptCards = Array.from(document.querySelectorAll("[data-manuscript]"));
+const manuscriptGrid = document.querySelector("[data-manuscript-grid]");
+
+const manuscriptOrders = {
+  featured: [
+    "radf",
+    "epistemic-guardrails",
+    "legitimacy-under-algorithmic-authority",
+    "operationalizing-responsibility",
+    "agentic-co-creation",
+    "trust-legitimate-participation"
+  ],
+  forthcoming: [
+    "legitimacy-under-algorithmic-authority",
+    "epistemic-guardrails"
+  ],
+  development: [
+    "radf",
+    "operationalizing-responsibility",
+    "authority-migration",
+    "trust-legitimate-participation",
+    "agentic-co-creation"
+  ],
+  review: [
+    "leadership-structuring-participation",
+    "relationality-to-relational-integrity",
+    "responsibility-architecture",
+    "learner-participation-adaptive-education"
+  ]
+};
+
+function applyManuscriptFilter(selectedFilter) {
+  const orderedManuscriptIds = manuscriptOrders[selectedFilter] || [];
+  const manuscriptsById = new Map(
+    manuscriptCards.map((card) => [card.dataset.manuscript, card])
+  );
+
+  manuscriptCards.forEach((card) => {
+    card.hidden = true;
+  });
+
+  orderedManuscriptIds.forEach((manuscriptId) => {
+    const card = manuscriptsById.get(manuscriptId);
+
+    if (!card) {
+      return;
+    }
+
+    const cardFilters = card.dataset.manuscriptFilters.split(/\s+/);
+    const shouldShow = cardFilters.includes(selectedFilter);
+
+    card.hidden = !shouldShow;
+
+    if (shouldShow && manuscriptGrid) {
+      manuscriptGrid.appendChild(card);
+    }
+  });
+}
+
+manuscriptFilters.forEach((button) => {
+  button.addEventListener("click", () => {
+    manuscriptFilters.forEach((item) => {
+      item.classList.remove("active");
+      item.setAttribute("aria-pressed", "false");
+    });
+
+    button.classList.add("active");
+    button.setAttribute("aria-pressed", "true");
+    applyManuscriptFilter(button.dataset.manuscriptFilter);
+  });
+});
+
+applyManuscriptFilter("featured");
 </script>
 </body>
 </html>
