@@ -1515,7 +1515,8 @@ button:focus-visible {
           <p>
             A selected pipeline of manuscripts examining how AI reshapes — and is shaped by — questions of learning, agency, ethics, design practice, and public-interest innovation across development, review, revision, and publication stages.<br>
             <br>
-            <em>Manuscript in development
+            <em>Abstract stage / awaiting decision
+            <br>Manuscript in development
             <br>Preprint in final preparation
             <br>Submitted for review
             <br>Accepted; awaiting publication</em>
@@ -1527,6 +1528,7 @@ button:focus-visible {
           <button class="filter" type="button" data-manuscript-filter="forthcoming" aria-pressed="false">Forthcoming</button>
           <button class="filter" type="button" data-manuscript-filter="development" aria-pressed="false">In Development</button>
           <button class="filter" type="button" data-manuscript-filter="review" aria-pressed="false">Under Review</button>
+          <button class="filter" type="button" data-manuscript-filter="abstract-stage" aria-pressed="false">Abstract Stage</button>
         </div>
 
         <div class="manuscript-list" data-manuscript-grid>
@@ -1638,6 +1640,8 @@ button:focus-visible {
             <span class="manuscript-status">Awaiting abstract decision</span>
           </article>
 
+          <!-- Abstract-stage cards retained for future activation after acceptance/approval. -->
+          
           <article class="card manuscript-item manuscript-card" data-manuscript="responsibility-architecture" data-manuscript-filters="abstract-stage">
             <div>
               <h3>Responsibility Architecture in AI-Mediated Education: Rethinking Ethics and the Conditions of Responsible Action</h3>
@@ -1990,6 +1994,11 @@ const manuscriptOrders = {
   ],
   review: [
     "leadership-structuring-participation"
+  ]
+  abstract-stage: [
+    "relationality-to-relational-integrity",
+    "responsibility-architecture",
+    "learner-participation-adaptive-education"
   ]
   };
 
