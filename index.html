@@ -395,15 +395,33 @@ h1 {
 }
 
 .work-bridge {
-  max-width: 615px;
-  margin: 22px 0 24px;
-  padding: 14px 18px;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.72);
+  position: relative;
+  max-width: 920px;
+  margin: -4px 0 28px;
+  padding: 18px 22px 18px 38px;
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--line));
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--accent) 8%, var(--panel)),
+      color-mix(in srgb, var(--panel) 94%, transparent)
+    );
+  box-shadow: var(--shadow-soft);
   color: var(--muted);
-  font-size: 0.96rem;
-  line-height: 1.55;
+  font-size: .98rem;
+  line-height: 1.6;
+}
+
+.work-bridge::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  bottom: 18px;
+  width: 3px;
+  border-radius: 999px;
+  background: var(--accent);
 }
 
 /* Cards need slightly more readable body text */
@@ -704,6 +722,17 @@ button:focus-visible {
 
   .footer-row {
     flex-direction: column;
+  }
+
+  .work-bridge {
+    margin: 0 0 24px;
+    padding: 16px 18px 16px 34px;
+  }
+
+  .work-bridge::before {
+    left: 16px;
+    top: 16px;
+    bottom: 16px;
   }
 }
 </style>
