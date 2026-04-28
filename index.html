@@ -1427,10 +1427,13 @@ button:focus-visible {
     <div class="container">
       <div class="section-head">
         <div>
-          <div class="eyebrow">Research & Publications</div>
-          <h2>Research that grounds the practice.</h2>
+          <div class="eyebrow">Research & Frameworks</div>
+          <h2>Theme-based work on AI, agency, and public value.</h2>
         </div>
-        <p>Selected publications, essays, and research artifacts that develop ideas across relational design, learner agency, responsible practice, and public-interest innovation.</p>
+        <p>
+          A map of manuscripts, frameworks, and public-facing work exploring how AI shapes learning,
+          judgment, participation, governance, and institutional life.
+        </p>
       </div>
 
       <div class="research-list">
@@ -1510,24 +1513,25 @@ button:focus-visible {
       <div class="research-subsection">
         <div class="research-subsection-head">
           <div>
-            <div class="eyebrow">Manuscripts in development</div>
-            <h2>Research directions in development and review.</h2>
+            <div class="eyebrow">Manuscripts & Frameworks</div>
+            <h2>Explore the research by theme.</h2>
           </div>
           <p>
-            A selected pipeline of manuscripts examining how AI reshapes — and is shaped by — questions of learning, agency, ethics, design practice, and public-interest innovation across development, review, revision, and publication stages.
+            Use the themes below to navigate the deeper research architecture. Status markers remain visible inside each card, while the filters organize the work by intellectual focus rather than publication stage.
           </p>
         </div>
 
-        <div class="filters manuscript-filters" aria-label="Manuscript filters">
-          <button class="filter active" type="button" data-manuscript-filter="featured" aria-pressed="true">Featured</button>
-          <button class="filter" type="button" data-manuscript-filter="forthcoming" aria-pressed="false">Forthcoming</button>
-          <button class="filter" type="button" data-manuscript-filter="development" aria-pressed="false">In Development</button>
-          <button class="filter" type="button" data-manuscript-filter="review" aria-pressed="false">Under Review</button>
-          <button class="filter" type="button" data-manuscript-filter="abstract-stage" aria-pressed="false">Abstract Stage</button>
+        <div class="filters manuscript-filters" aria-label="Filter research themes">
+          <button class="filter active" type="button" data-manuscript-filter="all" aria-pressed="true">All</button>
+          <button class="filter" type="button" data-manuscript-filter="relational-ai" aria-pressed="false">Relational AI</button>
+          <button class="filter" type="button" data-manuscript-filter="learning-agency" aria-pressed="false">Learning & Agency</button>
+          <button class="filter" type="button" data-manuscript-filter="guardrails" aria-pressed="false">Guardrails & Evaluation</button>
+          <button class="filter" type="button" data-manuscript-filter="governance" aria-pressed="false">Governance & Legitimacy</button>
+          <button class="filter" type="button" data-manuscript-filter="knowledge-work" aria-pressed="false">Knowledge Work</button>
         </div>
 
         <div class="manuscript-list" data-manuscript-grid>
-          <article class="card manuscript-item manuscript-card" data-manuscript="radf" data-manuscript-filters="featured development">
+          <article class="card manuscript-item manuscript-card" data-manuscript="radf" data-manuscript-filters="relational-ai guardrails governance">
             <div>
               <h3>The Relational AI Depth Framework</h3>
               <p class="manuscript-meta">
@@ -1539,7 +1543,7 @@ button:focus-visible {
             <span class="manuscript-status">Manuscript in development</span>
           </article>
       
-          <article class="card manuscript-item manuscript-card" data-manuscript="legitimacy-under-algorithmic-authority" data-manuscript-filters="featured forthcoming">
+          <article class="card manuscript-item manuscript-card" data-manuscript="legitimacy-under-algorithmic-authority" data-manuscript-filters="relational-ai governance">
             <div>
               <h3>Legitimacy Under Algorithmic Authority: A Relational Diagnostic of Leadership Education in AI-Mediated Contexts</h3>
               <p class="manuscript-meta">
@@ -1551,7 +1555,7 @@ button:focus-visible {
             <span class="manuscript-status">Accepted; awaiting publication</span>
           </article>
 
-          <article class="card manuscript-item manuscript-card" data-manuscript="epistemic-guardrails" data-manuscript-filters="featured forthcoming">
+          <article class="card manuscript-item manuscript-card" data-manuscript="epistemic-guardrails" data-manuscript-filters="relational-ai guardrails learning-agency">
             <div>
               <h3>Evaluating Epistemic Guardrails in AI Reading Assistants: A Behavioral Audit of a Minimal Prototype</h3>
               <p class="manuscript-meta">
@@ -1563,7 +1567,7 @@ button:focus-visible {
             <span class="manuscript-status">Preprint in final preparation</span>
           </article>
 
-          <article class="card manuscript-item manuscript-card" data-manuscript="operationalizing-responsibility" data-manuscript-filters="featured development">
+          <article class="card manuscript-item manuscript-card" data-manuscript="operationalizing-responsibility" data-manuscript-filters="governance guardrails">
             <div>
               <h3>Operationalizing Responsibility Under Infrastructural AI: A Relational Diagnostic Framework</h3>
               <p class="manuscript-meta">
@@ -1575,7 +1579,7 @@ button:focus-visible {
             <span class="manuscript-status">Manuscript in development</span>
           </article>
 
-          <article class="card manuscript-item manuscript-card" data-manuscript="agentic-co-creation" data-manuscript-filters="featured development">
+          <article class="card manuscript-item manuscript-card" data-manuscript="agentic-co-creation" data-manuscript-filters="relational-ai governance knowledge-work">
             <div>
               <h3>Rethinking Agentic Co-Creation: Interpretive Authority and Accountability in Human–AI Work</h3>
               <p class="manuscript-meta">
@@ -1587,7 +1591,7 @@ button:focus-visible {
             <span class="manuscript-status">Manuscript in development</span>
           </article>
 
-          <article class="card manuscript-item manuscript-card" data-manuscript="trust-legitimate-participation" data-manuscript-filters="featured development">
+          <article class="card manuscript-item manuscript-card" data-manuscript="trust-legitimate-participation" data-manuscript-filters="relational-ai governance">
             <div>
               <h3>Trust in AI as Legitimate Participation: Role Drift and Interpretive Delegation in Human–AI Interaction</h3>
               <p class="manuscript-meta">
@@ -1599,7 +1603,7 @@ button:focus-visible {
             <span class="manuscript-status">Manuscript in development</span>
           </article>
 
-          <article class="card manuscript-item manuscript-card" data-manuscript="authority-migration" data-manuscript-filters="development">
+          <article class="card manuscript-item manuscript-card" data-manuscript="authority-migration" data-manuscript-filters="knowledge-work governance">
             <div>
               <h3>Authority Migration and Algorithmic Legitimacy in AI-Integrated Knowledge Work</h3>
               <p class="manuscript-meta">
@@ -1611,7 +1615,7 @@ button:focus-visible {
             <span class="manuscript-status">Manuscript in development</span>
           </article>
 
-          <article class="card manuscript-item manuscript-card" data-manuscript="leadership-structuring-participation" data-manuscript-filters="review">
+          <article class="card manuscript-item manuscript-card" data-manuscript="leadership-structuring-participation" data-manuscript-filters="governance">
             <div>
               <h3>Leadership as the Structuring of Participation: Rethinking Legitimacy in Higher Education</h3>
               <p class="manuscript-meta">
@@ -1623,7 +1627,7 @@ button:focus-visible {
             <span class="manuscript-status">Submitted for review</span>
           </article>
 
-          <article class="card manuscript-item manuscript-card" data-manuscript="relationality-to-relational-integrity" data-manuscript-filters="abstract-stage">
+          <article class="card manuscript-item manuscript-card" data-manuscript="relationality-to-relational-integrity" data-manuscript-filters="relational-ai guardrails learning-agency">
             <div>
               <h3>From Relationality to Relational Integrity: Reframing AI-Mediated Pedagogical Conditions in Higher Education</h3>
               <p class="manuscript-meta">
@@ -1635,7 +1639,7 @@ button:focus-visible {
             <span class="manuscript-status">Awaiting abstract decision</span>
           </article>
           
-          <article class="card manuscript-item manuscript-card" data-manuscript="responsibility-architecture" data-manuscript-filters="abstract-stage">
+          <article class="card manuscript-item manuscript-card" data-manuscript="responsibility-architecture" data-manuscript-filters="learning-agency governance">
             <div>
               <h3>Responsibility Architecture in AI-Mediated Education: Rethinking Ethics and the Conditions of Responsible Action</h3>
               <p class="manuscript-meta">
@@ -1975,35 +1979,55 @@ const manuscriptCards = Array.from(document.querySelectorAll("[data-manuscript]"
 const manuscriptGrid = document.querySelector("[data-manuscript-grid]");
 
 const manuscriptOrders = {
-  featured: [
+  all: [
     "radf",
     "epistemic-guardrails",
     "legitimacy-under-algorithmic-authority",
     "operationalizing-responsibility",
     "agentic-co-creation",
-    "trust-legitimate-participation"
-  ],
-  forthcoming: [
-    "legitimacy-under-algorithmic-authority",
-    "epistemic-guardrails"
-  ],
-  development: [
-    "radf",
-    "operationalizing-responsibility",
-    "authority-migration",
     "trust-legitimate-participation",
-    "agentic-co-creation"
-  ],
-  review: [
-    "leadership-structuring-participation"
-  ],
-  "abstract-stage": [
+    "authority-migration",
+    "leadership-structuring-participation",
     "relationality-to-relational-integrity",
     "responsibility-architecture",
     "learner-participation-adaptive-education"
+  ],
+  "relational-ai": [
+    "radf",
+    "epistemic-guardrails",
+    "legitimacy-under-algorithmic-authority",
+    "agentic-co-creation",
+    "trust-legitimate-participation",
+    "relationality-to-relational-integrity",
+    "learner-participation-adaptive-education"
+  ],
+  "learning-agency": [
+    "epistemic-guardrails",
+    "relationality-to-relational-integrity",
+    "responsibility-architecture",
+    "learner-participation-adaptive-education"
+  ],
+  guardrails: [
+    "epistemic-guardrails",
+    "radf",
+    "operationalizing-responsibility",
+    "relationality-to-relational-integrity"
+  ],
+  governance: [
+    "legitimacy-under-algorithmic-authority",
+    "operationalizing-responsibility",
+    "trust-legitimate-participation",
+    "authority-migration",
+    "leadership-structuring-participation",
+    "agentic-co-creation",
+    "radf",
+    "responsibility-architecture"
+  ],
+  "knowledge-work": [
+    "authority-migration",
+    "agentic-co-creation"
   ]
 };
-
 function applyManuscriptFilter(selectedFilter) {
   const orderedManuscriptIds = manuscriptOrders[selectedFilter] || [];
   const manuscriptsById = new Map(
@@ -2022,7 +2046,7 @@ function applyManuscriptFilter(selectedFilter) {
     }
 
     const cardFilters = card.dataset.manuscriptFilters.split(/\s+/);
-    const shouldShow = cardFilters.includes(selectedFilter);
+    const shouldShow = selectedFilter === "all" || cardFilters.includes(selectedFilter);
 
     card.hidden = !shouldShow;
 
@@ -2045,7 +2069,7 @@ manuscriptFilters.forEach((button) => {
   });
 });
 
-applyManuscriptFilter("featured");
+applyManuscriptFilter("all");
 </script>
 </body>
 </html>
