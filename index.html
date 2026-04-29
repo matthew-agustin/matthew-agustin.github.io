@@ -403,6 +403,11 @@ footer {
   cursor: default;
   white-space: nowrap;
 }
+
+.footer-link-disabled em {
+  font-style: italic;
+  opacity: .82;
+}
 @media (max-width:860px) {
   .hero-grid,.about,.contact { grid-template-columns:1fr; }
   .grid { grid-template-columns:1fr; }
@@ -992,7 +997,7 @@ button:focus-visible {
       <nav class="hero-side-links" aria-label="Selected profile links">
         <span>Profiles</span>
         <a href="https://matthewagustin.com" target="_blank" rel="me noopener noreferrer">Main Site</a>
-        <a href="https://scholar.google.com/citations?user=E4G17PkAAAAJ&hl=en&oi=ao" target="_blank" rel="me noopener noreferrer">Research</a>
+        <a href="https://scholar.google.com/citations?user=E4G17PkAAAAJ&hl=en&oi=ao" target="_blank" rel="me noopener noreferrer">Scholar</a>
         <a href="https://www.linkedin.com/in/matthew-agustin/" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
       </nav>
     </div>
@@ -2084,7 +2089,7 @@ button:focus-visible {
       <a href="https://scholar.google.com/citations?user=E4G17PkAAAAJ&hl=en&oi=ao" target="_blank" rel="me noopener noreferrer">Google Scholar</a>
       <a href="https://orcid.org/0009-0006-9975-0240" target="_blank" rel="me noopener noreferrer">ORCID</a>
       <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=9953996" target="_blank" rel="me noopener noreferrer">SSRN</a>
-      <span class="footer-link-disabled">arXiv forthcoming</span>
+      <span class="footer-link-disabled">arXiv <em>(coming soon)</em></span>
       <a href="https://medium.com/@matt.agustin" target="_blank" rel="me noopener noreferrer">Medium</a>
       <a href="#top">Back to top ↑</a>
     </nav>
