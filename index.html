@@ -467,6 +467,50 @@ h1 {
   padding: 76px 0;
 }
 
+.hero-side {
+  width: 100%;
+  max-width: 430px;
+  justify-self: end;
+}
+
+.hero-side .feature-card {
+  width: 100%;
+  max-width: none;
+  justify-self: auto;
+}
+
+.hero-side-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.hero-side-links span {
+  color: var(--accent-2);
+  font-size: .76rem;
+  font-weight: 850;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.hero-side-links a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, var(--accent) 32%, var(--line));
+}
+
+.hero-side-links a:hover {
+  color: var(--text);
+  text-decoration-color: var(--accent);
+}
+
 /* Section headers become more balanced */
 .section-head {
   display: grid;
@@ -753,6 +797,15 @@ button:focus-visible {
     justify-self: start;
     max-width: 620px;
   }
+  
+  .hero-side {
+  justify-self: start;
+  max-width: 560px;
+}
+
+.hero-side-links {
+  justify-content: flex-start;
+}
 }
 
 /* Mobile */
@@ -820,6 +873,11 @@ button:focus-visible {
     top: 16px;
     bottom: 16px;
   }
+
+  .hero-side-links {
+  gap: 10px;
+  font-size: .88rem;
+}
 }
 </style>
 </head>
@@ -877,21 +935,30 @@ button:focus-visible {
       </div>
     </div>
 
-    <aside class="feature-card" aria-label="Portfolio highlight">
-      <div class="feature-inner">
-        <div>
-          <p class="eyebrow">Practice focus</p>
-          <h2>Relational AI practice</h2>
+    <div class="hero-side">
+      <aside class="feature-card" aria-label="Portfolio highlight">
+        <div class="feature-inner">
+          <div>
+            <p class="eyebrow">Practice focus</p>
+            <h2>Relational AI practice</h2>
+          </div>
+    
+          <div>
+            <div class="metric">AI × Society</div>
+            <p>
+              My practice sits where ethical design, strategic foresight, relational accountability, and public-interest innovation meet.
+            </p>
+          </div>
         </div>
-
-        <div>
-          <div class="metric">AI × Society</div>
-          <p>
-            My practice sits where ethical design, strategic foresight, relational accountability, and public-interest innovation meet.
-          </p>
-        </div>
-      </div>
-    </aside>
+      </aside>
+    
+      <nav class="hero-side-links" aria-label="External profile links">
+        <span>Elsewhere</span>
+        <a href="https://matthewagustin.com" target="_blank" rel="me noopener noreferrer">Website</a>
+        <a href="https://medium.com/@matt.agustin" target="_blank" rel="me noopener noreferrer">Writing</a>
+        <a href="https://www.linkedin.com/in/matthew-agustin/" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
+      </nav>
+    </div>
   </div>
 </section>
   <section class="section">
