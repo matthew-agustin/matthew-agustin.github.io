@@ -397,6 +397,12 @@ footer {
   color:var(--text);
   text-decoration-color: var(--accent);
 }
+
+.footer-link-disabled {
+  color: color-mix(in srgb, var(--muted) 72%, white);
+  cursor: default;
+  white-space: nowrap;
+}
 @media (max-width:860px) {
   .hero-grid,.about,.contact { grid-template-columns:1fr; }
   .grid { grid-template-columns:1fr; }
@@ -2078,7 +2084,7 @@ button:focus-visible {
       <a href="https://scholar.google.com/citations?user=E4G17PkAAAAJ&hl=en&oi=ao" target="_blank" rel="me noopener noreferrer">Google Scholar</a>
       <a href="https://orcid.org/0009-0006-9975-0240" target="_blank" rel="me noopener noreferrer">ORCID</a>
       <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=9953996" target="_blank" rel="me noopener noreferrer">SSRN</a>
-      <a href="YOUR_ARXIV_URL" target="_blank" rel="me noopener noreferrer">arXiv</a>
+      <span class="footer-link-disabled">arXiv forthcoming</span>
       <a href="https://medium.com/@matt.agustin" target="_blank" rel="me noopener noreferrer">Medium</a>
       <a href="#top">Back to top ↑</a>
     </nav>
