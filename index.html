@@ -531,63 +531,6 @@ h1 {
   justify-self: auto;
 }
 
-.hero-flip {
-  width: 100%;
-  max-width: 430px;
-  perspective: 1200px;
-}
-
-.hero-flip-inner {
-  position: relative;
-  width: 100%;
-  transform-style: preserve-3d;
-  transition: transform 1.5s cubic-bezier(.2, .8, .2, 1);
-}
-
-.hero-flip:hover .hero-flip-inner,
-.hero-flip:focus .hero-flip-inner,
-.hero-flip:focus-within .hero-flip-inner {
-  transform: rotateY(180deg);
-}
-
-.hero-flip-face {
-  width: 100%;
-  border-radius: 32px;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-.hero-flip-front {
-  position: relative;
-}
-
-.hero-flip-back {
-  position: absolute;
-  inset: 0;
-  transform: rotateY(180deg);
-}
-
-.hero-flip-back .feature-card {
-  height: 100%;
-  min-height: 0;
-}
-
-.hero-flip-back .feature-inner {
-  min-height: 100%;
-}
-
-.hero-profile-img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-  border-radius: 32px;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
-  background: var(--panel);
-}
-
 .hero-side-links {
   display: flex;
   flex-wrap: wrap;
@@ -1004,16 +947,6 @@ button:focus-visible {
   .nowrap {
     white-space: normal;
   }
-
-  .hero-flip:hover .hero-flip-inner,
-  .hero-flip:focus .hero-flip-inner,
-  .hero-flip:focus-within .hero-flip-inner {
-    transform: none;
-  }
-
-  .hero-flip-back {
-    display: none;
-  }
 }
 </style>
 </head>
@@ -1072,40 +1005,26 @@ button:focus-visible {
     </div>
 
     <div class="hero-side">
-      <div class="hero-flip" tabindex="0" aria-label="Profile image and practice focus card">
-        <div class="hero-flip-inner">
-          <div class="hero-flip-face hero-flip-front">
-            <img
-              src="profile.jpg"
-              alt="Portrait of Matthew Agustin"
-              class="hero-profile-img"
-            />
+      <aside class="feature-card" aria-label="Portfolio highlight">
+        <div class="feature-inner">
+          <div>
+            <p class="eyebrow">Practice focus</p>
+            <h2>Relational AI practice</h2>
           </div>
-      
-          <div class="hero-flip-face hero-flip-back">
-            <aside class="feature-card" aria-label="Portfolio highlight">
-              <div class="feature-inner">
-                <div>
-                  <p class="eyebrow">Practice focus</p>
-                  <h2>Relational AI practice</h2>
-                </div>
-      
-                <div>
-                  <div class="metric">AI × Society</div>
-                  <p>
-                    My practice sits where ethical design, strategic foresight, relational accountability, and public-interest innovation meet.
-                  </p>
-                </div>
-              </div>
-            </aside>
+    
+          <div>
+            <div class="metric">AI × Society</div>
+            <p>
+              My practice sits where ethical design, strategic foresight, relational accountability, and public-interest innovation meet.
+            </p>
           </div>
         </div>
-      </div>
+      </aside>
     
       <nav class="hero-side-links" aria-label="Selected profile links">
         <span>Profiles</span>
         <a href="https://matthewagustin.com" target="_blank" rel="me noopener noreferrer">Main Site</a>
-        <a href="https://scholar.google.com/citations?user=E4G17PkAAAAJ&hl=en&oi=ao" target="_blank" rel="me noopener noreferrer">Scholar</a>
+        <a href="https://scholar.google.com/citations?user=E4G17PkAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="me noopener noreferrer">Scholar</a>
         <a href="https://www.linkedin.com/in/matthew-agustin/" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
       </nav>
     </div>
