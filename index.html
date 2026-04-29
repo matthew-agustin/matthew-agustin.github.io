@@ -357,9 +357,12 @@ p { color:var(--muted); }
 .small-note {
   margin: 10px 0 18px;
   color: var(--muted);
-  font-size: .9rem;
-  line-height: 1.5;
-  font-style: italic; }
+  font-size: .84rem;
+  line-height: 1.45;
+  font-style: italic;
+  text-align: left; }
+.nowrap {
+  white-space: nowrap; }
 .contact-panel {
   grid-column: 1/-1;
   display: flex;
@@ -2028,7 +2031,10 @@ button:focus-visible {
       <article class="card about-card">
         <h2>About Matthew</h2>
         <p>I work across research, design, and strategy to protect human agency and public good in AI-enabled systems. My practice brings together relational frameworks, publications, methods, and strategic artifacts that help people, institutions, and communities move from possibility to accountable action and long-term care.</p>
-        <p class="small-note">Formal publications may appear under the full author name Matthew Christian Agustin.</p>
+        <p class="small-note">
+          Formal publications may appear under the full author name 
+          <span class="nowrap">Matthew [Middle Name] Agustin</span>.
+        </p>
         <div class="tag-row">
           <span class="tag">AI Governance</span>
           <span class="tag">Innovation Strategy</span>
