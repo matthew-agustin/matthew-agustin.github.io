@@ -2488,9 +2488,11 @@ const revealTargets = Array.from(
       main > .section > .container.grid,
       main > .section > .container > .section-head,
       main > .section > .container > .content-column,
-      main > .section > .container > .grid,
-      main > .section > .container > .research-list,
-      main > .section > .container > .research-subsection,
+      main > .section > .container > .grid > *,
+      main > .section > .container > .research-list > .research-card,
+      main > .section > .container > .research-subsection > .research-subsection-head,
+      main > .section > .container > .research-subsection > .filters,
+      main > .section > .container > .research-subsection .manuscript-item,
       main > .section > .container.about > *,
       main > .section > .container.contact > .contact-panel
     `)
@@ -2515,10 +2517,10 @@ if ("IntersectionObserver" in window) {
       });
     },
     {
-      threshold: 0.08,
+      threshold: 0.02,
       rootMargin: window.matchMedia("(max-width: 680px)").matches
-        ? "0px 0px 20% 0px"
-        : "0px 0px 16% 0px"
+        ? "0px 0px 34% 0px"
+        : "0px 0px 26% 0px"
     }
   );
 
