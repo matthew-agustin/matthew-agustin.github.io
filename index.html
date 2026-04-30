@@ -260,6 +260,7 @@ p { color:var(--muted); }
 .project-card[data-project="ai-transparency-challenge"] .artifact-preview::before {
   content: "";
   position: absolute;
+  z-index: 1;
   inset: auto 22px 22px 22px;
   height: 92px;
   border-radius: 18px;
@@ -268,16 +269,21 @@ p { color:var(--muted); }
 
 .project-card .artifact-preview::after {
   position: absolute;
+  z-index: 2;
   left: 24px;
   right: 24px;
   bottom: 24px;
   min-height: 64px;
+  padding: 0 18px;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   color: var(--text);
-  font-size: .95rem;
+  font-size: .94rem;
+  font-weight: 750;
   line-height: 1.45;
-  font-weight: 500;
+  letter-spacing: -.01em;
+  pointer-events: none;
 }
 
 .project-card[data-project="faif"] .artifact-preview::after {
