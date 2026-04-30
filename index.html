@@ -583,10 +583,17 @@ h1 {
   margin-right: auto;
 }
 
+.content-column {
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .work-bridge {
   position: relative;
   max-width: 600px;
-  margin: -4px 0 28px;
+  margin-top: -4px;
+  margin-bottom: 28px;
   padding: 18px 22px 18px 38px;
   border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--line));
   border-radius: 20px;
@@ -600,6 +607,19 @@ h1 {
   color: var(--muted);
   font-size: .98rem;
   line-height: 1.6;
+}
+
+.work-bridge.content-column {
+  max-width: 920px;
+}
+
+.filters.content-column {
+  margin-bottom: 18px;
+}
+
+.research-service-note.content-column {
+  margin-top: -18px;
+  margin-bottom: 28px;
 }
 
 .work-bridge::before {
@@ -1076,11 +1096,11 @@ button:focus-visible {
         <p>Research-grounded work for protecting agency, strengthening accountability, and shaping AI in context — where it is used and who it affects.</p>
       </div>
 
-      <p class="work-bridge">
+      <p class="work-bridge content-column">
         Available for research collaboration, responsible AI strategy, framework development, learning design, workshops, and public-interest AI projects.
       </p>
       
-      <div class="filters" aria-label="Project filters">
+      <div class="filters content-column" aria-label="Project filters">
         <button class="filter active" data-filter="featured" aria-pressed="true">Featured</button>
         <button class="filter" data-filter="learning" aria-pressed="false">Learning Futures</button>
         <button class="filter" data-filter="relational" aria-pressed="false">Relational AI</button>
@@ -1715,7 +1735,7 @@ button:focus-visible {
         </p>
       </div>
       
-      <p class="research-service-note">
+      <p class="research-service-note content-column">
          Scholarly service: ad hoc peer reviewer for emerging work on AI, learning, and human–AI interaction.
       </p>
 
