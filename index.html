@@ -217,7 +217,7 @@ p { color:var(--muted); }
 .filter.active { background:var(--accent); color:#fff; border-color:transparent; }
 .artifact-preview {
   position: relative;
-  min-height: 220px;
+  min-height: 190px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
   background:
@@ -267,14 +267,11 @@ p { color:var(--muted); }
   background: color-mix(in srgb, var(--panel) 70%, transparent); }
 
 .project-card .artifact-preview::after {
-  position: absolute;
-  left: 34px;
-  right: 34px;
-  bottom: 54px;
-  color: var(--muted);
-  font-size: .78rem;
-  font-weight: 800;
-  letter-spacing: .04em; }
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  min-height: 64px;
+}
 
 .project-card[data-project="faif"] .artifact-preview::after {
   content: "Trust · Dignity · Stewardship · Impact"; }
@@ -455,6 +452,8 @@ footer {
 
 :root {
   --max: 1180px;
+  --card: var(--panel);
+  --paper: var(--panel-2);
 }
 
 /* Slightly stronger base readability */
@@ -584,29 +583,33 @@ h1 {
 }
 
 .content-column {
-  max-width: 920px;
+  width: min(100%, 920px);
   margin-left: auto;
   margin-right: auto;
 }
 
 .work-bridge {
-  position: relative;
-  max-width: 600px;
-  margin-top: -4px;
-  margin-bottom: 28px;
+  width: min(100%, 920px);
+  margin: 0 auto 34px;
   padding: 18px 22px 18px 38px;
-  border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--line));
-  border-radius: 20px;
+  border: 1px solid color-mix(in srgb, var(--line) 85%, var(--accent-2));
+  border-radius: 18px;
   background:
-    linear-gradient(
-      135deg,
-      color-mix(in srgb, var(--accent) 8%, var(--panel)),
-      color-mix(in srgb, var(--panel) 94%, transparent)
-    );
-  box-shadow: var(--shadow-soft);
+    linear-gradient(135deg, color-mix(in srgb, var(--accent-2) 8%, transparent), transparent 58%),
+    var(--card);
   color: var(--muted);
-  font-size: .98rem;
-  line-height: 1.6;
+  position: relative;
+}
+
+.work-bridge::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 18px;
+  bottom: 18px;
+  width: 3px;
+  border-radius: 99px;
+  background: var(--accent-2);
 }
 
 .work-bridge.content-column {
@@ -615,22 +618,6 @@ h1 {
 
 .filters.content-column {
   margin-bottom: 18px;
-}
-
-.research-service-note.content-column {
-  margin-top: -18px;
-  margin-bottom: 28px;
-}
-
-.work-bridge::before {
-  content: "";
-  position: absolute;
-  left: 18px;
-  top: 18px;
-  bottom: 18px;
-  width: 3px;
-  border-radius: 999px;
-  background: var(--accent);
 }
 
 /* Cards need slightly more readable body text */
@@ -708,12 +695,22 @@ h1 {
   margin: 0 auto;
 }
 
+.research-service-note.content-column {
+  max-width: 920px;
+  margin: -10px auto 34px;
+  padding-left: 18px;
+  border-left: 3px solid color-mix(in srgb, var(--accent-2) 70%, var(--line));
+  color: var(--muted);
+  font-size: .98rem;
+  line-height: 1.55;
+}
+
 .research-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 24px;
   align-items: start;
-  padding: 28px;
+  padding: 30px 34px;
 }
 
 .research-card h3 {
@@ -733,6 +730,22 @@ h1 {
   margin: 0;
   font-size: 1rem;
   line-height: 1.65;
+}
+
+.research-card,
+.manuscript-card {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--panel) 98%, transparent),
+      color-mix(in srgb, var(--paper) 96%, transparent)
+    );
+  border-color: color-mix(in srgb, var(--accent-2) 22%, var(--line));
+}
+
+.research-card:first-child {
+  border-color: color-mix(in srgb, var(--accent-2) 36%, var(--line));
+  box-shadow: 0 18px 46px rgba(20, 31, 43, .08);
 }
 
 .research-tags {
@@ -902,24 +915,6 @@ button:focus-visible {
     width: min(100% - 24px, var(--max));
   }
 
-  .research-card {
-    grid-template-columns: 1fr;
-  }
-
-  .research-actions {
-    justify-content: flex-start;
-    min-width: 0;
-  }
-
-  .research-subsection-head,
-  .manuscript-item {
-    grid-template-columns: 1fr;
-  }
-
-  .manuscript-status {
-    justify-self: start;
-  }
-
   .hero {
     padding: 64px 0 48px;
   }
@@ -938,15 +933,59 @@ button:focus-visible {
     font-size: clamp(2rem, 10vw, 3rem);
   }
 
+  #research h2,
+  #work h2,
+  #engagements h2,
+  #principles h2 {
+    font-size: clamp(2.45rem, 13vw, 4rem);
+    line-height: .98;
+  }
+
+  .section-head {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .section-head p {
+    justify-self: start;
+    max-width: 100%;
+  }
+
   .grid,
   #projectGrid {
     grid-template-columns: 1fr;
   }
 
+  #engagements {
+    padding-bottom: 52px;
+  }
+
+  #principles {
+    padding-top: 52px;
+  }
+
+  .research-card,
+  .manuscript-item {
+    grid-template-columns: 1fr;
+  }
+
+  .research-actions {
+    justify-content: flex-start;
+    min-width: 0;
+  }
+
+  .research-subsection-head {
+    grid-template-columns: 1fr;
+  }
+
+  .manuscript-status {
+    justify-self: start;
+  }
+
   .contact-panel {
     padding: 28px;
   }
-  
+
   .footer-row {
     flex-direction: column;
     align-items: flex-start;
@@ -960,11 +999,23 @@ button:focus-visible {
     margin: 0 0 24px;
     padding: 16px 18px 16px 34px;
   }
-
+  
   .work-bridge::before {
     left: 16px;
     top: 16px;
     bottom: 16px;
+  }
+
+  .research-service-note.content-column {
+    margin-top: -4px;
+    margin-bottom: 30px;
+    max-width: 100%;
+    font-size: .98rem;
+    line-height: 1.55;
+  }
+
+  .artifact-preview {
+    min-height: 170px;
   }
 
   .hero-side-links {
