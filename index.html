@@ -2491,10 +2491,11 @@ if ("IntersectionObserver" in window) {
       });
     },
     {
-      threshold: 0,
-      rootMargin: "0px 0px 42% 0px"
+      threshold: 0.01,
+      rootMargin: window.matchMedia("(max-width: 680px)").matches
+        ? "0px 0px 32% 0px"
+        : "0px 0px 24% 0px"
     }
-  );
 
   revealTargets.forEach((target) => {
     revealObserver.observe(target);
