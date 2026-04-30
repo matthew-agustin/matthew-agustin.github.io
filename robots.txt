@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://matthew-agustin.github.io/sitemap.xml
+Sitemap: https://matthew-agustin.github.io/sitemap-main.xml
