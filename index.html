@@ -1859,6 +1859,26 @@ button:focus-visible {
             <a class="button" href="https://doi.org/10.3389/feduc.2026.1761602" target="_blank" rel="noopener noreferrer">Read publication</a>
           </div>
         </article>
+        
+        <article class="card research-card">
+          <div>
+            <p class="research-meta">Behavioral audit · arXiv preprint · 2026</p>
+            <h3>Evaluating Epistemic Guardrails in AI Reading Assistants</h3>
+            <p>
+              A behavioral audit of a minimal AI reading-assistant prototype examining whether epistemic guardrails preserve interpretive agency, text-grounded engagement, and user participation under structured interactional pressure.
+            </p>
+            <div class="tag-row research-tags">
+              <span class="tag">Epistemic Guardrails</span>
+              <span class="tag">Human–AI Interaction</span>
+              <span class="tag">Reading Assistants</span>
+            </div>
+          </div>
+          <div class="research-actions">
+            <a class="button" href="https://arxiv.org/abs/2604.27275" target="_blank" rel="noopener noreferrer">
+              View preprint
+            </a>
+          </div>
+        </article>
 
         <article class="card research-card">
           <div>
@@ -1958,18 +1978,6 @@ button:focus-visible {
               </p>
             </div>
             <span class="manuscript-status">Accepted; awaiting publication</span>
-          </article>
-
-          <article class="card manuscript-item manuscript-card" data-manuscript="epistemic-guardrails" data-manuscript-filters="relational-ai learning-agency guardrails">
-            <div>
-              <h3>Evaluating Epistemic Guardrails in AI Reading Assistants</h3>
-              <p class="manuscript-meta">
-                <strong>Status:</strong> Submitted to arXiv; awaiting publication<br>
-                <strong>Focus:</strong> Epistemic guardrails, AI reading assistants, interpretive agency, and human–AI interaction<br>
-                <span class="title-note">Preprint pending arXiv publication</span>
-              </p>
-            </div>
-            <span class="manuscript-status">Awaiting arXiv publication</span>
           </article>
 
           <article class="card manuscript-item manuscript-card" data-manuscript="operationalizing-responsibility" data-manuscript-filters="governance guardrails">
@@ -2400,7 +2408,6 @@ const manuscriptGrid = document.querySelector("[data-manuscript-grid]");
 const manuscriptOrders = {
   all: [
     "radf",
-    "epistemic-guardrails",
     "legitimacy-under-algorithmic-authority",
     "operationalizing-responsibility",
     "agentic-co-creation",
@@ -2413,7 +2420,6 @@ const manuscriptOrders = {
   ],
   "relational-ai": [
     "radf",
-    "epistemic-guardrails",
     "legitimacy-under-algorithmic-authority",
     "agentic-co-creation",
     "trust-legitimate-participation",
@@ -2421,13 +2427,11 @@ const manuscriptOrders = {
     "learner-participation-adaptive-education"
   ],
   "learning-agency": [
-    "epistemic-guardrails",
     "relationality-to-relational-integrity",
     "responsibility-architecture",
     "learner-participation-adaptive-education"
   ],
   guardrails: [
-    "epistemic-guardrails",
     "radf",
     "operationalizing-responsibility",
     "relationality-to-relational-integrity"
