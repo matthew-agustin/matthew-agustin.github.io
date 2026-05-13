@@ -1256,7 +1256,7 @@ button:focus-visible {
           <h3>Relational AI Depth Framework</h3>
 
           <p class="project-meta">
-            Framework · Human–AI engagement depth, agency, and responsibility · White paper in development
+            Framework · Human–AI engagement depth, agency, and responsibility · SSRN preprint published
           </p>
 
           <p>
@@ -1268,7 +1268,7 @@ button:focus-visible {
           </p>
 
           <div class="project-actions">
-            <a class="button" href="mailto:mcagusti@asu.edu?subject=Interested%20in%20RADF">Discuss the framework</a>
+            <a class="button" href="https://ssrn.com/abstract=6714758" target="_blank" rel="noopener noreferrer">Read preprint</a>
           </div>
 
           <div class="tag-row">
@@ -1895,6 +1895,24 @@ button:focus-visible {
             <a class="button" href="https://dx.doi.org/10.2139/ssrn.6075449" target="_blank" rel="noopener noreferrer">Read preprint</a>
           </div>
         </article>
+
+        <article class="card research-card">
+          <div>
+            <p class="research-meta">Framework paper · SSRN preprint · 2026</p>
+            <h3>The Relational AI Depth Framework: Relational Depth and Responsibility in Human–AI Engagement</h3>
+            <p>
+              A seven-level framework for understanding how human–AI engagement deepens across interaction contexts, and how responsibility, agency, authorship, and relational risk scale as AI systems become more influential in human thinking, work, and co-creation.
+            </p>
+            <div class="tag-row research-tags">
+              <span class="tag">Relational AI</span>
+              <span class="tag">Human Agency</span>
+              <span class="tag">Responsibility</span>
+            </div>
+          </div>
+          <div class="research-actions">
+            <a class="button" href="https://ssrn.com/abstract=6714758" target="_blank" rel="noopener noreferrer">Read preprint</a>
+          </div>
+        </article>
         
         <article class="card research-card">
           <div>
@@ -1954,18 +1972,6 @@ button:focus-visible {
         </div>
 
         <div class="manuscript-list" data-manuscript-grid>
-          <article class="card manuscript-item manuscript-card" data-manuscript="radf" data-manuscript-filters="relational-ai guardrails governance">
-            <div>
-              <h3>The Relational AI Depth Framework</h3>
-              <p class="manuscript-meta">
-                <strong>Status:</strong> Manuscript in development<br>
-                <strong>Focus:</strong> Relational AI depth, human agency, authorship, responsibility, and human–AI co-creation<br>
-                <span class="title-note">White paper in development</span>
-              </p>
-            </div>
-            <span class="manuscript-status">Manuscript in development</span>
-          </article>
-      
           <article class="card manuscript-item manuscript-card" data-manuscript="legitimacy-under-algorithmic-authority" data-manuscript-filters="relational-ai governance">
             <div>
               <h3>Legitimacy Under Algorithmic Authority: A Relational Diagnostic of Leadership Education in AI-Mediated Contexts</h3>
@@ -2418,7 +2424,6 @@ const manuscriptGrid = document.querySelector("[data-manuscript-grid]");
 
 const manuscriptOrders = {
   all: [
-    "radf",
     "legitimacy-under-algorithmic-authority",
     "operationalizing-responsibility",
     "agentic-co-creation",
@@ -2431,7 +2436,6 @@ const manuscriptOrders = {
     "learner-participation-adaptive-education"
   ],
   "relational-ai": [
-    "radf",
     "legitimacy-under-algorithmic-authority",
     "agentic-co-creation",
     "trust-legitimate-participation",
@@ -2444,7 +2448,6 @@ const manuscriptOrders = {
     "learner-participation-adaptive-education"
   ],
   guardrails: [
-    "radf",
     "operationalizing-responsibility",
     "relationality-to-relational-integrity"
   ],
@@ -2456,7 +2459,6 @@ const manuscriptOrders = {
     "rehearsing-technological-futures",
     "leadership-structuring-participation",
     "agentic-co-creation",
-    "radf",
     "responsibility-architecture"
   ],
   "knowledge-work": [
@@ -2465,7 +2467,8 @@ const manuscriptOrders = {
     "agentic-co-creation"
   ]
 };
-function applyManuscriptFilter(selectedFilter) {
+
+  function applyManuscriptFilter(selectedFilter) {
   const orderedManuscriptIds = manuscriptOrders[selectedFilter] || [];
   const manuscriptsById = new Map(
     manuscriptCards.map((card) => [card.dataset.manuscript, card])
