@@ -613,6 +613,11 @@ button:focus-visible {
     justify-self: start;
     max-width: 560px;
   }
+
+  .scroll-reveal[data-reveal-side="left"],
+  .scroll-reveal[data-reveal-side="right"] {
+    --reveal-x: 0;
+  }
 }
 
 /* Mobile */
@@ -1172,16 +1177,17 @@ button:focus-visible {
 <script>
 const root = document.documentElement;
 const themeToggle = document.querySelector("#themeToggle");
-const savedTheme = localStorage.getItem("theme");
+let savedTheme = null;
+
+try {
+  savedTheme = localStorage.getItem("theme");
+} catch (error) {
+  savedTheme = null;
+}
 
 if (savedTheme) {
   root.dataset.theme = savedTheme;
 }
-
-function updateThemeButton() {
-  if (!themeToggle) {
-    return;
-  }
 
   const isDark = root.dataset.theme === "dark";
 
@@ -1198,7 +1204,13 @@ if (themeToggle) {
   themeToggle.addEventListener("click", () => {
     const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
     root.dataset.theme = nextTheme;
-    localStorage.setItem("theme", nextTheme);
+
+    try {
+      localStorage.setItem("theme", nextTheme);
+    } catch (error) {
+      // Theme still changes for the current session if storage is unavailable.
+    }
+    
     updateThemeButton();
   });
 }
