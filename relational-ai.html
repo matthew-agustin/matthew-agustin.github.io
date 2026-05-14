@@ -1189,6 +1189,11 @@ if (savedTheme) {
   root.dataset.theme = savedTheme;
 }
 
+function updateThemeButton() {
+  if (!themeToggle) {
+    return;
+  }
+
   const isDark = root.dataset.theme === "dark";
 
   themeToggle.textContent = isDark ? "Light mode" : "Dark mode";
@@ -1210,7 +1215,7 @@ if (themeToggle) {
     } catch (error) {
       // Theme still changes for the current session if storage is unavailable.
     }
-    
+
     updateThemeButton();
   });
 }
