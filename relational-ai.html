@@ -162,6 +162,7 @@ header { position:sticky; top:0; z-index:10; backdrop-filter:blur(16px); backgro
 .button { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0 18px; border:1px solid var(--line); border-radius:999px; background:var(--panel); color:var(--text); font-weight:750; cursor:pointer; box-shadow:0 8px 24px rgba(31,41,51,.06); }
 .button.primary { border-color:transparent; background:var(--accent); color:#fff; }
 .button:hover { transform: translateY(-2px); }
+.button.is-static { cursor: default; pointer-events: none; opacity: .82; }
 .card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(30, 50, 60, 0.09); }
 .hero { padding:90px 0 56px; }
 .hero-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:34px; align-items:center; }
@@ -1056,6 +1057,24 @@ button:focus-visible {
           </div>
           <div class="research-actions">
             <a class="button" href="https://ssrn.com/abstract=6075449" target="_blank" rel="noopener noreferrer">Read preprint</a>
+          </div>
+        </article>
+
+        <article class="card research-card">
+          <div>
+            <p class="research-meta">Scoping review · In development</p>
+            <h3>Relational AI as Human–AI Participation</h3>
+            <p>
+              A planned scoping review and evidence map examining how relational AI is conceptualized, designed, and evaluated across concepts, roles, risks, and evaluation practices.
+            </p>
+            <div class="tag-row research-tags">
+              <span class="tag">Scoping review</span>
+              <span class="tag">Evidence map</span>
+              <span class="tag">Human–AI participation</span>
+            </div>
+          </div>
+          <div class="research-actions">
+            <span class="button is-static">In development</span>
           </div>
         </article>
       
