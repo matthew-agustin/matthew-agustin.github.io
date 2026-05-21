@@ -169,6 +169,7 @@ header { position:sticky; top:0; z-index:10; backdrop-filter:blur(16px); backgro
 .button.primary { border-color:transparent; background:var(--accent); color:#fff; }
 .button:hover { transform: translateY(-2px); }
 .button.is-static { cursor: default; pointer-events: none; opacity: .92; background: color-mix(in srgb, var(--accent-2) 9%, var(--panel)); border-color: color-mix(in srgb, var(--accent-2) 34%, var(--line)); color: var(--accent-2); box-shadow: none; }
+.button { transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, color 180ms ease; }
 .card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(30, 50, 60, 0.09); }
 .hero { padding:90px 0 56px; }
 .hero-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:34px; align-items:center; }
@@ -525,7 +526,7 @@ h1 {
   border-color: color-mix(in srgb, var(--accent-2) 22%, var(--line));
 }
 
-.research-card:first-child {
+.research-card.featured-publication {
   border-color: color-mix(in srgb, var(--accent-2) 36%, var(--line));
   box-shadow: 0 18px 46px rgba(20, 31, 43, .08);
 }
@@ -545,6 +546,16 @@ h1 {
   font-size: .9rem;
   box-shadow: none;
   white-space: nowrap;
+}
+
+.profile-grid .hero-actions {
+  margin-top: 18px;
+}
+
+.profile-grid .button {
+  min-height: 42px;
+  font-size: .9rem;
+  box-shadow: none;
 }
 
 /* About section alignment */
@@ -833,7 +844,7 @@ button:focus-visible {
       </div>
   
       <div class="research-list">
-        <article class="card research-card">
+        <article class="card research-card featured-publication">
           <div>
             <p class="research-meta">Hypothesis &amp; Theory · Frontiers in Education · 2026</p>
             <h3>AI as a co-regulator: relational design for strengthening self-regulated learning</h3>
@@ -1183,7 +1194,7 @@ button:focus-visible {
         </p>
       </div>
   
-      <div class="grid">
+      <div class="grid profile-grid">
         <article class="card">
           <h3>Google Scholar</h3>
           <p>Scholar profile for publications and citation tracking.</p>
