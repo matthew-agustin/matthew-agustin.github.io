@@ -168,7 +168,7 @@ header { position:sticky; top:0; z-index:10; backdrop-filter:blur(16px); backgro
 .button { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0 18px; border:1px solid var(--line); border-radius:999px; background:var(--panel); color:var(--text); font-weight:750; cursor:pointer; box-shadow:0 8px 24px rgba(31,41,51,.06); }
 .button.primary { border-color:transparent; background:var(--accent); color:#fff; }
 .button:hover { transform: translateY(-2px); }
-.button.is-static { cursor: default; pointer-events: none; opacity: .82; }
+.button.is-static { cursor: default; pointer-events: none; opacity: .92; background: color-mix(in srgb, var(--accent-2) 9%, var(--panel)); border-color: color-mix(in srgb, var(--accent-2) 34%, var(--line)); color: var(--accent-2); box-shadow: none; }
 .card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(30, 50, 60, 0.09); }
 .hero { padding:90px 0 56px; }
 .hero-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:34px; align-items:center; }
@@ -749,43 +749,44 @@ button:focus-visible {
   <section class="hero" id="top">
     <div class="container hero-grid">
       <div>
-        <div class="eyebrow">Emerging research program</div>
+        <div class="eyebrow">Writing &amp; Publications</div>
         
-        <h1>Relational AI for human agency, accountability, and legitimate AI participation.</h1>
+        <h1>Research and public writing on AI, agency, learning, governance, and public value.</h1>
         
         <p class="lead">
-          I approach relational AI as the study and design of AI systems that shape the conditions under which people interpret, decide, learn, create, participate, and remain accountable for what follows.
+          A growing record of peer-reviewed publications, public preprints, framework papers, manuscripts, and public-facing scholarship exploring how AI systems shape human agency, interpretation, accountability, learning, and institutional life.
         </p>
         
         <p class="credibility-line">
-          This work extends beyond companion AI and emotionally intimate systems. It focuses on everyday human–AI systems from AI tutors and research assistants to workplace agents, governance simulations, and institutional tools.
+          This page organizes published work separately from manuscripts in review or development, so the record remains clear, current, and careful about publication status.
         </p>
         
-        <div class="evidence-strip" aria-label="Relational AI focus areas">
-          <span>Human agency</span>
-          <span>Interpretive integrity</span>
-          <span>Role-bounded participation</span>
-          <span>Traceable accountability</span>
+        <div class="evidence-strip" aria-label="Writing and publication categories">
+          <span>Peer-reviewed publications</span>
+          <span>Preprints</span>
+          <span>Framework papers</span>
+          <span>Manuscripts in review</span>
+          <span>Public scholarship</span>
         </div>
         
         <div class="hero-actions">
-          <a class="button primary" href="#program">Explore the program</a>
-          <a class="button" href="#related-work">See related work</a>
+          <a class="button primary" href="#public-research">Read public work</a>
+          <a class="button" href="#manuscripts">View manuscripts</a>
         </div>
       </div>
   
       <div class="hero-side">
-        <aside class="feature-card" aria-label="Relational AI research focus">
+        <aside class="feature-card" aria-label="Writing and publications focus">
           <div class="feature-inner">
             <div>
-              <p class="eyebrow">Research focus</p>
-              <h2>Beyond AI as tool or companion</h2>
+              <p class="eyebrow">Publication record</p>
+              <h2>A coherent research trajectory</h2>
             </div>
       
             <div>
-              <div class="concept-label">Relational Responsibility</div>
+              <div class="concept-label">Agency, Legitimacy, Responsibility</div>
               <p>
-                Relational AI asks what role AI is allowed to play when it participates in meaning-making, judgment, learning, trust, responsibility, and institutional action.
+                The writing connects relational AI, learning, governance, human–AI interaction, public-interest innovation, and the conditions needed for responsible participation in AI-mediated systems.
               </p>
             </div>
           </div>
@@ -794,376 +795,50 @@ button:focus-visible {
     </div>
   </section>
   
-  <section class="section" id="program">
+  <section class="section" id="publication-orientation">
     <div class="container grid">
       <article class="card">
-        <h3>What this studies</h3>
+        <h3>Publicly available research</h3>
         <p>
-          This research program examines the roles AI systems take on across human activity: tutor, assistant, collaborator, agent, simulator, evaluator, or institutional support layer. The focus is not only what these systems produce, but how their participation shapes judgment, agency, and responsibility.
+          Peer-reviewed publications, arXiv preprints, SSRN preprints, and public framework papers that readers can access directly.
         </p>
       </article>
       
       <article class="card">
-        <h3>What this challenges</h3>
+        <h3>Manuscripts and submissions</h3>
         <p>
-          Relational AI is not limited to companion bots, emotional attachment, or systems that imitate intimacy. AI also becomes relational when it structures attention, frames choices, redistributes authority, or changes how people understand themselves, others, and their obligations.
+          Work that is submitted, in review, accepted at the abstract stage, or actively in development, with status language kept visible and bounded.
         </p>
       </article>
       
       <article class="card">
-        <h3>What this protects</h3>
+        <h3>Public scholarship</h3>
         <p>
-          The aim is to keep human agency, interpretive integrity, role-bounded participation, contestability, and traceable accountability intact as AI systems enter learning, knowledge work, governance, creativity, and decision-making environments.
+          Essays, reports, commentary, and public-facing writing that translate research on responsible AI, future readiness, and public value for broader audiences.
         </p>
       </article>
     </div>
   </section>
   
-  <section class="section" id="broader-frame">
+  <section class="section" id="public-research">
     <div class="container">
       <div class="section-head narrow-head">
         <div>
-          <div class="eyebrow">Why relational AI needs a broader frame</div>
-          <h2>Relational AI is not only about emotional bonds with machines.</h2>
+          <div class="eyebrow">Published &amp; Public Research</div>
+          <h2>Publicly available work.</h2>
         </div>
         <p>
-          Many AI systems reshape human agency without looking intimate, social, or companion-like. They become relational when they alter what people notice, what choices feel available, whose judgment carries weight, and where responsibility appears to sit.
-        </p>
-      </div>
-  
-      <p class="work-bridge content-column">
-        This research program starts from a simple premise: AI does not need to feel like a companion to participate in human life. A tutor can shape how a learner understands their own ability. A research assistant can influence what evidence feels relevant. A writing system can shift authorship and voice. A workplace agent can redirect who appears responsible for action. A governance simulation can frame what futures seem plausible.
-      </p>
-  
-      <div class="grid">
-        <article class="card">
-          <h3>Beyond companion AI</h3>
-          <p>
-            Companion systems make relational dynamics visible, but they do not define the full terrain. Relational AI also includes everyday systems that structure attention, mediate judgment, guide learning, scaffold decisions, or change how people understand their roles.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Beyond output alignment</h3>
-          <p>
-            A system can produce acceptable outputs while still shaping a user’s assumptions, confidence, dependencies, or sense of responsibility over time. Relational evaluation therefore has to examine interaction patterns, not only isolated responses.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Beyond “just a tool”</h3>
-          <p>
-            Tools become consequential when they help frame problems, rank options, mediate trust, or distribute accountability. The question is not whether AI is a person, but what kind of participation its design makes possible.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="distinct-approach">
-    <div class="container">
-      <div class="section-head narrow-head">
-        <div>
-          <div class="eyebrow">What makes this approach distinct</div>
-          <h2>A relational integrity approach to AI participation.</h2>
-        </div>
-        <p>
-          This program does not begin by asking whether AI is human-like, emotionally convincing, or deserving of moral standing. It asks whether AI participation preserves the conditions for human agency, interpretation, accountability, and trust.
-        </p>
-      </div>
-  
-      <p class="work-bridge content-column">
-        The central concern is authority migration: the subtle movement of framing, judgment, authorship, responsibility, or legitimacy from people and institutions into AI-mediated systems. Relational AI, in this sense, is not about treating AI as a person. It is about understanding when AI begins to participate in the relationships, roles, and decisions that shape human life.
-      </p>
-  
-      <div class="grid">
-        <article class="card">
-          <h3>Interpretive authority</h3>
-          <p>
-            AI systems do more than provide information. They can frame what a situation means, which evidence appears relevant, what options feel reasonable, and how people understand their own judgment. This makes interpretation a central governance concern.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Role drift</h3>
-          <p>
-            Systems often begin as assistants, tutors, co-writers, or advisors, then gradually take on functions closer to evaluator, strategist, gatekeeper, confidant, or decision-shaper. Relational integrity requires making those role shifts visible and contestable.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Legitimate participation</h3>
-          <p>
-            The question is not simply whether an AI system is useful or aligned in a given moment. The question is whether its participation remains bounded, transparent, accountable, reversible, and appropriate to the context in which it is being used.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="commitments">
-    <div class="container">
-      <div class="section-head narrow-head">
-        <div>
-          <div class="eyebrow">Core commitments</div>
-          <h2>Designing for relational integrity requires more than responsible outputs.</h2>
-        </div>
-        <p>
-          These commitments guide how I assess whether AI participation remains bounded, accountable, and supportive of human agency across learning, judgment, creativity, governance, and institutional life.
-        </p>
-      </div>
-  
-      <div class="grid">
-        <article class="card">
-          <h3>Human agency</h3>
-          <p>
-            AI systems should expand a person’s capacity to think, choose, question, and act, not quietly narrow their sense of what is possible, appropriate, or worth considering.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Interpretive integrity</h3>
-          <p>
-            Systems should make their framing visible enough for users to inspect, revise, or reject it. Interpretation should remain a shared and contestable process, not something silently absorbed by the system.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Role-bounded participation</h3>
-          <p>
-            AI should remain clear about what role it is playing: tutor, assistant, co-reader, collaborator, advisor, simulator, or support layer. When that role changes, the shift should be visible.
-          </p>
-        </article>
-  
-        <article class="card">
-          <h3>Contestability</h3>
-          <p>
-            People need meaningful ways to question, redirect, override, or exit AI-shaped pathways. Relational integrity depends on preserving room for disagreement and course correction.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Traceable accountability</h3>
-          <p>
-            When AI contributes to decisions, recommendations, interpretations, or institutional actions, responsibility should not disappear into the system or scatter across workflows, models, and organizations. Human and organizational accountability must remain traceable.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Relational stewardship</h3>
-          <p>
-            AI design should account for the relationships it reshapes: between learners and teachers, workers and institutions, citizens and systems, creators and audiences, people and their own judgment.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-  
-  <section class="section" id="applications">
-    <div class="container">
-      <div class="section-head narrow-head">
-        <div>
-          <div class="eyebrow">Where this applies</div>
-          <h2>Mainstream AI systems can become relational before they look intimate.</h2>
-        </div>
-        <p>
-          This approach is designed for everyday systems that shape learning, work, creativity, governance, and institutional judgment, not only systems built for companionship.
-        </p>
-      </div>
-  
-      <div class="grid">
-        <article class="card">
-          <h3>AI tutors and learning systems</h3>
-          <p>
-            Educational AI can shape how learners understand their abilities, questions, mistakes, and progress. Relational integrity asks whether support strengthens agency, reflection, and learner-led interpretation.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Research assistants</h3>
-          <p>
-            AI research support can influence what sources feel relevant, which claims appear central, and how uncertainty is handled. The concern is not only accuracy, but how inquiry itself is framed.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Writing collaborators</h3>
-          <p>
-            Co-writing systems can help people clarify ideas, but they can also reshape voice, authorship, confidence, and judgment. Relational AI asks how collaboration preserves the human author’s interpretive role.
-          </p>
-        </article>
-  
-        <article class="card">
-          <h3>Workplace agents</h3>
-          <p>
-            AI agents in professional settings can route tasks, recommend actions, summarize people’s work, or influence what counts as performance. These systems require clear role boundaries and traceable responsibility.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Governance simulations</h3>
-          <p>
-            Scenario-based AI systems can help people rehearse decisions under uncertainty, but they also frame which futures, stakeholders, and tradeoffs become visible. The design of the simulation shapes the imagination of governance.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Institutional decision tools</h3>
-          <p>
-            AI systems used in education, civic life, hiring, care, or public administration can redistribute authority between people, policies, and platforms. Relational integrity asks whether accountability remains traceable and contestable.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="outcomes">
-    <div class="container">
-      <div class="section-head narrow-head">
-        <div>
-          <div class="eyebrow">Longer-term direction</div>
-          <h2>What this work aims to make possible.</h2>
-        </div>
-        <p>
-          The longer-term goal is to make relational integrity something people can recognize, design for, evaluate, and govern in the real AI systems they already use to learn, work, create, decide, and participate.
-        </p>
-      </div>
-  
-      <div class="grid">
-        <article class="card">
-          <h3>Measurable relational integrity</h3>
-          <p>
-            Build evaluation methods that assess how AI systems affect human agency, interpretive integrity, role-bounded participation, contestability, and traceable accountability as interaction deepens over time.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Design patterns for legitimate participation</h3>
-          <p>
-            Translate relational AI concepts into prompts, interfaces, protocols, and institutional practices that keep AI participation visible, bounded, contestable, and accountable within real contexts of use.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Governance-ready indicators</h3>
-          <p>
-            Create indicators and review practices that help educators, researchers, organizations, and public-interest teams assess when AI systems reshape roles, judgment, responsibility, or trust.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="research-questions">
-    <div class="container">
-      <div class="section-head narrow-head">
-        <div>
-          <div class="eyebrow">Guiding questions</div>
-          <h2>The questions this program keeps open.</h2>
-        </div>
-        <p>
-          These questions guide the central concern of this work: how AI systems participate in human judgment, agency, responsibility, and institutional life as their roles become more consequential.
-        </p>
-      </div>
-  
-      <div class="grid">
-        <article class="card">
-          <h3>When does AI participation become consequential?</h3>
-          <p>
-            At what point does an AI system move from supporting a task to shaping what people notice, trust, choose, or feel responsible for?
-          </p>
-        </article>
-  
-        <article class="card">
-          <h3>What makes AI participation visible and legitimate?</h3>
-          <p>
-            How can systems make their roles clear while keeping AI participation bounded, contestable, accountable, and appropriate to the context in which it is used?
-          </p>
-        </article>
-  
-        <article class="card">
-          <h3>How can relational integrity be evaluated?</h3>
-          <p>
-            What methods can assess whether AI systems preserve agency, interpretive integrity, accountability, and trust as interaction deepens over time?
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-  
-  <section class="section" id="related-work">
-    <div class="container">
-      <div class="section-head narrow-head">
-        <div>
-          <div class="eyebrow">Related work</div>
-          <h2>A research constellation for relational AI, agency, and accountability.</h2>
-        </div>
-        <p>
-          This page names an emerging research program. The work below develops its concepts, methods, prototypes, and applied questions across learning, governance, trust, and human–AI co-creation.
+          These pieces are available to read now. They form the public foundation of the research record across AI, learning, relational integrity, agency, legitimacy, and responsible innovation.
         </p>
       </div>
   
       <div class="research-list">
         <article class="card research-card">
           <div>
-            <p class="research-meta">Framework · Published preprint</p>
-            <h3>Relational AI Depth Framework</h3>
+            <p class="research-meta">Hypothesis &amp; Theory · Frontiers in Education · 2026</p>
+            <h3>AI as a co-regulator: relational design for strengthening self-regulated learning</h3>
             <p>
-              A 7-level framework for understanding how human–AI engagement deepens across interaction, influence, agency, authorship, and responsibility.
-            </p>
-            <div class="tag-row research-tags">
-              <span class="tag">Relational depth</span>
-              <span class="tag">Agency</span>
-              <span class="tag">Responsibility</span>
-            </div>
-          </div>
-          <div class="research-actions">
-            <a class="button" href="https://ssrn.com/abstract=6714758" target="_blank" rel="noopener noreferrer">Read preprint</a>
-          </div>
-        </article>
-      
-        <article class="card research-card">
-          <div>
-            <p class="research-meta">Framework · Published preprint</p>
-            <h3>Relational Integrity in AI Framework</h3>
-            <p>
-              A diagnostic framework for evaluating whether AI-mediated support remains truthful, bounded, non-substitutive, and accountable as systems enter learning, civic, care-adjacent, and institutional contexts.
-            </p>
-            <div class="tag-row research-tags">
-              <span class="tag">Relational integrity</span>
-              <span class="tag">Non-substitution</span>
-              <span class="tag">Trust</span>
-            </div>
-          </div>
-          <div class="research-actions">
-            <a class="button" href="https://ssrn.com/abstract=6075449" target="_blank" rel="noopener noreferrer">Read preprint</a>
-          </div>
-        </article>
-
-        <article class="card research-card">
-          <div>
-            <p class="research-meta">Scoping review · In development</p>
-            <h3>Relational AI as Human–AI Participation</h3>
-            <p>
-              A planned scoping review and evidence map examining how relational AI is conceptualized across roles, risks, design patterns, and evaluation practices.
-            </p>
-            <div class="tag-row research-tags">
-              <span class="tag">Scoping review</span>
-              <span class="tag">Evidence map</span>
-              <span class="tag">Human–AI participation</span>
-            </div>
-          </div>
-          <div class="research-actions">
-            <span class="button is-static">In development</span>
-          </div>
-        </article>
-      
-        <article class="card research-card">
-          <div>
-            <p class="research-meta">Journal article · Published</p>
-            <h3>AI as a Co-Regulator</h3>
-            <p>
-              A learning-focused extension of relational AI that examines how AI systems can participate in reflection, self-regulation, judgment, and learner agency over time.
+              A theoretical framework for understanding how AI can support learners as they plan, monitor, reflect, and adapt without displacing their agency, judgment, or growth.
             </p>
             <div class="tag-row research-tags">
               <span class="tag">Learning</span>
@@ -1172,61 +847,388 @@ button:focus-visible {
             </div>
           </div>
           <div class="research-actions">
-            <a class="button" href="https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1761602/full" target="_blank" rel="noopener noreferrer">Read article</a>
+            <a class="button" href="https://doi.org/10.3389/feduc.2026.1761602" target="_blank" rel="noopener noreferrer">Read publication</a>
           </div>
         </article>
       
         <article class="card research-card">
           <div>
-            <p class="research-meta">Prototype study · Published preprint</p>
-            <h3>TextWalk and epistemic guardrails</h3>
+            <p class="research-meta">Behavioral audit · arXiv preprint · 2026</p>
+            <h3>Evaluating Epistemic Guardrails in AI Reading Assistants: A Behavioral Audit of a Minimal Prototype</h3>
             <p>
-              A behavioral audit of a minimal AI reading assistant designed to support close reading, structure-first engagement, interpretive humility, and learner-led meaning-making.
+              A behavioral audit of TextWalk, a minimal AI reading-assistant prototype designed to support close reading, structure-first engagement, interpretive humility, and learner-led meaning-making.
             </p>
             <div class="tag-row research-tags">
               <span class="tag">Epistemic guardrails</span>
+              <span class="tag">Human–AI interaction</span>
               <span class="tag">Reading support</span>
-              <span class="tag">Interpretive agency</span>
             </div>
           </div>
           <div class="research-actions">
             <a class="button" href="https://arxiv.org/abs/2604.27275" target="_blank" rel="noopener noreferrer">Read preprint</a>
           </div>
         </article>
-      
+
         <article class="card research-card">
           <div>
-            <p class="research-meta">Conceptual manuscript · Submitted</p>
-            <h3>Trust in AI as legitimate participation</h3>
+            <p class="research-meta">Framework paper · SSRN preprint · 2026</p>
+            <h3>Relational Integrity in AI: Preserving Human Agency, Accountability, and Meaning Under Pressure</h3>
             <p>
-              A reframing of trust in AI around role drift, interpretive delegation, and the conditions under which AI participation remains legitimate in human–AI interaction.
+              A diagnostic framework for understanding how AI systems can gradually erode relational integrity through ordinary interaction, shifting role clarity, accountability, authority, and meaning before visible harm appears.
+            </p>
+            <div class="tag-row research-tags">
+              <span class="tag">Relational integrity</span>
+              <span class="tag">Human agency</span>
+              <span class="tag">Accountability</span>
+            </div>
+          </div>
+          <div class="research-actions">
+            <a class="button" href="https://dx.doi.org/10.2139/ssrn.6075449" target="_blank" rel="noopener noreferrer">Read preprint</a>
+          </div>
+        </article>
+
+        <article class="card research-card">
+          <div>
+            <p class="research-meta">Framework paper · SSRN preprint · 2026</p>
+            <h3>The Relational AI Depth Framework: Relational Depth and Responsibility in Human–AI Engagement</h3>
+            <p>
+              A seven-level framework for understanding how human–AI engagement deepens across interaction contexts, and how responsibility, agency, authorship, and relational risk scale as AI systems become more influential in human thinking, work, and co-creation.
+            </p>
+            <div class="tag-row research-tags">
+              <span class="tag">Relational AI</span>
+              <span class="tag">Human agency</span>
+              <span class="tag">Responsibility</span>
+            </div>
+          </div>
+          <div class="research-actions">
+            <a class="button" href="https://ssrn.com/abstract=6714758" target="_blank" rel="noopener noreferrer">Read preprint</a>
+          </div>
+        </article>
+        
+        <article class="card research-card">
+          <div>
+            <p class="research-meta">Conceptual essay · SSRN preprint · 2026</p>
+            <h3>How We Invite AI to Participate: Metaphor and the Implicit Assignment of Authority</h3>
+            <p>
+              A conceptual essay examining how metaphors such as tool, assistant, tutor, mentor, or co-creator structure AI participation, shape role boundaries, and implicitly assign authority in human work.
+            </p>
+            <div class="tag-row research-tags">
+              <span class="tag">AI participation</span>
+              <span class="tag">Metaphor</span>
+              <span class="tag">Role clarity</span>
+            </div>
+          </div>
+          <div class="research-actions">
+            <a class="button" href="https://ssrn.com/abstract=6151366" target="_blank" rel="noopener noreferrer">Read preprint</a>
+          </div>
+        </article>
+        
+        <article class="card research-card">
+          <div>
+            <p class="research-meta">Conceptual paper · SSRN preprint · 2026</p>
+            <h3>The Geometry of Human Participation: The Structural Conditions of Legitimacy in AI-Mediated Systems</h3>
+            <p>
+              A structural account of legitimacy in AI-mediated systems, arguing that meaning, evaluation, and obligation must remain visibly human-borne for participation to stay contestable and accountable.
+            </p>
+            <div class="tag-row research-tags">
+              <span class="tag">Human participation</span>
+              <span class="tag">Legitimacy</span>
+              <span class="tag">Responsibility</span>
+            </div>
+          </div>
+          <div class="research-actions">
+            <a class="button" href="https://dx.doi.org/10.2139/ssrn.6348840" target="_blank" rel="noopener noreferrer">Read preprint</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="manuscripts">
+    <div class="container">
+      <div class="section-head narrow-head">
+        <div>
+          <div class="eyebrow">Manuscripts &amp; Developing Research</div>
+          <h2>Current submissions, accepted abstracts, and work in progress.</h2>
+        </div>
+        <p>
+          This section shows momentum without overstating status. Public links are only included when the work is available to read.
+        </p>
+      </div>
+
+      <p class="work-bridge content-column">
+        Status language matters here. “Submitted,” “in review,” “abstract accepted,” and “manuscript in development” signal different stages of scholarly work, so each card keeps the distinction visible.
+      </p>
+  
+      <div class="research-list">
+        <article class="card research-card">
+          <div>
+            <p class="research-meta">Conceptual manuscript · Submitted for review</p>
+            <h3>Trust in AI as Legitimate Participation: Role Drift and Interpretive Delegation in Human–AI Interaction</h3>
+            <p>
+              A conceptual reframing of trust in AI around role drift, interpretive delegation, and the conditions under which AI participation remains legitimate, bounded, and contestable in human–AI interaction.
             </p>
             <div class="tag-row research-tags">
               <span class="tag">Trust</span>
               <span class="tag">Role drift</span>
-              <span class="tag">Legitimate participation</span>
+              <span class="tag">Human–AI interaction</span>
             </div>
           </div>
           <div class="research-actions">
-            <a class="button" href="index.html#research">View research</a>
+            <span class="button is-static">Submitted</span>
           </div>
         </article>
-      
+
         <article class="card research-card">
           <div>
-            <p class="research-meta">Simulation method · Prototype</p>
-            <h3>AI Governance Simulation Lab</h3>
+            <p class="research-meta">Opinion / perspective · Submitted</p>
+            <h3>Human Oversight Must Start Before the Output: Framing Authority in Generative and Agentic AI</h3>
             <p>
-              A role-based simulation environment for rehearsing technology governance decisions, surfacing stakeholder tensions, and examining how AI can mediate responsible foresight.
+              A short perspective arguing that meaningful human oversight must begin before AI outputs appear, at the level of task framing, assumptions, criteria, role expectations, and option visibility.
             </p>
             <div class="tag-row research-tags">
-              <span class="tag">Governance</span>
-              <span class="tag">Simulation</span>
-              <span class="tag">Responsible foresight</span>
+              <span class="tag">Human oversight</span>
+              <span class="tag">Framing authority</span>
+              <span class="tag">Agentic AI</span>
             </div>
           </div>
           <div class="research-actions">
-            <a class="button" href="index.html#work">View portfolio</a>
+            <span class="button is-static">Submitted</span>
+          </div>
+        </article>
+
+        <article class="card research-card">
+          <div>
+            <p class="research-meta">Conceptual manuscript · Abstract accepted; full manuscript in development</p>
+            <h3>Rethinking Agentic Co-Creation: Interpretive Authority and Accountability in Human–AI Work</h3>
+            <p>
+              A developing manuscript on agentic co-creation, interpretive authority, accountability, and how AI systems participate in human work beyond simple assistance or output generation.
+            </p>
+            <div class="tag-row research-tags">
+              <span class="tag">Agentic co-creation</span>
+              <span class="tag">Interpretive authority</span>
+              <span class="tag">Accountability</span>
+            </div>
+          </div>
+          <div class="research-actions">
+            <span class="button is-static">Abstract accepted</span>
+          </div>
+        </article>
+
+        <article class="card research-card">
+          <div>
+            <p class="research-meta">Special topic manuscript · Abstract accepted; full manuscript in development</p>
+            <h3>Authority Migration and Algorithmic Legitimacy in AI-Integrated Knowledge Work</h3>
+            <p>
+              A manuscript in development examining how authority migrates across AI-integrated knowledge work, and what that means for algorithmic legitimacy, institutional accountability, and human judgment.
+            </p>
+            <div class="tag-row research-tags">
+              <span class="tag">Authority migration</span>
+              <span class="tag">Knowledge work</span>
+              <span class="tag">Legitimacy</span>
+            </div>
+          </div>
+          <div class="research-actions">
+            <span class="button is-static">Abstract accepted</span>
+          </div>
+        </article>
+
+        <article class="card research-card">
+          <div>
+            <p class="research-meta">Foresight methods manuscript · In progress</p>
+            <h3>Rehearsing Technological Futures: LLM-Based Governance Simulation as a Method for Responsible Foresight</h3>
+            <p>
+              A methods-oriented manuscript framing the AI Governance Simulation Lab as an LLM-mediated foresight method for examining role-based responsibility, stakeholder visibility, and governance readiness under uncertainty.
+            </p>
+            <div class="tag-row research-tags">
+              <span class="tag">Responsible foresight</span>
+              <span class="tag">Governance simulation</span>
+              <span class="tag">LLM methods</span>
+            </div>
+          </div>
+          <div class="research-actions">
+            <span class="button is-static">In progress</span>
+          </div>
+        </article>
+
+        <article class="card research-card">
+          <div>
+            <p class="research-meta">Leadership education manuscript · In review</p>
+            <h3>Legitimacy Under Algorithmic Authority: A Relational Diagnostic of Leadership Education in AI-Mediated Contexts</h3>
+            <p>
+              A relational diagnostic of leadership education in AI-mediated contexts, focused on algorithmic authority, legitimacy, institutional trust, and the conditions that shape responsible participation.
+            </p>
+            <div class="tag-row research-tags">
+              <span class="tag">Leadership education</span>
+              <span class="tag">Algorithmic authority</span>
+              <span class="tag">Relational diagnostics</span>
+            </div>
+          </div>
+          <div class="research-actions">
+            <span class="button is-static">In review</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="public-scholarship">
+    <div class="container">
+      <div class="section-head narrow-head">
+        <div>
+          <div class="eyebrow">Public Scholarship &amp; Reports</div>
+          <h2>Translating research for broader public value.</h2>
+        </div>
+        <p>
+          This section maps the public-facing translation layer of the work: essays, reports, commentary, and applied writing that make research concepts usable beyond formal publication venues.
+        </p>
+      </div>
+
+      <p class="work-bridge content-column">
+        Public scholarship will be added selectively as pieces are ready to feature. The goal is not to create a loose archive, but to show how formal research translates into public learning, institutional reflection, and responsible innovation practice.
+      </p>
+  
+      <div class="grid">
+        <article class="card">
+          <h3>Responsible AI and relational design</h3>
+          <p>
+            Public-facing essays and commentary that translate ideas from relational AI, human agency, and responsible innovation into accessible language for broader audiences.
+          </p>
+        </article>
+        
+        <article class="card">
+          <h3>AI-era readiness and learning</h3>
+          <p>
+            Writing on AI literacy, student agency, future readiness, and the skills people and institutions need to navigate AI-mediated systems with care.
+          </p>
+        </article>
+        
+        <article class="card">
+          <h3>Reports and applied frameworks</h3>
+          <p>
+            Longer-form reports, white papers, and strategic artifacts that connect research concepts to public-interest implementation, program design, and institutional learning.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="writing-themes">
+    <div class="container">
+      <div class="section-head narrow-head">
+        <div>
+          <div class="eyebrow">Writing Themes</div>
+          <h2>The intellectual through-lines.</h2>
+        </div>
+        <p>
+          Across formats and venues, the work returns to a shared concern: how emerging systems shape the conditions for human judgment, participation, and responsibility.
+        </p>
+      </div>
+  
+      <div class="grid">
+        <article class="card">
+          <h3>Relational AI, agency, and accountability</h3>
+          <p>
+            Work on relational depth, relational integrity, role drift, interpretive delegation, and the responsibilities that emerge as AI systems become more involved in human work.
+          </p>
+        </article>
+        
+        <article class="card">
+          <h3>AI, learning, and epistemic agency</h3>
+          <p>
+            Research on AI-mediated learning, co-regulation, reading support, epistemic guardrails, learner participation, and the preservation of interpretive agency.
+          </p>
+        </article>
+        
+        <article class="card">
+          <h3>Governance, legitimacy, and public value</h3>
+          <p>
+            Writing on algorithmic legitimacy, authority migration, institutional responsibility, governance simulation, and the conditions needed for accountable AI participation.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Public-interest innovation and future readiness</h3>
+          <p>
+            Public scholarship and strategic work on AI literacy, youth futures, responsible innovation, and future-facing systems that support agency, dignity, and long-term public good.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Frameworks as civic infrastructure</h3>
+          <p>
+            Framework papers that turn complex questions into usable maps, diagnostics, and design lenses for people navigating AI-mediated learning, work, and governance.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Human participation under pressure</h3>
+          <p>
+            A recurring focus on how participation, judgment, authorship, and accountability can become compressed or displaced when systems optimize for speed, fluency, or scale.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="profiles">
+    <div class="container">
+      <div class="section-head narrow-head">
+        <div>
+          <div class="eyebrow">Profiles &amp; Citation Links</div>
+          <h2>Research profiles and publication pages.</h2>
+        </div>
+        <p>
+          External profiles for publication tracking, preprints, citations, and public-facing writing.
+        </p>
+      </div>
+  
+      <div class="grid">
+        <article class="card">
+          <h3>Google Scholar</h3>
+          <p>Scholar profile for publications and citation tracking.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://scholar.google.com/citations?user=E4G17PkAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="me noopener noreferrer">Open profile</a>
+          </div>
+        </article>
+        
+        <article class="card">
+          <h3>ORCID</h3>
+          <p>Persistent researcher identifier and scholarly profile.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://orcid.org/0009-0006-9975-0240" target="_blank" rel="me noopener noreferrer">Open profile</a>
+          </div>
+        </article>
+        
+        <article class="card">
+          <h3>SSRN</h3>
+          <p>Public preprints and working papers.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=9953996" target="_blank" rel="me noopener noreferrer">Open profile</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>arXiv</h3>
+          <p>Preprints and technical research artifacts.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://arxiv.org/a/agustin_m_1.html" target="_blank" rel="me noopener noreferrer">Open profile</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>ResearchGate</h3>
+          <p>Research profile and scholarly network presence.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://www.researchgate.net/profile/Matthew-Agustin" target="_blank" rel="me noopener noreferrer">Open profile</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Medium</h3>
+          <p>Public-facing essays and broader commentary.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://medium.com/@matt.agustin" target="_blank" rel="me noopener noreferrer">Open profile</a>
           </div>
         </article>
       </div>
@@ -1237,26 +1239,26 @@ button:focus-visible {
     <div class="container about">
       <article class="card quote-card">
         <div>
-          <p class="eyebrow">Closing thesis</p>
+          <p class="eyebrow">Writing thesis</p>
           <p class="quote">
-            “Relational AI is not only about whether humans form bonds with machines. It is about whether AI systems reshape agency, interpretation, responsibility, and trust with integrity.”
+            “The through-line of this work is not only what AI can produce, but what AI changes about human agency, interpretation, accountability, and participation.”
           </p>
         </div>
       </article>
   
       <article class="card about-card">
-        <h2>An emerging program, not a finished doctrine.</h2>
+        <h2>A research record, not just a list of outputs.</h2>
         <p>
-          This page names a developing research direction: a way of studying and designing AI systems that participate in human meaning-making, judgment, learning, governance, and institutional life.
+          The publications and manuscripts on this page are organized as a developing body of work across relational AI, learning, governance, legitimacy, public-interest innovation, and responsible design.
         </p>
         <p>
-          The aim is not to claim that all AI systems are relational in the same way. It is to ask more carefully when AI begins to shape roles, relationships, responsibility, and participation, and what forms of accountability should follow.
+          As the record grows, this page can continue separating public work from manuscripts in progress while showing how each piece contributes to a broader research trajectory.
         </p>
         <div class="tag-row">
           <span class="tag">Agency</span>
-          <span class="tag">Accountability</span>
-          <span class="tag">Interpretive integrity</span>
-          <span class="tag">Legitimate participation</span>
+          <span class="tag">Learning</span>
+          <span class="tag">Governance</span>
+          <span class="tag">Public value</span>
         </div>
       </article>
     </div>
@@ -1267,9 +1269,9 @@ button:focus-visible {
       <div class="contact-panel">
         <div>
           <div class="eyebrow">Contact</div>
-          <h2>Working on AI systems that shape agency, interpretation, or accountability?</h2>
+          <h2>Interested in research collaboration, invited writing, or public-interest AI work?</h2>
           <p>
-            I welcome conversations with researchers, educators, designers, institutions, and public-interest teams exploring how AI systems can support human judgment, participation, and responsibility without quietly replacing them.
+            I welcome conversations with researchers, editors, educators, institutions, and public-interest teams working on AI, agency, learning, governance, legitimacy, and responsible innovation.
           </p>
         </div>
         <a class="button" href="mailto:mcagusti@asu.edu">Start a conversation</a>
