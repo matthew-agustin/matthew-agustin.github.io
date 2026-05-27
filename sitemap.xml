@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+>
   <url>
     <loc>https://matthew-agustin.github.io/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
   </url>
+
   <url>
     <loc>https://matthew-agustin.github.io/relational-ai.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://matthew-agustin.github.io/writing-publications.html</loc>
-    <lastmod>2026-05-21</lastmod>
-    <priority>0.85</priority>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://matthew-agustin.github.io/ai-era-readiness.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>
