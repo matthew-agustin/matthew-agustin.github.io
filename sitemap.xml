@@ -21,4 +21,11 @@
     <loc>https://matthew-agustin.github.io/ai-era-readiness.html</loc>
     <lastmod>2026-05-27</lastmod>
   </url>
+
+  <url>
+    <loc>https://matthew-agustin.github.io/speaking-workshops.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
 </urlset>
