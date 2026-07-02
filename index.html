@@ -124,6 +124,7 @@ header { position:sticky; top:0; z-index:100; -webkit-backdrop-filter:blur(16px)
 .logo { width:38px; height:38px; border-radius:13px; display:grid; place-items:center; color:#fff; background:linear-gradient(135deg,var(--accent),var(--accent-2)); box-shadow:var(--shadow); }
 .nav-links { display:flex; align-items:center; gap:18px; color:var(--muted); font-size:.95rem; }
 .nav-links a:hover { color:var(--text); }
+.nav-links a[aria-current="page"] { color: var(--text); font-weight: 750; }
 
 .nav-actions {
   display: flex;
@@ -940,7 +941,7 @@ button:focus-visible {
   }
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1120px) {
   .nav-links {
     display: none;
   }
@@ -1122,6 +1123,7 @@ button:focus-visible {
       <a href="writing-publications.html">Writing</a>
       <a href="relational-ai.html">Relational AI</a>
       <a href="ai-era-readiness.html">AI-Era Readiness</a>
+      <a href="speaking-workshops.html">Talks &amp; Workshops</a>
       <a href="#contact">Contact</a>
     </div>
   
@@ -2165,8 +2167,13 @@ button:focus-visible {
         </article>
   
         <article class="card">
-          <h3>Talks & facilitated dialogue</h3>
-          <p>Conversations, workshops, and convenings that help groups surface tradeoffs, clarify responsibilities, and imagine more trustworthy futures together.</p>
+          <h3>Talks &amp; facilitated dialogue</h3>
+          <p>
+            Conversations, workshops, and convenings that help groups surface tradeoffs, clarify responsibilities, and imagine more trustworthy futures together.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="speaking-workshops.html">Explore speaking and workshop opportunities</a>
+          </div>
         </article>
   
         <article class="card">
@@ -2333,6 +2340,7 @@ button:focus-visible {
       <a href="writing-publications.html">Writing &amp; Publications</a>
       <a href="relational-ai.html">Relational AI</a>
       <a href="ai-era-readiness.html">AI-Era Readiness</a>
+      <a href="speaking-workshops.html">Speaking &amp; Workshops</a>
       <a href="https://matthewagustin.com" target="_blank" rel="me noopener noreferrer">Website</a>
       <a href="https://www.linkedin.com/in/matthew-agustin/" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
       <a href="https://scholar.google.com/citations?user=E4G17PkAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="me noopener noreferrer">Google Scholar</a>
