@@ -125,6 +125,8 @@ header { position:sticky; top:0; z-index:100; -webkit-backdrop-filter:blur(16px)
 .nav-links { display:flex; align-items:center; gap:18px; color:var(--muted); font-size:.95rem; }
 .nav-links a:hover { color:var(--text); }
 .nav-links a[aria-current="page"] { color: var(--text); font-weight: 750; }
+.nav-links a,
+.nav-actions .button { white-space: nowrap; }
 
 .nav-actions {
   display: flex;
@@ -1124,7 +1126,6 @@ button:focus-visible {
       <a href="relational-ai.html">Relational AI</a>
       <a href="ai-era-readiness.html">AI-Era Readiness</a>
       <a href="speaking-workshops.html">Talks &amp; Workshops</a>
-      <a href="#contact">Contact</a>
     </div>
   
     <div class="nav-actions">
@@ -2050,6 +2051,19 @@ button:focus-visible {
             <span class="manuscript-status">Manuscript in development</span>
           </article>
 
+          <article class="card manuscript-item manuscript-card" data-manuscript="framing-authority" data-manuscript-filters="governance guardrails knowledge-work">
+            <div>
+              <h3>Framing Authority: Designing Human Oversight Before the Output</h3>
+              <p class="manuscript-meta">
+                <strong>Status:</strong> Revised submission under consideration<br>
+                <strong>Venue:</strong> ACM Interactions Feature article<br>
+                <strong>Focus:</strong> Human oversight, authority, generative AI, agentic AI, and responsible design before the output<br>
+                <span class="title-note">Second-round revision submitted</span>
+              </p>
+            </div>
+            <span class="manuscript-status">Under consideration</span>
+          </article>
+
           <article class="card manuscript-item manuscript-card" data-manuscript="agentic-co-creation" data-manuscript-filters="relational-ai governance knowledge-work">
             <div>
               <h3>Participation structure and interpretive authority: A framework for agentic human–AI co-creation</h3>
@@ -2066,24 +2080,24 @@ button:focus-visible {
             <div>
               <h3>Trust in AI as Legitimate Participation: Role Drift and Interpretive Delegation in Human–AI Interaction</h3>
               <p class="manuscript-meta">
-                <strong>Status:</strong> Manuscript in development<br>
+                <strong>Status:</strong> Submitted for review<br>
                 <strong>Focus:</strong> Trust, legitimate participation, role drift, interpretive delegation, and human–AI interaction<br>
-                <span class="title-note">Special issue manuscript in development</span>
+                <span class="title-note">Special issue manuscript submitted for review</span>
               </p>
             </div>
-            <span class="manuscript-status">Manuscript in development</span>
+            <span class="manuscript-status">Submitted for review</span>
           </article>
 
           <article class="card manuscript-item manuscript-card" data-manuscript="authority-migration" data-manuscript-filters="knowledge-work governance">
             <div>
               <h3>Authority Migration and Algorithmic Legitimacy in AI-Integrated Knowledge Work</h3>
               <p class="manuscript-meta">
-                <strong>Status:</strong> Manuscript in development<br>
+                <strong>Status:</strong> Full manuscript submitted<br>
                 <strong>Focus:</strong> Authority migration, algorithmic legitimacy, knowledge work, and institutional accountability<br>
-                <span class="title-note">Abstract accepted; invited full manuscript in development</span>
+                <span class="title-note">Full manuscript submitted for review</span>
               </p>
             </div>
-            <span class="manuscript-status">Manuscript in development</span>
+            <span class="manuscript-status">Submitted for review</span>
           </article>
 
           <article class="card manuscript-item manuscript-card" data-manuscript="rehearsing-technological-futures" data-manuscript-filters="governance guardrails knowledge-work">
@@ -2097,30 +2111,6 @@ button:focus-visible {
             </div>
             <span class="manuscript-status">Manuscript in progress</span>
           </article>
-
-          <article class="card manuscript-item manuscript-card" data-manuscript="leadership-structuring-participation" data-manuscript-filters="governance">
-            <div>
-              <h3>Leadership as the Structuring of Participation: Rethinking Legitimacy in Higher Education</h3>
-              <p class="manuscript-meta">
-                <strong>Status:</strong> Submitted for review<br>
-                <strong>Focus:</strong> Leadership, participation, legitimacy, and higher education governance<br>
-                <span class="title-note">Manuscript submitted</span>
-              </p>
-            </div>
-            <span class="manuscript-status">Submitted for review</span>
-          </article>
-
-          <article class="card manuscript-item manuscript-card" data-manuscript="relationality-to-relational-integrity" data-manuscript-filters="relational-ai guardrails learning-agency">
-            <div>
-              <h3>Relational Integrity in AI-Mediated Learning Conditions: Judgment, Authority, and Participation in Digital Education</h3>
-              <p class="manuscript-meta">
-                <strong>Status:</strong> Manuscript in development<br>
-                <strong>Focus:</strong> Relational integrity, AI-mediated learning conditions, judgment, authority, participation, and digital education<br>
-                <span class="title-note">Reframed for LMT as a full manuscript</span>
-              </p>
-            </div>
-            <span class="manuscript-status">Manuscript in development</span>
-          </article>
           
           <article class="card manuscript-item manuscript-card" data-manuscript="responsibility-architecture" data-manuscript-filters="learning-agency governance">
             <div>
@@ -2132,18 +2122,6 @@ button:focus-visible {
               </p>
             </div>
             <span class="manuscript-status">Awaiting abstract decision</span>
-          </article>
-
-          <article class="card manuscript-item manuscript-card" data-manuscript="learner-participation-adaptive-education" data-manuscript-filters="relational-ai learning-agency">
-            <div>
-              <h3>Relational Integrity in AI-Mediated Learning Conditions: Judgment, Authority, and Participation in Digital Education</h3>
-              <p class="manuscript-meta">
-                <strong>Status:</strong> Manuscript in development<br>
-                <strong>Focus:</strong> Learner participation, relational integrity, judgment, authority, and participation-sensitive evaluation in AI-mediated adaptive learning<br>
-                <span class="title-note">RPTEL-directed theory-practice manuscript in development</span>
-              </p>
-            </div>
-            <span class="manuscript-status">Manuscript in development</span>
           </article>
         </div>
       </div>
@@ -2492,42 +2470,37 @@ const manuscriptOrders = {
   all: [
     "legitimacy-under-algorithmic-authority",
     "operationalizing-responsibility",
+    "framing-authority",
     "agentic-co-creation",
     "trust-legitimate-participation",
     "authority-migration",
     "rehearsing-technological-futures",
-    "leadership-structuring-participation",
-    "relationality-to-relational-integrity",
-    "responsibility-architecture",
-    "learner-participation-adaptive-education"
+    "responsibility-architecture"
   ],
   "relational-ai": [
     "legitimacy-under-algorithmic-authority",
     "agentic-co-creation",
     "trust-legitimate-participation",
-    "relationality-to-relational-integrity",
-    "learner-participation-adaptive-education"
   ],
   "learning-agency": [
-    "relationality-to-relational-integrity",
     "responsibility-architecture",
-    "learner-participation-adaptive-education"
   ],
   guardrails: [
     "operationalizing-responsibility",
-    "relationality-to-relational-integrity"
+    "framing-authority",
   ],
   governance: [
     "legitimacy-under-algorithmic-authority",
     "operationalizing-responsibility",
+    "framing-authority",
     "trust-legitimate-participation",
     "authority-migration",
     "rehearsing-technological-futures",
-    "leadership-structuring-participation",
     "agentic-co-creation",
     "responsibility-architecture"
   ],
   "knowledge-work": [
+    "framing-authority",
     "authority-migration",
     "rehearsing-technological-futures",
     "agentic-co-creation"
