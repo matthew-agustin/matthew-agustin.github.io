@@ -90,7 +90,6 @@
       "email": "mailto:mcagusti@asu.edu",
       "sameAs": [
         "https://www.linkedin.com/in/matthew-agustin/",
-        "https://matthewagustin.com",
         "https://medium.com/@matt.agustin"
       ],
       "knowsAbout": [
@@ -150,6 +149,8 @@ header { position:sticky; top:0; z-index:100; -webkit-backdrop-filter:blur(16px)
 .nav-links a:hover { color:var(--text); }
 .nav-links a[aria-current="page"] { color: var(--text); font-weight: 750; }
 .nav-links { font-size: .98rem; gap: 18px; }
+.nav-links a,
+.nav-actions .button { white-space: nowrap; }
 
 .nav-actions {
   display: flex;
@@ -834,7 +835,7 @@ button:focus-visible {
       <article class="card">
         <h3>Manuscripts and submissions</h3>
         <p>
-          Work that is submitted, in review, accepted at the abstract stage, or actively in development, with status language kept visible and bounded.
+          Work that is submitted, in review, awaiting abstract decision, preparing submission, or actively in development, with status language kept visible and bounded.
         </p>
       </article>
       
@@ -952,7 +953,7 @@ button:focus-visible {
 
         <article class="card research-card">
           <div>
-            <p class="research-meta">Conceptual model · Preprint · 2026</p>
+            <p class="research-meta">Conceptual paper · SSRN preprint · 2026</p>
             <h3>AI as a Generative Pathway System: How Generative AI Reshapes Possibility, Continuation, and Human Agency</h3>
             <p>
               A conceptual model examining how generative AI can shape whether possibilities persist, develop, branch, shift direction, or close over time, with relational integrity and human agency serving as governing conditions for responsible continuation.
@@ -994,7 +995,7 @@ button:focus-visible {
       <div class="section-head narrow-head">
         <div>
           <div class="eyebrow">Manuscripts &amp; Developing Research</div>
-          <h2>Current submissions, accepted abstracts, and work in progress.</h2>
+          <h2>Current submissions, abstract-stage work, and manuscripts in progress.</h2>
         </div>
         <p>
           This section shows momentum without overstating status. Public links are only included when the work is available to read.
@@ -1002,7 +1003,7 @@ button:focus-visible {
       </div>
 
       <p class="work-bridge content-column">
-        Status language matters here. “Submitted,” “in review,” “abstract accepted,” and “manuscript in development” signal different stages of scholarly work, so each card keeps the distinction visible.
+        Status language matters here. “Submitted,” “in review,” “awaiting abstract decision,” “preparing submission,” and “manuscript in development” signal different stages of scholarly work, so each card keeps the distinction visible.
       </p>
   
       <div class="research-list">
@@ -1026,10 +1027,10 @@ button:focus-visible {
 
         <article class="card research-card">
           <div>
-            <p class="research-meta">Opinion / perspective · Submitted</p>
-            <h3>Human Oversight Must Start Before the Output: Framing Authority in Generative and Agentic AI</h3>
+            <p class="research-meta">Feature article · Revised submission under consideration</p>
+            <h3>Framing Authority: Designing Human Oversight Before the Output</h3>
             <p>
-              A short perspective arguing that meaningful human oversight must begin before AI outputs appear, at the level of task framing, assumptions, criteria, role expectations, and option visibility.
+              A feature article for <em>ACM Interactions</em> arguing that meaningful human oversight begins before AI outputs appear, at the level of task framing, assumptions, criteria, role expectations, and option visibility.
             </p>
             <div class="tag-row research-tags">
               <span class="tag">Human oversight</span>
@@ -1038,7 +1039,43 @@ button:focus-visible {
             </div>
           </div>
           <div class="research-actions">
-            <span class="button is-static">Submitted</span>
+            <span class="button is-static">Under consideration</span>
+          </div>
+        </article>
+
+        <article class="card research-card">
+          <div>
+            <p class="research-meta">Higher education policy manuscript · Preparing final submission</p>
+            <h3>The Foresight-to-Practice Gap: Adaptive Coherence for Anticipatory Governance in Higher Education</h3>
+            <p>
+              A redirected manuscript for <em>Policy Futures in Education</em> developing adaptive coherence as a higher-education-specific capacity for translating strategic foresight into anticipatory governance, institutional policy translation, and educational practice under AI-era uncertainty.
+            </p>
+            <div class="tag-row research-tags">
+              <span class="tag">Strategic foresight</span>
+              <span class="tag">Anticipatory governance</span>
+              <span class="tag">Higher education</span>
+            </div>
+          </div>
+          <div class="research-actions">
+            <span class="button is-static">Preparing submission</span>
+          </div>
+        </article>
+
+        <article class="card research-card">
+          <div>
+            <p class="research-meta">Education ethics manuscript · Awaiting abstract decision</p>
+            <h3>Responsibility Architecture in AI-Mediated Education: Rethinking Ethics and the Conditions of Responsible Action</h3>
+            <p>
+              An abstract-stage submission examining responsibility architecture in AI-mediated education, with attention to ethics, institutional conditions, and the structures that make responsible action possible.
+            </p>
+            <div class="tag-row research-tags">
+              <span class="tag">AI-mediated education</span>
+              <span class="tag">Responsibility architecture</span>
+              <span class="tag">Ethics</span>
+            </div>
+          </div>
+          <div class="research-actions">
+            <span class="button is-static">Awaiting decision</span>
           </div>
         </article>
 
@@ -1062,10 +1099,10 @@ button:focus-visible {
 
         <article class="card research-card">
           <div>
-            <p class="research-meta">Special topic manuscript · Abstract accepted; full manuscript in development</p>
+            <p class="research-meta">Special topic manuscript · Full manuscript submitted</p>
             <h3>Authority Migration and Algorithmic Legitimacy in AI-Integrated Knowledge Work</h3>
             <p>
-              A manuscript in development examining how authority migrates across AI-integrated knowledge work, and what that means for algorithmic legitimacy, institutional accountability, and human judgment.
+              A submitted manuscript examining how authority migrates across AI-integrated knowledge work, and what that means for algorithmic legitimacy, institutional accountability, and human judgment.
             </p>
             <div class="tag-row research-tags">
               <span class="tag">Authority migration</span>
@@ -1074,7 +1111,7 @@ button:focus-visible {
             </div>
           </div>
           <div class="research-actions">
-            <span class="button is-static">Abstract accepted</span>
+            <span class="button is-static">Submitted</span>
           </div>
         </article>
 
@@ -1116,15 +1153,15 @@ button:focus-visible {
 
         <article class="card research-card">
           <div>
-            <p class="research-meta">Technology-enhanced learning manuscript · In development</p>
-            <h3>Relational Integrity in AI-Mediated Learning Conditions: Judgment, Authority, and Participation in Digital Education</h3>
+            <p class="research-meta">Framework manuscript · In development</p>
+            <h3>Operationalizing Responsibility Under Infrastructural AI: A Relational Diagnostic Framework</h3>
             <p>
-              A theory-practice manuscript developing a participation-sensitive lens for evaluating AI-mediated adaptive learning. It examines how learner modeling, feedback architecture, optimization logics, and adaptive sequencing shape learner agency, interpretive integrity, co-regulation, epistemic participation, and meaningful engagement with learning processes.
+              A framework manuscript developing a relational diagnostic approach for examining how responsibility is distributed, obscured, or weakened when AI becomes infrastructural across institutional settings.
             </p>
             <div class="tag-row research-tags">
-              <span class="tag">Technology-enhanced learning</span>
-              <span class="tag">Learner participation</span>
-              <span class="tag">Adaptive learning</span>
+              <span class="tag">Infrastructural AI</span>
+              <span class="tag">Responsibility</span>
+              <span class="tag">Relational diagnostics</span>
             </div>
           </div>
           <div class="research-actions">
@@ -1191,11 +1228,11 @@ button:focus-visible {
     <div class="container">
       <div class="section-head narrow-head">
         <div>
-          <div class="eyebrow">Public Scholarship &amp; Reports</div>
+          <div class="eyebrow">Public Scholarship &amp; Applied Writing</div>
           <h2>Translating research for broader public value.</h2>
         </div>
         <p>
-          This section maps the public-facing translation layer of the work: essays, reports, commentary, and applied writing that make research concepts usable beyond formal publication venues.
+          This section maps the public-facing translation layer of the work: essays, commentary, applied frameworks, and strategic resources that make research concepts usable beyond formal publication venues.
         </p>
       </div>
 
@@ -1219,9 +1256,9 @@ button:focus-visible {
         </article>
         
         <article class="card">
-          <h3>Reports and applied frameworks</h3>
+          <h3>Applied frameworks and strategic artifacts</h3>
           <p>
-            Longer-form reports, white papers, and strategic artifacts that connect research concepts to public-interest implementation, program design, and institutional learning.
+            Longer-form guides, white papers, and strategic resources that connect research concepts to public-interest implementation, program design, and institutional learning.
           </p>
         </article>
       </div>
@@ -1404,7 +1441,6 @@ button:focus-visible {
       <a href="relational-ai.html">Relational AI</a>
       <a href="ai-era-readiness.html">AI-Era Readiness</a>
       <a href="speaking-workshops.html">Speaking &amp; Workshops</a>
-      <a href="https://matthewagustin.com" target="_blank" rel="me noopener noreferrer">Website</a>
       <a href="https://www.linkedin.com/in/matthew-agustin/" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
       <a href="https://scholar.google.com/citations?user=E4G17PkAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="me noopener noreferrer">Google Scholar</a>
       <a href="https://orcid.org/0009-0006-9975-0240" target="_blank" rel="me noopener noreferrer">ORCID</a>
@@ -1412,6 +1448,7 @@ button:focus-visible {
       <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=9953996" target="_blank" rel="me noopener noreferrer">SSRN</a>
       <a href="https://arxiv.org/a/agustin_m_1.html" target="_blank" rel="me noopener noreferrer">arXiv</a>
       <a href="https://medium.com/@matt.agustin" target="_blank" rel="me noopener noreferrer">Medium</a>
+      <a href="https://bsky.app/profile/matthewagustin.bsky.social" target="_blank" rel="me noopener noreferrer">Bluesky</a>
       <a href="#top">Back to top ↑</a>
     </nav>
   </div>
