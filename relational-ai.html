@@ -471,6 +471,48 @@ h1 {
   max-width: 760px;
 }
 
+.application-map {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 1px solid color-mix(in srgb, var(--accent-2) 18%, var(--line));
+  border-radius: 24px;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--accent-2) 6%, transparent),
+      transparent 58%
+    ),
+    color-mix(in srgb, var(--panel) 96%, transparent);
+  box-shadow: 0 12px 34px rgba(31, 41, 51, .055);
+  overflow: hidden;
+}
+
+.application-item {
+  padding: 24px 26px;
+  border-bottom: 1px solid var(--line);
+}
+
+.application-item:nth-child(odd) {
+  border-right: 1px solid var(--line);
+}
+
+.application-item:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.application-item h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.application-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .98rem;
+  line-height: 1.6;
+}
+
 .note-card {
   width: min(100%, 920px);
   margin: 0 auto 34px;
@@ -761,6 +803,22 @@ button:focus-visible {
     top: 16px;
     bottom: 16px;
   }
+
+  .application-map {
+    grid-template-columns: 1fr;
+  }
+  
+  .application-item:nth-child(odd) {
+    border-right: 0;
+  }
+  
+  .application-item:nth-last-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+  
+  .application-item:last-child {
+    border-bottom: 0;
+  }
 }
 </style>
 </head>
@@ -1013,50 +1071,50 @@ button:focus-visible {
           <h2>Mainstream AI systems can become relational before they look intimate.</h2>
         </div>
         <p>
-          This approach is designed for everyday systems that shape learning, work, creativity, governance, and institutional judgment, not only systems built for companionship.
+          This approach is designed for everyday systems that shape learning, work, creativity, governance, and institutional judgment across contexts far beyond companionship.
         </p>
       </div>
   
-      <div class="grid">
-        <article class="card">
+      <div class="application-map content-column">
+        <article class="application-item">
           <h3>AI tutors and learning systems</h3>
           <p>
-            Educational AI can shape how learners understand their abilities, questions, mistakes, and progress. Relational integrity asks whether support strengthens agency, reflection, and learner-led interpretation.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Research assistants</h3>
-          <p>
-            AI research support can influence what sources feel relevant, which claims appear central, and how uncertainty is handled. The concern is not only accuracy, but how inquiry itself is framed.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Writing collaborators</h3>
-          <p>
-            Co-writing systems can help people clarify ideas, but they can also reshape voice, authorship, confidence, and judgment. Relational AI asks how collaboration preserves the human author’s interpretive role.
+            Educational AI can shape how learners understand their abilities, questions, mistakes, and progress.
           </p>
         </article>
   
-        <article class="card">
+        <article class="application-item">
+          <h3>Research assistants</h3>
+          <p>
+            AI research support can influence what sources feel relevant, which claims appear central, and how uncertainty is handled.
+          </p>
+        </article>
+  
+        <article class="application-item">
+          <h3>Writing collaborators</h3>
+          <p>
+            Co-writing systems can help people clarify ideas while also reshaping voice, authorship, confidence, and judgment.
+          </p>
+        </article>
+  
+        <article class="application-item">
           <h3>Workplace agents</h3>
           <p>
-            AI agents in professional settings can route tasks, recommend actions, summarize people’s work, or influence what counts as performance. These systems require clear role boundaries and traceable responsibility.
+            AI agents can route tasks, recommend actions, summarize people’s work, or influence what counts as performance.
           </p>
         </article>
-        
-        <article class="card">
+  
+        <article class="application-item">
           <h3>Governance simulations</h3>
           <p>
-            Scenario-based AI systems can help people rehearse decisions under uncertainty, but they also frame which futures, stakeholders, and tradeoffs become visible. The design of the simulation shapes the imagination of governance.
+            Scenario-based AI systems can frame which futures, stakeholders, and tradeoffs become visible under uncertainty.
           </p>
         </article>
-        
-        <article class="card">
+  
+        <article class="application-item">
           <h3>Institutional decision tools</h3>
           <p>
-            AI systems used in education, civic life, hiring, care, or public administration can redistribute authority between people, policies, and platforms. Relational integrity asks whether accountability remains traceable and contestable.
+            AI systems in education, civic life, hiring, care, or public administration can redistribute authority between people, policies, and platforms.
           </p>
         </article>
       </div>
