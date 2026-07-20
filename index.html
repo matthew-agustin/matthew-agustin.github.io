@@ -95,7 +95,7 @@
 :root {
   --bg:#fbfaf7; --panel:#fff; --text:#1f2933; --muted:#637083;
   --line:#e7e0d6; --accent:#315f72; --accent-2:#a16a4a; --panel-2:#f6f0e8;
-  --shadow:0 18px 50px rgba(31,41,51,.09); --shadow-soft:0 10px 32px rgba(31,41,51,.05); --radius:22px; --radius-lg:22px; --max:1120px;
+  --shadow:0 18px 50px rgba(31,41,51,.09); --shadow-soft:0 10px 32px rgba(31,41,51,.05); --radius:16px; --radius-lg:20px; --max:1120px;
 }
 [data-theme="dark"] {
   --bg:#101820; --panel:#172330; --text:#f5f0e8; --muted:#bac5d1;
@@ -107,17 +107,22 @@
   display: none !important; }
 html { scroll-behavior:smooth; }
 body {
-  margin:0; color:var(--text); line-height:1.6;
+  margin: 0;
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: clip;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background:radial-gradient(circle at top left,rgba(49,95,114,.13),transparent 32rem),
-  radial-gradient(circle at bottom right,rgba(161,106,74,.13),transparent 30rem),var(--bg);
+  background:
+    radial-gradient(circle at top left, rgba(49,95,114,.13), transparent 32rem),
+    radial-gradient(circle at bottom right, rgba(161,106,74,.13), transparent 30rem),
+    var(--bg);
 }
 a { color:inherit; text-decoration:none; }
 button { font:inherit; }
 .container { width:min(100% - 32px,var(--max)); margin:0 auto; }
 .skip-link { position:absolute; left:-999px; top:8px; padding:10px 14px; background:var(--panel); border:1px solid var(--line); border-radius:999px; }
 .skip-link:focus { left:16px; z-index:20; }
-header { position:sticky; top:0; z-index:100; -webkit-backdrop-filter:blur(16px); background:color-mix(in srgb,var(--bg) 90%,transparent); border-bottom:1px solid var(--line); }
+header { position: sticky; top: 0; z-index: 100; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); background: color-mix(in srgb, var(--bg) 90%, transparent); border-bottom: 1px solid var(--line); }
 .nav { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
 .brand { display:flex; align-items:center; gap:12px; font-weight:850; letter-spacing:-.03em; }
 .logo { width:38px; height:38px; border-radius:13px; display:grid; place-items:center; color:#fff; background:linear-gradient(135deg,var(--accent),var(--accent-2)); box-shadow:var(--shadow); }
@@ -389,7 +394,7 @@ p { color:var(--muted); }
   justify-content: space-between;
   gap: 24px;
   padding: 34px;
-  border-radius: 30px;
+  border-radius: 24px;
   color: var(--bg);
   background: var(--text); }
 .contact-panel p { max-width:620px; color:color-mix(in srgb,var(--bg) 78%,transparent); }
@@ -643,6 +648,98 @@ h1 {
   max-width: 760px;
 }
 
+/* Editorial research architecture section */
+
+.architecture-section {
+  padding-top: 52px;
+}
+
+.architecture-panel {
+  width: min(100%, 920px);
+  margin: 0 auto;
+  padding: clamp(30px, 5vw, 56px);
+  border: 1px solid color-mix(in srgb, var(--accent-2) 24%, var(--line));
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 8%, transparent), transparent 48%),
+    color-mix(in srgb, var(--panel) 96%, transparent);
+  box-shadow: 0 18px 46px rgba(20, 31, 43, .07);
+}
+
+.architecture-kicker {
+  margin: 0 0 14px;
+  color: var(--accent-2);
+  font-size: .78rem;
+  font-weight: 850;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.architecture-panel h2 {
+  max-width: 780px;
+  margin: 0;
+}
+
+.architecture-intro {
+  max-width: 760px;
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: clamp(1.02rem, 1.7vw, 1.18rem);
+  line-height: 1.7;
+}
+
+.architecture-map {
+  display: grid;
+  gap: 0;
+  margin-top: 34px;
+  border-top: 1px solid var(--line);
+}
+
+.architecture-pathway {
+  display: grid;
+  grid-template-columns: minmax(180px, .38fr) minmax(0, 1fr);
+  gap: 28px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.architecture-pathway h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.05rem;
+  letter-spacing: -.02em;
+}
+
+.architecture-pathway p {
+  margin: 0;
+  max-width: 650px;
+  color: var(--muted);
+  line-height: 1.68;
+}
+
+.architecture-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+@media (max-width: 680px) {
+  .architecture-section {
+    padding-top: 36px;
+  }
+
+  .architecture-panel {
+    padding: 28px;
+    border-radius: 24px;
+  }
+
+  .architecture-pathway {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
 .filters.content-column {
   margin-bottom: 18px;
 }
@@ -759,8 +856,7 @@ h1 {
   line-height: 1.65;
 }
 
-.research-card,
-.manuscript-card {
+.research-card {
   background:
     linear-gradient(
       180deg,
@@ -773,12 +869,6 @@ h1 {
 .research-card:first-child {
   border-color: color-mix(in srgb, var(--accent-2) 36%, var(--line));
   box-shadow: 0 18px 46px rgba(20, 31, 43, .08);
-}
-
-.research-cta {
-  max-width: 920px;
-  margin: 24px auto 48px;
-  border-color: color-mix(in srgb, var(--accent) 22%, var(--line));
 }
 
 .nav-links a[aria-current="page"] {
@@ -803,73 +893,300 @@ h1 {
   white-space: nowrap;
 }
 
-.research-subsection {
-  max-width: 920px;
-  margin: 48px auto 0;
-}
-
-.research-subsection-head {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(220px, .55fr);
-  gap: 28px;
-  align-items: end;
-  margin-bottom: 22px;
-}
-
-.research-subsection-head p {
-  margin: 0;
-  color: var(--muted);
-}
-
-.research-subsection .filters {
-  margin-bottom: 22px;
-}
-
-.manuscript-list {
-  display: grid;
-  gap: 18px;
-}
-
-.manuscript-item {
+.research-pathway-panel {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: 22px;
-  align-items: start;
-  padding: 22px 24px;
-}
-
-.manuscript-item h3 {
-  margin: 0 0 8px;
-  font-size: 1.08rem;
-  line-height: 1.25;
-  letter-spacing: -.025em;
-}
-
-.manuscript-meta {
-  margin: 0;
-  color: var(--muted);
-  font-size: .94rem;
-  line-height: 1.55;
-}
-
-.manuscript-status {
-  display: inline-flex;
+  gap: 28px;
   align-items: center;
-  justify-content: center;
-  min-height: 34px;
-  padding: 0 12px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  color: var(--accent);
-  background: var(--panel);
-  font-size: .8rem;
-  font-weight: 800;
+  max-width: 920px;
+  margin: 30px auto 0;
+  padding: 28px 30px;
+  border: 1px solid color-mix(in srgb, var(--accent-2) 24%, var(--line));
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent-2) 8%, transparent), transparent 58%),
+    color-mix(in srgb, var(--panel) 96%, transparent);
+  box-shadow: 0 12px 34px rgba(31, 41, 51, .055);
+}
+
+.research-pathway-panel h3 {
+  margin: 0 0 10px;
+  font-size: 1.18rem;
+}
+
+.research-pathway-panel p:not(.research-meta) {
+  margin: 0;
+  max-width: 610px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.research-pathway-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 230px;
+}
+
+.research-pathway-actions .button {
+  width: 100%;
+  min-height: 42px;
+  font-size: .9rem;
+  box-shadow: none;
   white-space: nowrap;
 }
 
-.title-note {
+/* Editorial principles section */
+
+.principles-section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.principles-panel {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(260px, .42fr) minmax(0, 1fr);
+  gap: clamp(34px, 6vw, 72px);
+  align-items: start;
+  padding: clamp(30px, 5vw, 54px);
+  border-top: 1px solid color-mix(in srgb, var(--accent-2) 34%, var(--line));
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-2) 34%, var(--line));
+}
+
+.principles-intro p:not(.eyebrow) {
+  margin: 20px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.principles-list {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.principle-item {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.principle-number {
   color: var(--accent-2);
-  font-weight: 800;
+  font-size: .78rem;
+  font-weight: 850;
+  letter-spacing: .12em;
+}
+
+.principle-item h3 {
+  margin: 0 0 8px;
+  font-size: 1.12rem;
+}
+
+.principle-item p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.68;
+}
+
+@media (max-width: 860px) {
+  .principles-panel {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+}
+
+@media (max-width: 680px) {
+  .principles-section {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+
+  .principles-panel {
+    padding: 28px 0;
+  }
+
+  .principle-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+/* Engagement invitation section */
+
+.engagements-section {
+  padding-top: 68px;
+  padding-bottom: 68px;
+}
+
+.engagement-panel {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  padding: clamp(30px, 5vw, 54px);
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line));
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 8%, transparent), transparent 52%),
+    color-mix(in srgb, var(--panel) 96%, transparent);
+  box-shadow: 0 16px 42px rgba(31, 41, 51, .065);
+}
+
+.engagement-copy {
+  max-width: 760px;
+}
+
+.engagement-copy p:not(.eyebrow) {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: clamp(1.02rem, 1.5vw, 1.14rem);
+  line-height: 1.72;
+}
+
+.engagement-routes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 34px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.engagement-route {
+  padding: 22px 22px 22px 0;
+}
+
+.engagement-route + .engagement-route {
+  padding-left: 22px;
+  border-left: 1px solid var(--line);
+}
+
+.engagement-route h3 {
+  margin: 0 0 8px;
+  font-size: 1.04rem;
+}
+
+.engagement-route p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .96rem;
+  line-height: 1.62;
+}
+
+.engagement-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+@media (max-width: 860px) {
+  .engagement-routes {
+    grid-template-columns: 1fr;
+  }
+
+  .engagement-route {
+    padding: 20px 0;
+  }
+
+  .engagement-route + .engagement-route {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 680px) {
+  .engagements-section {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+
+  .engagement-panel {
+    padding: 28px;
+    border-radius: 24px;
+  }
+}
+
+/* Collaboration fit section */
+
+.collaborate-section {
+  padding-top: 68px;
+  padding-bottom: 68px;
+}
+
+.collaborate-panel {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(260px, .42fr) minmax(0, 1fr);
+  gap: clamp(34px, 6vw, 72px);
+  align-items: start;
+  padding: clamp(30px, 5vw, 54px);
+  border: 1px solid color-mix(in srgb, var(--accent-2) 24%, var(--line));
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent-2) 7%, transparent), transparent 56%),
+    color-mix(in srgb, var(--panel) 96%, transparent);
+  box-shadow: 0 14px 38px rgba(31, 41, 51, .055);
+}
+
+.collaborate-copy p:not(.eyebrow) {
+  margin: 20px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.collaborate-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.collaborate-list {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.collaborate-item {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.collaborate-item h3 {
+  margin: 0 0 7px;
+  font-size: 1.04rem;
+}
+
+.collaborate-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .96rem;
+  line-height: 1.62;
+}
+
+@media (max-width: 860px) {
+  .collaborate-panel {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+}
+
+@media (max-width: 680px) {
+  .collaborate-section {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+
+  .collaborate-panel {
+    padding: 28px;
+    border-radius: 24px;
+  }
 }
 
 /* Process cards currently feel a bit stretched horizontally */
@@ -1027,16 +1344,7 @@ button:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  #engagements {
-    padding-bottom: 52px;
-  }
-
-  #principles {
-    padding-top: 52px;
-  }
-
-  .research-card,
-  .manuscript-item {
+  .research-card {
     grid-template-columns: 1fr;
   }
 
@@ -1045,12 +1353,24 @@ button:focus-visible {
     min-width: 0;
   }
 
-  .research-subsection-head {
+  .research-pathway-panel {
     grid-template-columns: 1fr;
+    padding: 24px;
   }
 
-  .manuscript-status {
-    justify-self: start;
+  .research-pathway-actions {
+    min-width: 0;
+  }
+
+  .research-pathway-actions .button {
+    width: auto;
+    justify-content: center;
+  }
+
+  .engagement-actions .button,
+  .collaborate-actions .button,
+  .architecture-actions .button {
+    width: 100%;
   }
 
   .contact-panel {
@@ -1119,6 +1439,7 @@ button:focus-visible {
     </a>
   
     <div class="nav-links">
+      <a href="#architecture">Architecture</a>
       <a href="#work">Work</a>
       <a href="#research">Research</a>
       <a href="writing-publications.html">Writing</a>
@@ -1190,28 +1511,52 @@ button:focus-visible {
     </div>
   </div>
 </section>
-  <section class="section">
-    <div class="container grid">
-      <article class="card">
-        <h3>What I notice</h3>
-        <p>
-          I identify the moments when technical possibility starts becoming social infrastructure — where assumptions, incentives, relationships, and power begin to shape the future.
+  <section class="section architecture-section" id="architecture">
+    <div class="container">
+      <div class="architecture-panel">
+        <p class="architecture-kicker">Research architecture</p>
+        <h2>A body of work on how AI changes human participation.</h2>
+        
+        <p class="architecture-intro">
+          My work examines how AI systems shape the conditions under which people interpret, learn, decide, create, trust, and remain accountable. The projects, frameworks, and publications on this site move through four connected pathways.
         </p>
-      </article>
-      
-      <article class="card">
-        <h3>What I make</h3>
-        <p>
-          I create frameworks, prototypes, fieldwork methods, research artifacts, and narratives that help people translate broad concerns into concrete choices and shared practice.
-        </p>
-      </article>
-      
-      <article class="card">
-        <h3>What it makes visible</h3>
-        <p>
-          My practice makes visible what is being built, who is affected, what responsibility requires, and how decisions can be carried forward with care beyond launch.
-        </p>
-      </article>
+
+        <div class="architecture-map" aria-label="Research architecture pathways">
+          <div class="architecture-pathway">
+            <h3>Relational AI</h3>
+            <p>
+              How AI systems become consequential participants in human judgment, meaning-making, trust, accountability, and institutional life.
+            </p>
+          </div>
+
+          <div class="architecture-pathway">
+            <h3>Learning, judgment, and agency</h3>
+            <p>
+              How AI-mediated learning systems can support reflection, co-regulation, epistemic agency, and learner participation without substituting for human growth.
+            </p>
+          </div>
+
+          <div class="architecture-pathway">
+            <h3>Governance, legitimacy, and responsibility</h3>
+            <p>
+              How organizations and public-interest systems can keep authority, accountability, contestability, and responsibility visible as AI becomes embedded in decision-making.
+            </p>
+          </div>
+
+          <div class="architecture-pathway">
+            <h3>AI-era readiness and public value</h3>
+            <p>
+              How people, institutions, and communities can build the literacy, foresight, and participation capacities needed to navigate AI-mediated life with dignity and purpose.
+            </p>
+          </div>
+        </div>
+
+        <div class="architecture-actions">
+          <a class="button primary" href="relational-ai.html">Explore Relational AI</a>
+          <a class="button" href="ai-era-readiness.html">Explore AI-Era Readiness</a>
+          <a class="button" href="#work">View selected work</a>
+        </div>
+      </div>
     </div>
   </section>
   <section class="section" id="work">
@@ -1402,7 +1747,7 @@ button:focus-visible {
         <article
           class="card project-card"
           data-project="vireo"
-          data-filters="featured relational prototypes"
+          data-filters="relational prototypes"
         >
           <figure class="artifact-preview" role="img" aria-label="Vireo preview: a reflective thought partner for voice, plurality, values reflection, and transparent human–AI co-creation.">
             <div class="artifact-badge" aria-hidden="true">Vireo</div>
@@ -1994,228 +2339,108 @@ button:focus-visible {
         </article>
       </div>
 
-      <article class="card research-card research-cta">
+      <div class="research-pathway-panel">
         <div>
-          <p class="research-meta">Full writing record</p>
-          <h3>Writing &amp; Publications</h3>
+          <p class="research-meta">Full scholarly record</p>
+          <h3>Explore the complete writing and research record.</h3>
           <p>
-            Explore the dedicated page for peer-reviewed publications, preprints, framework papers, manuscripts in review, and public-facing scholarship.
-          </p>
-        </div>
-        <div class="research-actions">
-          <a class="button primary" href="writing-publications.html">View all writing &amp; publications</a>
-        </div>
-      </article>
-
-      <article class="card research-card research-cta">
-        <div>
-          <p class="research-meta">Programmatic spine · AI-era readiness</p>
-          <h3>Explore AI-Era Readiness as the public capacity frame.</h3>
-          <p>
-            A dedicated page connecting AI literacy, learner agency, youth futures,
-            institutional readiness, and responsible participation into a broader
-            readiness agenda for AI-mediated life.
-          </p>
-        </div>
-        <div class="research-actions">
-          <a class="button primary" href="ai-era-readiness.html">Explore AI-Era Readiness</a>
-        </div>
-      </article>
-
-      <div class="research-subsection">
-        <div class="research-subsection-head">
-          <div>
-            <div class="eyebrow">Research Architecture</div>
-            <h2>Explore the deeper research by theme.</h2>
-          </div>
-          <p>
-            Use the themes below to navigate the conceptual architecture behind the public work, submitted manuscripts, and developing frameworks. Formal publication status and citation links are organized on the Writing &amp; Publications page.
+            The homepage highlights selected public work. For the full record of publications, preprints, manuscripts, proceedings, reports, and public scholarship, visit the dedicated Writing &amp; Publications page.
           </p>
         </div>
 
-        <div class="filters manuscript-filters" aria-label="Filter research themes">
-          <button class="filter active" type="button" data-manuscript-filter="all" aria-pressed="true">All</button>
-          <button class="filter" type="button" data-manuscript-filter="relational-ai" aria-pressed="false">Relational AI</button>
-          <button class="filter" type="button" data-manuscript-filter="learning-agency" aria-pressed="false">Learning & Agency</button>
-          <button class="filter" type="button" data-manuscript-filter="guardrails" aria-pressed="false">Guardrails & Evaluation</button>
-          <button class="filter" type="button" data-manuscript-filter="governance" aria-pressed="false">Governance & Legitimacy</button>
-          <button class="filter" type="button" data-manuscript-filter="knowledge-work" aria-pressed="false">Knowledge Work</button>
-        </div>
-
-        <div class="manuscript-list" data-manuscript-grid>
-          <article class="card manuscript-item manuscript-card" data-manuscript="legitimacy-under-algorithmic-authority" data-manuscript-filters="relational-ai governance">
-            <div>
-              <h3>Legitimacy Under Algorithmic Authority: A Relational Diagnostic of Leadership Education in AI-Mediated Contexts</h3>
-              <p class="manuscript-meta">
-                <strong>Status:</strong> In review<br>
-                <strong>Focus:</strong> Algorithmic authority, leadership education, relational diagnostics, legitimacy, and institutional trust<br>
-                <span class="title-note">Revised manuscript under review</span>
-              </p>
-            </div>
-            <span class="manuscript-status">In review</span>
-          </article>
-
-          <article class="card manuscript-item manuscript-card" data-manuscript="operationalizing-responsibility" data-manuscript-filters="governance guardrails">
-            <div>
-              <h3>Operationalizing Responsibility Under Infrastructural AI: A Relational Diagnostic Framework</h3>
-              <p class="manuscript-meta">
-                <strong>Status:</strong> Manuscript in development<br>
-                <strong>Focus:</strong> Infrastructural AI, responsibility, relational diagnostics, institutional conditions, and accountable implementation<br>
-                <span class="title-note">Framework manuscript in development</span>
-              </p>
-            </div>
-            <span class="manuscript-status">Manuscript in development</span>
-          </article>
-
-          <article class="card manuscript-item manuscript-card" data-manuscript="framing-authority" data-manuscript-filters="governance guardrails knowledge-work">
-            <div>
-              <h3>Framing Authority: Designing Human Oversight Before the Output</h3>
-              <p class="manuscript-meta">
-                <strong>Status:</strong> Revised submission under consideration<br>
-                <strong>Venue:</strong> ACM Interactions Feature article<br>
-                <strong>Focus:</strong> Human oversight, authority, generative AI, agentic AI, and responsible design before the output<br>
-                <span class="title-note">Second-round revision submitted</span>
-              </p>
-            </div>
-            <span class="manuscript-status">Under consideration</span>
-          </article>
-
-          <article class="card manuscript-item manuscript-card" data-manuscript="foresight-to-practice" data-manuscript-filters="learning-agency governance">
-            <div>
-              <h3>The Foresight-to-Practice Gap: Adaptive Coherence for Anticipatory Governance in Higher Education</h3>
-              <p class="manuscript-meta">
-                <strong>Status:</strong> Preparing final submission<br>
-                <strong>Target venue:</strong> Policy Futures in Education<br>
-                <strong>Focus:</strong> Strategic foresight, anticipatory governance, adaptive coherence, higher education, institutional policy translation, and AI-era change<br>
-                <span class="title-note">Redirected manuscript nearing submission</span>
-              </p>
-            </div>
-            <span class="manuscript-status">Preparing submission</span>
-          </article>
-
-          <article class="card manuscript-item manuscript-card" data-manuscript="agentic-co-creation" data-manuscript-filters="relational-ai governance knowledge-work">
-            <div>
-              <h3>Participation structure and interpretive authority: A framework for agentic human–AI co-creation</h3>
-              <p class="manuscript-meta">
-                <strong>Status:</strong> Submitted for review<br>
-                <strong>Focus:</strong> Participation structure, interpretive authority, accountability, and agentic human–AI co-creation<br>
-                <span class="title-note">Full manuscript submitted for review</span>
-              </p>
-            </div>
-            <span class="manuscript-status">Submitted for review</span>
-          </article>
-
-          <article class="card manuscript-item manuscript-card" data-manuscript="trust-legitimate-participation" data-manuscript-filters="relational-ai governance">
-            <div>
-              <h3>Trust in AI as Legitimate Participation: Role Drift and Interpretive Delegation in Human–AI Interaction</h3>
-              <p class="manuscript-meta">
-                <strong>Status:</strong> Submitted for review<br>
-                <strong>Focus:</strong> Trust, legitimate participation, role drift, interpretive delegation, and human–AI interaction<br>
-                <span class="title-note">Special issue manuscript submitted for review</span>
-              </p>
-            </div>
-            <span class="manuscript-status">Submitted for review</span>
-          </article>
-
-          <article class="card manuscript-item manuscript-card" data-manuscript="authority-migration" data-manuscript-filters="knowledge-work governance">
-            <div>
-              <h3>Authority Migration and Algorithmic Legitimacy in AI-Integrated Knowledge Work</h3>
-              <p class="manuscript-meta">
-                <strong>Status:</strong> Full manuscript submitted<br>
-                <strong>Focus:</strong> Authority migration, algorithmic legitimacy, knowledge work, and institutional accountability<br>
-                <span class="title-note">Full manuscript submitted for review</span>
-              </p>
-            </div>
-            <span class="manuscript-status">Submitted for review</span>
-          </article>
-
-          <article class="card manuscript-item manuscript-card" data-manuscript="rehearsing-technological-futures" data-manuscript-filters="governance guardrails knowledge-work">
-            <div>
-              <h3>Rehearsing Technological Futures: LLM-Based Governance Simulation as a Method for Responsible Foresight</h3>
-              <p class="manuscript-meta">
-                <strong>Status:</strong> Manuscript in progress<br>
-                <strong>Focus:</strong> LLM-based governance simulation, responsible foresight, technology management, authority migration, stakeholder visibility, and governance readiness<br>
-                <span class="title-note">Targeting <em>Technological Forecasting and Social Change</em> special issue on LLMs as methodological innovators</span>
-              </p>
-            </div>
-            <span class="manuscript-status">Manuscript in progress</span>
-          </article>
-          
-          <article class="card manuscript-item manuscript-card" data-manuscript="responsibility-architecture" data-manuscript-filters="learning-agency governance">
-            <div>
-              <h3>Responsibility Architecture in AI-Mediated Education: Rethinking Ethics and the Conditions of Responsible Action</h3>
-              <p class="manuscript-meta">
-                <strong>Status:</strong> Awaiting abstract decision<br>
-                <strong>Focus:</strong> Responsibility architecture, AI-mediated education, ethics, and conditions for responsible action<br>
-                <span class="title-note">Abstract submitted</span>
-              </p>
-            </div>
-            <span class="manuscript-status">Awaiting abstract decision</span>
-          </article>
+        <div class="research-pathway-actions">
+          <a class="button primary" href="writing-publications.html">View Writing &amp; Publications</a>
+          <a class="button" href="relational-ai.html">Explore Relational AI</a>
+          <a class="button" href="ai-era-readiness.html">Explore AI-Era Readiness</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="engagements">
+  <section class="section engagements-section" id="engagements">
     <div class="container">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Engagements</div>
+      <div class="engagement-panel">
+        <div class="engagement-copy">
+          <p class="eyebrow">Engagements</p>
           <h2>Teaching, facilitation, and public engagement.</h2>
-        </div>
-        <p>Selected ways this work is shared through learning design, facilitated dialogue, writing, and public-interest collaboration.</p>
-      </div>
-  
-      <div class="grid">
-        <article class="card">
-          <h3>Teaching & learning design</h3>
-          <p>Learning experiences that help students, educators, and organizations examine AI, agency, ethics, and responsible innovation in context.</p>
-        </article>
-  
-        <article class="card">
-          <h3>Talks &amp; facilitated dialogue</h3>
           <p>
-            Conversations, workshops, and convenings that help groups surface tradeoffs, clarify responsibilities, and imagine more trustworthy futures together.
+            I share this work through learning design, facilitated dialogue, public scholarship, and collaborative sessions that help groups surface tradeoffs, clarify responsibilities, and imagine more trustworthy AI futures together.
           </p>
-          <div class="hero-actions">
-            <a class="button" href="speaking-workshops.html">Explore talks &amp; workshops →</a>
+        </div>
+
+        <div class="engagement-routes" aria-label="Engagement pathways">
+          <div class="engagement-route">
+            <h3>Learning design</h3>
+            <p>
+              Courses, workshops, and learning experiences on AI, agency, ethics, responsible innovation, and future-readiness.
+            </p>
           </div>
-        </article>
-  
-        <article class="card">
-          <h3>Public scholarship & service</h3>
-          <p>Writing, review, governance, and public-interest contributions that strengthen accountability around emerging technology.</p>
-        </article>
+
+          <div class="engagement-route">
+            <h3>Talks and facilitated dialogue</h3>
+            <p>
+              Sessions for surfacing tensions, clarifying responsibilities, and helping teams reason together before decisions harden.
+            </p>
+          </div>
+
+          <div class="engagement-route">
+            <h3>Public scholarship and service</h3>
+            <p>
+              Writing, review, governance, and public-interest contributions that strengthen accountability around emerging technology.
+            </p>
+          </div>
+        </div>
+
+        <div class="engagement-actions">
+          <a class="button primary" href="speaking-workshops.html">Explore talks &amp; workshops</a>
+          <a class="button" href="#contact">Start a conversation</a>
+        </div>
       </div>
     </div>
   </section>
   
-  <section class="section" id="principles">
+  <section class="section principles-section" id="principles">
     <div class="container">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Principles</div>
+      <div class="principles-panel">
+        <div class="principles-intro">
+          <p class="eyebrow">Principles</p>
           <h2>Principles for work that earns trust.</h2>
+          <p>
+            These commitments guide how I approach technology, strategy, and collaboration: by grounding decisions in context, making tensions discussable, and treating impact as something to steward over time.
+          </p>
         </div>
-        <p>These commitments guide how I approach technology, strategy, and collaboration: by grounding decisions in context, making tensions discussable, and treating impact as something to steward over time.</p>
-      </div>
-  
-      <div class="grid">
-        <article class="card">
-          <h3>Begin with relationship and context</h3>
-          <p>I start by understanding the people, communities, institutions, and conditions around the work, so strategy responds to context rather than abstract use cases.</p>
-        </article>
-        
-        <article class="card">
-          <h3>Surface tradeoffs early</h3>
-          <p>I name assumptions, risks, tensions, and open questions before decisions harden, making room for clearer judgment and more accountable choices.</p>
-        </article>
-        
-        <article class="card">
-          <h3>Design for stewardship</h3>
-          <p>I treat launch as the beginning of responsibility, not the end of design, and plan for care, governance, adaptation, and long-term accountability.</p>
-        </article>
+
+        <div class="principles-list" aria-label="Working principles">
+          <div class="principle-item">
+            <span class="principle-number">01</span>
+            <div>
+              <h3>Begin with relationship and context.</h3>
+              <p>
+                I start by understanding the people, communities, institutions, and conditions around the work, so strategy responds to lived context rather than abstract use cases.
+              </p>
+            </div>
+          </div>
+
+          <div class="principle-item">
+            <span class="principle-number">02</span>
+            <div>
+              <h3>Surface tradeoffs before decisions harden.</h3>
+              <p>
+                I name assumptions, risks, tensions, and open questions early, making room for clearer judgment and more accountable choices while there is still time to change direction.
+              </p>
+            </div>
+          </div>
+
+          <div class="principle-item">
+            <span class="principle-number">03</span>
+            <div>
+              <h3>Design for stewardship beyond launch.</h3>
+              <p>
+                I treat launch as the beginning of responsibility, not the end of design, and plan for care, governance, adaptation, and long-term accountability.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -2260,7 +2485,7 @@ button:focus-visible {
         <div>
           <p class="eyebrow">Guiding thesis</p>
           <p class="quote">
-            “Responsible innovation is not only about what we can build. It is about the relationships, responsibilities, and futures our work makes possible.”
+            “Responsible innovation begins with what we build, but its deeper test is the relationships, responsibilities, and futures our work makes possible.”
           </p>
         </div>
       </article>
@@ -2281,46 +2506,64 @@ button:focus-visible {
     </div>
   </section>
   
-  <section class="section" id="collaborate">
+  <section class="section collaborate-section" id="collaborate">
     <div class="container">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Ways to collaborate</div>
+      <div class="collaborate-panel">
+        <div class="collaborate-copy">
+          <p class="eyebrow">Ways to collaborate</p>
           <h2>Where this work can contribute.</h2>
+          <p>
+            I collaborate on research, design, strategy, and public-interest efforts that need grounded inquiry, relational accountability, and responsible direction before decisions harden.
+          </p>
+          <div class="collaborate-actions">
+            <a class="button primary" href="#contact">Start a conversation</a>
+            <a class="button" href="speaking-workshops.html">Explore workshops</a>
+          </div>
         </div>
-        <p>For research, design, strategy, and public-interest efforts that need grounded inquiry, relational accountability, and responsible direction before decisions harden.</p>
-      </div>
-  
-      <div class="grid">
-        <article class="card">
-          <h3>Responsible AI strategy</h3>
-          <p>Clarifying governance, adoption, implementation, and accountability questions before AI-enabled systems scale.</p>
-        </article>
-  
-        <article class="card">
-          <h3>Research & publication collaboration</h3>
-          <p>Developing manuscripts, frameworks, and research artifacts that clarify emerging questions across AI, learning, governance, ethics, and design practice.</p>
-        </article>
-  
-        <article class="card">
-          <h3>Fieldwork & community inquiry</h3>
-          <p>Learning from affected people, communities, and institutions while there is still room to shape design and implementation choices with care.</p>
-        </article>
-  
-        <article class="card">
-          <h3>Frameworks & strategic artifacts</h3>
-          <p>Turning complex concerns into decision frameworks, methods, narratives, and tools that support accountable action.</p>
-        </article>
-  
-        <article class="card">
-          <h3>Learning design & facilitated dialogue</h3>
-          <p>Designing courses, workshops, and reflective learning experiences that help students, educators, and youth-facing teams build AI literacy, future-readiness, and responsible judgment in context.</p>
-        </article>
-  
-        <article class="card">
-          <h3>Reflective tools for agency</h3>
-          <p>Creating reflective practices and human–AI concepts that support purpose, judgment, learning, and long-term responsibility.</p>
-        </article>
+
+        <div class="collaborate-list" aria-label="Collaboration areas">
+          <div class="collaborate-item">
+            <h3>Responsible AI strategy</h3>
+            <p>
+              Clarifying governance, adoption, implementation, and accountability questions before AI-enabled systems scale.
+            </p>
+          </div>
+
+          <div class="collaborate-item">
+            <h3>Research and publication collaboration</h3>
+            <p>
+              Developing manuscripts, frameworks, and research artifacts across AI, learning, governance, ethics, and design practice.
+            </p>
+          </div>
+
+          <div class="collaborate-item">
+            <h3>Frameworks and strategic artifacts</h3>
+            <p>
+              Turning complex concerns into decision frameworks, methods, narratives, and tools that support accountable action.
+            </p>
+          </div>
+
+          <div class="collaborate-item">
+            <h3>Learning design and facilitated dialogue</h3>
+            <p>
+              Designing courses, workshops, and reflective learning experiences that build AI literacy, future-readiness, and responsible judgment in context.
+            </p>
+          </div>
+
+          <div class="collaborate-item">
+            <h3>Fieldwork and community inquiry</h3>
+            <p>
+              Learning from affected people, communities, and institutions while there is still room to shape design and implementation choices with care.
+            </p>
+          </div>
+
+          <div class="collaborate-item">
+            <h3>Reflective tools for agency</h3>
+            <p>
+              Creating reflective practices and human–AI concepts that support purpose, judgment, learning, and long-term responsibility.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -2399,7 +2642,6 @@ const projectOrders = {
     "riaf",
     "textwalk",
     "ro",
-    "vireo",
     "human-centered-ai-literacy-course",
     "the-work-of-you",
     "ai-governance-simulation-lab"
@@ -2490,98 +2732,6 @@ projectFilters.forEach((button) => {
 
 applyProjectFilter("featured");
 
-const manuscriptFilters = document.querySelectorAll("[data-manuscript-filter]");
-const manuscriptCards = Array.from(document.querySelectorAll("[data-manuscript]"));
-const manuscriptGrid = document.querySelector("[data-manuscript-grid]");
-
-const manuscriptOrders = {
-  all: [
-    "legitimacy-under-algorithmic-authority",
-    "operationalizing-responsibility",
-    "framing-authority",
-    "foresight-to-practice",
-    "agentic-co-creation",
-    "trust-legitimate-participation",
-    "authority-migration",
-    "rehearsing-technological-futures",
-    "responsibility-architecture"
-  ],
-  "relational-ai": [
-    "legitimacy-under-algorithmic-authority",
-    "agentic-co-creation",
-    "trust-legitimate-participation"
-  ],
-  "learning-agency": [
-    "foresight-to-practice",
-    "responsibility-architecture"
-    
-  ],
-  guardrails: [
-    "operationalizing-responsibility",
-    "framing-authority"
-  ],
-  governance: [
-    "legitimacy-under-algorithmic-authority",
-    "operationalizing-responsibility",
-    "framing-authority",
-    "foresight-to-practice",
-    "trust-legitimate-participation",
-    "authority-migration",
-    "rehearsing-technological-futures",
-    "agentic-co-creation",
-    "responsibility-architecture"
-  ],
-  "knowledge-work": [
-    "framing-authority",
-    "authority-migration",
-    "rehearsing-technological-futures",
-    "agentic-co-creation"
-  ]
-};
-
-  function applyManuscriptFilter(selectedFilter) {
-  const orderedManuscriptIds = manuscriptOrders[selectedFilter] || [];
-  const manuscriptsById = new Map(
-    manuscriptCards.map((card) => [card.dataset.manuscript, card])
-  );
-
-  manuscriptCards.forEach((card) => {
-    card.hidden = true;
-  });
-
-  orderedManuscriptIds.forEach((manuscriptId) => {
-    const card = manuscriptsById.get(manuscriptId);
-
-    if (!card) {
-      return;
-    }
-
-    const cardFilters = card.dataset.manuscriptFilters.split(/\s+/);
-    const shouldShow = selectedFilter === "all" || cardFilters.includes(selectedFilter);
-
-    card.hidden = !shouldShow;
-
-    if (shouldShow && manuscriptGrid) {
-      manuscriptGrid.appendChild(card);
-    }
-  });
-}
-
-manuscriptFilters.forEach((button) => {
-  button.addEventListener("click", () => {
-    manuscriptFilters.forEach((item) => {
-      item.classList.remove("active");
-      item.setAttribute("aria-pressed", "false");
-    });
-
-    button.classList.add("active");
-    button.setAttribute("aria-pressed", "true");
-    applyManuscriptFilter(button.dataset.manuscriptFilter);
-  });
-});
-
-applyManuscriptFilter("all");
-
 const revealTargets = Array.from(
   new Set(
     document.querySelectorAll(`
@@ -2590,8 +2740,10 @@ const revealTargets = Array.from(
       main > .section > .container > .content-column,
       main > .section > .container > .grid,
       main > .section > .container > .research-list,
-      main > .section > .container > .research-cta,
-      main > .section > .container > .research-subsection,
+      main > .section > .container > .research-pathway-panel,
+      main > .section > .container > .engagement-panel,
+      main > .section > .container > .principles-panel,
+      main > .section > .container > .collaborate-panel,
       main > .section > .container.about > *,
       main > .section > .container.contact > .contact-panel
     `)
