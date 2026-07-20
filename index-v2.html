@@ -643,6 +643,98 @@ h1 {
   max-width: 760px;
 }
 
+/* Editorial research architecture section */
+
+.architecture-section {
+  padding-top: 52px;
+}
+
+.architecture-panel {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  padding: clamp(30px, 5vw, 56px);
+  border: 1px solid color-mix(in srgb, var(--accent-2) 24%, var(--line));
+  border-radius: 30px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 8%, transparent), transparent 48%),
+    color-mix(in srgb, var(--panel) 96%, transparent);
+  box-shadow: 0 18px 46px rgba(20, 31, 43, .07);
+}
+
+.architecture-kicker {
+  margin: 0 0 14px;
+  color: var(--accent-2);
+  font-size: .78rem;
+  font-weight: 850;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.architecture-panel h2 {
+  max-width: 780px;
+  margin: 0;
+}
+
+.architecture-intro {
+  max-width: 760px;
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: clamp(1.02rem, 1.7vw, 1.18rem);
+  line-height: 1.7;
+}
+
+.architecture-map {
+  display: grid;
+  gap: 0;
+  margin-top: 34px;
+  border-top: 1px solid var(--line);
+}
+
+.architecture-pathway {
+  display: grid;
+  grid-template-columns: minmax(180px, .38fr) minmax(0, 1fr);
+  gap: 28px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.architecture-pathway h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.05rem;
+  letter-spacing: -.02em;
+}
+
+.architecture-pathway p {
+  margin: 0;
+  max-width: 650px;
+  color: var(--muted);
+  line-height: 1.68;
+}
+
+.architecture-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 34px;
+}
+
+@media (max-width: 680px) {
+  .architecture-section {
+    padding-top: 36px;
+  }
+
+  .architecture-panel {
+    padding: 28px;
+    border-radius: 24px;
+  }
+
+  .architecture-pathway {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
 .filters.content-column {
   margin-bottom: 18px;
 }
@@ -1119,6 +1211,7 @@ button:focus-visible {
     </a>
   
     <div class="nav-links">
+      <a href="#architecture">Architecture</a>
       <a href="#work">Work</a>
       <a href="#research">Research</a>
       <a href="writing-publications.html">Writing</a>
@@ -1190,28 +1283,52 @@ button:focus-visible {
     </div>
   </div>
 </section>
-  <section class="section">
-    <div class="container grid">
-      <article class="card">
-        <h3>What I notice</h3>
-        <p>
-          I identify the moments when technical possibility starts becoming social infrastructure — where assumptions, incentives, relationships, and power begin to shape the future.
+  <section class="section architecture-section" id="architecture">
+    <div class="container">
+      <div class="architecture-panel">
+        <p class="architecture-kicker">Research architecture</p>
+        <h2>A body of work about what AI changes in human participation.</h2>
+        
+        <p class="architecture-intro">
+          My work examines how AI systems shape the conditions under which people interpret, learn, decide, create, trust, and remain accountable. The projects, frameworks, and publications on this site are organized around four connected pathways.
         </p>
-      </article>
-      
-      <article class="card">
-        <h3>What I make</h3>
-        <p>
-          I create frameworks, prototypes, fieldwork methods, research artifacts, and narratives that help people translate broad concerns into concrete choices and shared practice.
-        </p>
-      </article>
-      
-      <article class="card">
-        <h3>What it makes visible</h3>
-        <p>
-          My practice makes visible what is being built, who is affected, what responsibility requires, and how decisions can be carried forward with care beyond launch.
-        </p>
-      </article>
+
+        <div class="architecture-map" aria-label="Research architecture pathways">
+          <div class="architecture-pathway">
+            <h3>Relational AI</h3>
+            <p>
+              How AI systems become consequential participants in human judgment, meaning-making, trust, accountability, and institutional life.
+            </p>
+          </div>
+
+          <div class="architecture-pathway">
+            <h3>Learning, judgment, and agency</h3>
+            <p>
+              How AI-mediated learning systems can support reflection, co-regulation, epistemic agency, and learner participation without substituting for human growth.
+            </p>
+          </div>
+
+          <div class="architecture-pathway">
+            <h3>Governance, legitimacy, and responsibility</h3>
+            <p>
+              How organizations and public-interest systems can keep authority, accountability, contestability, and responsibility visible as AI becomes embedded in decision-making.
+            </p>
+          </div>
+
+          <div class="architecture-pathway">
+            <h3>AI-era readiness and public value</h3>
+            <p>
+              How people, institutions, and communities can build the literacy, foresight, and participation capacities needed to navigate AI-mediated life with dignity and purpose.
+            </p>
+          </div>
+        </div>
+
+        <div class="architecture-actions">
+          <a class="button primary" href="relational-ai.html">Explore Relational AI</a>
+          <a class="button" href="ai-era-readiness.html">Explore AI-Era Readiness</a>
+          <a class="button" href="#work">View selected work</a>
+        </div>
+      </div>
     </div>
   </section>
   <section class="section" id="work">
