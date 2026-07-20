@@ -931,6 +931,259 @@ h1 {
   white-space: nowrap;
 }
 
+/* Editorial principles section */
+
+.principles-section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.principles-panel {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(260px, .42fr) minmax(0, 1fr);
+  gap: clamp(34px, 6vw, 72px);
+  align-items: start;
+  padding: clamp(30px, 5vw, 54px);
+  border-top: 1px solid color-mix(in srgb, var(--accent-2) 34%, var(--line));
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-2) 34%, var(--line));
+}
+
+.principles-intro p:not(.eyebrow) {
+  margin: 20px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.principles-list {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.principle-item {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.principle-number {
+  color: var(--accent-2);
+  font-size: .78rem;
+  font-weight: 850;
+  letter-spacing: .12em;
+}
+
+.principle-item h3 {
+  margin: 0 0 8px;
+  font-size: 1.12rem;
+}
+
+.principle-item p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.68;
+}
+
+@media (max-width: 860px) {
+  .principles-panel {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+}
+
+@media (max-width: 680px) {
+  .principles-section {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+
+  .principles-panel {
+    padding: 28px 0;
+  }
+
+  .principle-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+/* Engagement invitation section */
+
+.engagements-section {
+  padding-top: 68px;
+  padding-bottom: 68px;
+}
+
+.engagement-panel {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  padding: clamp(30px, 5vw, 54px);
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line));
+  border-radius: 30px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 8%, transparent), transparent 52%),
+    color-mix(in srgb, var(--panel) 96%, transparent);
+  box-shadow: 0 16px 42px rgba(31, 41, 51, .065);
+}
+
+.engagement-copy {
+  max-width: 760px;
+}
+
+.engagement-copy p:not(.eyebrow) {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: clamp(1.02rem, 1.5vw, 1.14rem);
+  line-height: 1.72;
+}
+
+.engagement-routes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 34px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.engagement-route {
+  padding: 22px 22px 22px 0;
+}
+
+.engagement-route + .engagement-route {
+  padding-left: 22px;
+  border-left: 1px solid var(--line);
+}
+
+.engagement-route h3 {
+  margin: 0 0 8px;
+  font-size: 1.04rem;
+}
+
+.engagement-route p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .96rem;
+  line-height: 1.62;
+}
+
+.engagement-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+@media (max-width: 860px) {
+  .engagement-routes {
+    grid-template-columns: 1fr;
+  }
+
+  .engagement-route {
+    padding: 20px 0;
+  }
+
+  .engagement-route + .engagement-route {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 680px) {
+  .engagements-section {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+
+  .engagement-panel {
+    padding: 28px;
+    border-radius: 24px;
+  }
+}
+
+/* Collaboration fit section */
+
+.collaborate-section {
+  padding-top: 68px;
+  padding-bottom: 68px;
+}
+
+.collaborate-panel {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(260px, .42fr) minmax(0, 1fr);
+  gap: clamp(34px, 6vw, 72px);
+  align-items: start;
+  padding: clamp(30px, 5vw, 54px);
+  border: 1px solid color-mix(in srgb, var(--accent-2) 24%, var(--line));
+  border-radius: 30px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent-2) 7%, transparent), transparent 56%),
+    color-mix(in srgb, var(--panel) 96%, transparent);
+  box-shadow: 0 14px 38px rgba(31, 41, 51, .055);
+}
+
+.collaborate-copy p:not(.eyebrow) {
+  margin: 20px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.collaborate-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.collaborate-list {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.collaborate-item {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.collaborate-item h3 {
+  margin: 0 0 7px;
+  font-size: 1.04rem;
+}
+
+.collaborate-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .96rem;
+  line-height: 1.62;
+}
+
+@media (max-width: 860px) {
+  .collaborate-panel {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+}
+
+@media (max-width: 680px) {
+  .collaborate-section {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+
+  .collaborate-panel {
+    padding: 28px;
+    border-radius: 24px;
+  }
+}
+
 /* Process cards currently feel a bit stretched horizontally */
 .step {
   align-items: start;
@@ -1084,10 +1337,6 @@ button:focus-visible {
   .grid,
   #projectGrid {
     grid-template-columns: 1fr;
-  }
-
-  #engagements {
-    padding-bottom: 52px;
   }
 
   #principles {
@@ -2101,65 +2350,90 @@ button:focus-visible {
     </div>
   </section>
 
-  <section class="section" id="engagements">
+  <section class="section engagements-section" id="engagements">
     <div class="container">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Engagements</div>
+      <div class="engagement-panel">
+        <div class="engagement-copy">
+          <p class="eyebrow">Engagements</p>
           <h2>Teaching, facilitation, and public engagement.</h2>
-        </div>
-        <p>Selected ways this work is shared through learning design, facilitated dialogue, writing, and public-interest collaboration.</p>
-      </div>
-  
-      <div class="grid">
-        <article class="card">
-          <h3>Teaching & learning design</h3>
-          <p>Learning experiences that help students, educators, and organizations examine AI, agency, ethics, and responsible innovation in context.</p>
-        </article>
-  
-        <article class="card">
-          <h3>Talks &amp; facilitated dialogue</h3>
           <p>
-            Conversations, workshops, and convenings that help groups surface tradeoffs, clarify responsibilities, and imagine more trustworthy futures together.
+            I share this work through learning design, facilitated dialogue, public scholarship, and collaborative sessions that help groups surface tradeoffs, clarify responsibilities, and imagine more trustworthy AI futures together.
           </p>
-          <div class="hero-actions">
-            <a class="button" href="speaking-workshops.html">Explore talks &amp; workshops →</a>
+        </div>
+
+        <div class="engagement-routes" aria-label="Engagement pathways">
+          <div class="engagement-route">
+            <h3>Learning design</h3>
+            <p>
+              Courses, workshops, and learning experiences on AI, agency, ethics, responsible innovation, and future-readiness.
+            </p>
           </div>
-        </article>
-  
-        <article class="card">
-          <h3>Public scholarship & service</h3>
-          <p>Writing, review, governance, and public-interest contributions that strengthen accountability around emerging technology.</p>
-        </article>
+
+          <div class="engagement-route">
+            <h3>Talks and facilitated dialogue</h3>
+            <p>
+              Sessions for surfacing tensions, clarifying responsibilities, and helping teams reason together before decisions harden.
+            </p>
+          </div>
+
+          <div class="engagement-route">
+            <h3>Public scholarship and service</h3>
+            <p>
+              Writing, review, governance, and public-interest contributions that strengthen accountability around emerging technology.
+            </p>
+          </div>
+        </div>
+
+        <div class="engagement-actions">
+          <a class="button primary" href="speaking-workshops.html">Explore talks &amp; workshops</a>
+          <a class="button" href="#contact">Start a conversation</a>
+        </div>
       </div>
     </div>
   </section>
   
-  <section class="section" id="principles">
+  <section class="section principles-section" id="principles">
     <div class="container">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Principles</div>
+      <div class="principles-panel">
+        <div class="principles-intro">
+          <p class="eyebrow">Principles</p>
           <h2>Principles for work that earns trust.</h2>
+          <p>
+            These commitments guide how I approach technology, strategy, and collaboration: by grounding decisions in context, making tensions discussable, and treating impact as something to steward over time.
+          </p>
         </div>
-        <p>These commitments guide how I approach technology, strategy, and collaboration: by grounding decisions in context, making tensions discussable, and treating impact as something to steward over time.</p>
-      </div>
-  
-      <div class="grid">
-        <article class="card">
-          <h3>Begin with relationship and context</h3>
-          <p>I start by understanding the people, communities, institutions, and conditions around the work, so strategy responds to context rather than abstract use cases.</p>
-        </article>
-        
-        <article class="card">
-          <h3>Surface tradeoffs early</h3>
-          <p>I name assumptions, risks, tensions, and open questions before decisions harden, making room for clearer judgment and more accountable choices.</p>
-        </article>
-        
-        <article class="card">
-          <h3>Design for stewardship</h3>
-          <p>I treat launch as the beginning of responsibility, not the end of design, and plan for care, governance, adaptation, and long-term accountability.</p>
-        </article>
+
+        <div class="principles-list" aria-label="Working principles">
+          <div class="principle-item">
+            <span class="principle-number">01</span>
+            <div>
+              <h3>Begin with relationship and context.</h3>
+              <p>
+                I start by understanding the people, communities, institutions, and conditions around the work, so strategy responds to lived context rather than abstract use cases.
+              </p>
+            </div>
+          </div>
+
+          <div class="principle-item">
+            <span class="principle-number">02</span>
+            <div>
+              <h3>Surface tradeoffs before decisions harden.</h3>
+              <p>
+                I name assumptions, risks, tensions, and open questions early, making room for clearer judgment and more accountable choices while there is still time to change direction.
+              </p>
+            </div>
+          </div>
+
+          <div class="principle-item">
+            <span class="principle-number">03</span>
+            <div>
+              <h3>Design for stewardship beyond launch.</h3>
+              <p>
+                I treat launch as the beginning of responsibility, not the end of design, and plan for care, governance, adaptation, and long-term accountability.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -2225,46 +2499,64 @@ button:focus-visible {
     </div>
   </section>
   
-  <section class="section" id="collaborate">
+  <section class="section collaborate-section" id="collaborate">
     <div class="container">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Ways to collaborate</div>
+      <div class="collaborate-panel">
+        <div class="collaborate-copy">
+          <p class="eyebrow">Ways to collaborate</p>
           <h2>Where this work can contribute.</h2>
+          <p>
+            I collaborate on research, design, strategy, and public-interest efforts that need grounded inquiry, relational accountability, and responsible direction before decisions harden.
+          </p>
+          <div class="collaborate-actions">
+            <a class="button primary" href="#contact">Start a conversation</a>
+            <a class="button" href="speaking-workshops.html">Explore workshops</a>
+          </div>
         </div>
-        <p>For research, design, strategy, and public-interest efforts that need grounded inquiry, relational accountability, and responsible direction before decisions harden.</p>
-      </div>
-  
-      <div class="grid">
-        <article class="card">
-          <h3>Responsible AI strategy</h3>
-          <p>Clarifying governance, adoption, implementation, and accountability questions before AI-enabled systems scale.</p>
-        </article>
-  
-        <article class="card">
-          <h3>Research & publication collaboration</h3>
-          <p>Developing manuscripts, frameworks, and research artifacts that clarify emerging questions across AI, learning, governance, ethics, and design practice.</p>
-        </article>
-  
-        <article class="card">
-          <h3>Fieldwork & community inquiry</h3>
-          <p>Learning from affected people, communities, and institutions while there is still room to shape design and implementation choices with care.</p>
-        </article>
-  
-        <article class="card">
-          <h3>Frameworks & strategic artifacts</h3>
-          <p>Turning complex concerns into decision frameworks, methods, narratives, and tools that support accountable action.</p>
-        </article>
-  
-        <article class="card">
-          <h3>Learning design & facilitated dialogue</h3>
-          <p>Designing courses, workshops, and reflective learning experiences that help students, educators, and youth-facing teams build AI literacy, future-readiness, and responsible judgment in context.</p>
-        </article>
-  
-        <article class="card">
-          <h3>Reflective tools for agency</h3>
-          <p>Creating reflective practices and human–AI concepts that support purpose, judgment, learning, and long-term responsibility.</p>
-        </article>
+
+        <div class="collaborate-list" aria-label="Collaboration areas">
+          <div class="collaborate-item">
+            <h3>Responsible AI strategy</h3>
+            <p>
+              Clarifying governance, adoption, implementation, and accountability questions before AI-enabled systems scale.
+            </p>
+          </div>
+
+          <div class="collaborate-item">
+            <h3>Research and publication collaboration</h3>
+            <p>
+              Developing manuscripts, frameworks, and research artifacts across AI, learning, governance, ethics, and design practice.
+            </p>
+          </div>
+
+          <div class="collaborate-item">
+            <h3>Frameworks and strategic artifacts</h3>
+            <p>
+              Turning complex concerns into decision frameworks, methods, narratives, and tools that support accountable action.
+            </p>
+          </div>
+
+          <div class="collaborate-item">
+            <h3>Learning design and facilitated dialogue</h3>
+            <p>
+              Designing courses, workshops, and reflective learning experiences that build AI literacy, future-readiness, and responsible judgment in context.
+            </p>
+          </div>
+
+          <div class="collaborate-item">
+            <h3>Fieldwork and community inquiry</h3>
+            <p>
+              Learning from affected people, communities, and institutions while there is still room to shape design and implementation choices with care.
+            </p>
+          </div>
+
+          <div class="collaborate-item">
+            <h3>Reflective tools for agency</h3>
+            <p>
+              Creating reflective practices and human–AI concepts that support purpose, judgment, learning, and long-term responsibility.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -2443,6 +2735,9 @@ const revealTargets = Array.from(
       main > .section > .container > .grid,
       main > .section > .container > .research-list,
       main > .section > .container > .research-pathway-panel,
+      main > .section > .container > .engagement-panel,
+      main > .section > .container > .principles-panel,
+      main > .section > .container > .collaborate-panel,
       main > .section > .container.about > *,
       main > .section > .container.contact > .contact-panel
     `)
