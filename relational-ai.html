@@ -513,6 +513,53 @@ h1 {
   line-height: 1.6;
 }
 
+.orientation-panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 1px solid color-mix(in srgb, var(--accent-2) 18%, var(--line));
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--accent) 5%, transparent),
+      transparent 58%
+    ),
+    color-mix(in srgb, var(--panel) 96%, transparent);
+  box-shadow: 0 12px 34px rgba(31, 41, 51, .05);
+  overflow: hidden;
+}
+
+.orientation-item {
+  padding: 24px 26px;
+  border-right: 1px solid var(--line);
+}
+
+.orientation-item:last-child {
+  border-right: 0;
+}
+
+.orientation-label {
+  margin: 0 0 10px;
+  color: var(--accent-2);
+  font-size: .76rem;
+  font-weight: 850;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.orientation-item h3 {
+  margin: 0 0 10px;
+  font-size: 1.08rem;
+  line-height: 1.2;
+}
+
+.orientation-item p:not(.orientation-label) {
+  margin: 0;
+  color: var(--muted);
+  font-size: .98rem;
+  line-height: 1.62;
+}
+
 .note-card {
   width: min(100%, 920px);
   margin: 0 auto 34px;
@@ -819,6 +866,19 @@ button:focus-visible {
   .application-item:last-child {
     border-bottom: 0;
   }
+
+  .orientation-panel {
+    grid-template-columns: 1fr;
+  }
+  
+  .orientation-item {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  
+  .orientation-item:last-child {
+    border-bottom: 0;
+  }
 }
 </style>
 </head>
@@ -899,27 +959,32 @@ button:focus-visible {
   </section>
   
   <section class="section" id="program">
-    <div class="container grid">
-      <article class="card">
-        <h3>What this studies</h3>
-        <p>
-          This research program examines the roles AI systems take on across human activity: tutor, assistant, collaborator, agent, simulator, evaluator, or institutional support layer. The focus is not only what these systems produce, but how their participation shapes judgment, agency, and responsibility.
-        </p>
-      </article>
-      
-      <article class="card">
-        <h3>What this challenges</h3>
-        <p>
-          Relational AI is not limited to companion bots, emotional attachment, or systems that imitate intimacy. AI also becomes relational when it structures attention, frames choices, redistributes authority, or changes how people understand themselves, others, and their obligations.
-        </p>
-      </article>
-      
-      <article class="card">
-        <h3>What this protects</h3>
-        <p>
-          The aim is to keep human agency, interpretive integrity, role-bounded participation, contestability, and traceable accountability intact as AI systems enter learning, knowledge work, governance, creativity, and decision-making environments.
-        </p>
-      </article>
+    <div class="container">
+      <div class="orientation-panel content-column" aria-label="Relational AI program orientation">
+        <div class="orientation-item">
+          <p class="orientation-label">Studies</p>
+          <h3>The roles AI systems take on</h3>
+          <p>
+            This research program examines AI as tutor, assistant, collaborator, agent, simulator, evaluator, or institutional support layer, with attention to how those roles shape judgment, agency, and responsibility.
+          </p>
+        </div>
+  
+        <div class="orientation-item">
+          <p class="orientation-label">Challenges</p>
+          <h3>A narrow view of relational AI</h3>
+          <p>
+            Relational AI is not limited to companion bots, emotional attachment, or systems that imitate intimacy. It also appears when AI structures attention, frames choices, redistributes authority, or changes how people understand their obligations.
+          </p>
+        </div>
+  
+        <div class="orientation-item">
+          <p class="orientation-label">Protects</p>
+          <h3>The conditions for accountable agency</h3>
+          <p>
+            The aim is to keep human agency, interpretive integrity, role-bounded participation, contestability, and traceable accountability intact as AI enters learning, work, governance, creativity, and institutional life.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
   
