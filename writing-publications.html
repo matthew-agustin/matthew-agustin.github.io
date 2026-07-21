@@ -927,7 +927,10 @@ h1 {
 .profile-link-list a {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: 12px;
+  grid-template-areas:
+    "title arrow"
+    "description arrow";
+  gap: 5px 14px;
   align-items: center;
   padding: 14px 16px;
   border: 1px solid var(--line);
@@ -941,6 +944,7 @@ h1 {
 
 .profile-link-list a::after {
   content: "↗";
+  grid-area: arrow;
   color: var(--accent-2);
   font-weight: 850;
 }
@@ -952,6 +956,7 @@ h1 {
 }
 
 .profile-link-list span {
+  grid-area: title;
   display: block;
   color: var(--text);
   font-weight: 850;
@@ -960,8 +965,8 @@ h1 {
 }
 
 .profile-link-list small {
+  grid-area: description;
   display: block;
-  margin-top: 5px;
   color: var(--muted);
   font-size: .86rem;
   line-height: 1.45;
@@ -1204,10 +1209,6 @@ button:focus-visible {
   .profile-record {
     grid-template-columns: 1fr;
     padding: 22px;
-  }
-  
-  .profile-link-list a {
-    grid-template-columns: minmax(0, 1fr) auto;
   }
 
   .footer-row {
