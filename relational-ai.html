@@ -621,7 +621,7 @@ h1 {
 }
 
 .architecture-thesis {
-  padding: 30px 32px;
+  padding: 34px 36px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -660,6 +660,57 @@ h1 {
 
 .architecture-item:last-child {
   border-right: 0;
+}
+
+.commitment-matrix {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--line));
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--accent) 5%, transparent),
+      transparent 58%
+    ),
+    color-mix(in srgb, var(--panel) 96%, transparent);
+  box-shadow: 0 12px 34px rgba(31, 41, 51, .05);
+  overflow: hidden;
+}
+
+.commitment-item {
+  padding: 24px 26px;
+  border-bottom: 1px solid var(--line);
+}
+
+.commitment-item:nth-child(odd) {
+  border-right: 1px solid var(--line);
+}
+
+.commitment-item:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.commitment-label {
+  margin: 0 0 8px;
+  color: var(--accent-2);
+  font-size: .74rem;
+  font-weight: 850;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.commitment-item h3 {
+  margin: 0 0 8px;
+  font-size: 1.08rem;
+  line-height: 1.2;
+}
+
+.commitment-item p:not(.commitment-label) {
+  margin: 0;
+  color: var(--muted);
+  font-size: .98rem;
+  line-height: 1.62;
 }
 
 .note-card {
@@ -999,6 +1050,22 @@ button:focus-visible {
   .architecture-item:last-child {
     border-bottom: 0;
   }
+
+  .commitment-matrix {
+    grid-template-columns: 1fr;
+  }
+  
+  .commitment-item:nth-child(odd) {
+    border-right: 0;
+  }
+  
+  .commitment-item:nth-last-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+  
+  .commitment-item:last-child {
+    border-bottom: 0;
+  }
 }
 </style>
 </head>
@@ -1211,43 +1278,49 @@ button:focus-visible {
         </p>
       </div>
   
-      <div class="grid">
-        <article class="card">
+      <div class="commitment-matrix content-column" aria-label="Core relational integrity commitments">
+        <article class="commitment-item">
+          <p class="commitment-label">Agency</p>
           <h3>Human agency</h3>
           <p>
             AI systems should expand a person’s capacity to think, choose, question, and act, not quietly narrow their sense of what is possible, appropriate, or worth considering.
           </p>
         </article>
-        
-        <article class="card">
+      
+        <article class="commitment-item">
+          <p class="commitment-label">Interpretation</p>
           <h3>Interpretive integrity</h3>
           <p>
             Systems should make their framing visible enough for users to inspect, revise, or reject it. Interpretation should remain a shared and contestable process, not something silently absorbed by the system.
           </p>
         </article>
-        
-        <article class="card">
+      
+        <article class="commitment-item">
+          <p class="commitment-label">Role boundaries</p>
           <h3>Role-bounded participation</h3>
           <p>
             AI should remain clear about what role it is playing: tutor, assistant, co-reader, collaborator, advisor, simulator, or support layer. When that role changes, the shift should be visible.
           </p>
         </article>
-  
-        <article class="card">
+      
+        <article class="commitment-item">
+          <p class="commitment-label">Contestability</p>
           <h3>Contestability</h3>
           <p>
             People need meaningful ways to question, redirect, override, or exit AI-shaped pathways. Relational integrity depends on preserving room for disagreement and course correction.
           </p>
         </article>
-        
-        <article class="card">
+      
+        <article class="commitment-item">
+          <p class="commitment-label">Accountability</p>
           <h3>Traceable accountability</h3>
           <p>
             When AI contributes to decisions, recommendations, interpretations, or institutional actions, responsibility should not disappear into the system or scatter across workflows, models, and organizations. Human and organizational accountability must remain traceable.
           </p>
         </article>
-        
-        <article class="card">
+      
+        <article class="commitment-item">
+          <p class="commitment-label">Stewardship</p>
           <h3>Relational stewardship</h3>
           <p>
             AI design should account for the relationships it reshapes: between learners and teachers, workers and institutions, citizens and systems, creators and audiences, people and their own judgment.
