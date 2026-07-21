@@ -606,6 +606,62 @@ h1 {
   line-height: 1.62;
 }
 
+.architecture-panel {
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--line));
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--accent) 7%, transparent),
+      transparent 56%
+    ),
+    color-mix(in srgb, var(--panel) 97%, transparent);
+  box-shadow: 0 16px 42px rgba(31, 41, 51, .065);
+  overflow: hidden;
+}
+
+.architecture-thesis {
+  padding: 30px 32px;
+  border-bottom: 1px solid var(--line);
+}
+
+.architecture-label,
+.architecture-number {
+  margin: 0 0 10px;
+  color: var(--accent-2);
+  font-size: .76rem;
+  font-weight: 850;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.architecture-thesis h3,
+.architecture-item h3 {
+  margin: 0 0 10px;
+}
+
+.architecture-thesis p:not(.architecture-label),
+.architecture-item p:not(.architecture-number) {
+  margin: 0;
+  color: var(--muted);
+  font-size: .98rem;
+  line-height: 1.62;
+}
+
+.architecture-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.architecture-item {
+  padding: 26px 28px;
+  border-right: 1px solid var(--line);
+}
+
+.architecture-item:last-child {
+  border-right: 0;
+}
+
 .note-card {
   width: min(100%, 920px);
   margin: 0 auto 34px;
@@ -930,6 +986,19 @@ button:focus-visible {
     grid-template-columns: 1fr;
     gap: 8px;
   }
+
+  .architecture-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .architecture-item {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  
+  .architecture-item:last-child {
+    border-bottom: 0;
+  }
 }
 </style>
 </head>
@@ -1092,31 +1161,40 @@ button:focus-visible {
         </p>
       </div>
   
-      <p class="work-bridge content-column">
-        The central concern is authority migration: the subtle movement of framing, judgment, authorship, responsibility, or legitimacy from people and institutions into AI-mediated systems. Relational AI, in this sense, is not about treating AI as a person. It is about understanding when AI begins to participate in the relationships, roles, and decisions that shape human life.
-      </p>
+      <div class="architecture-panel content-column" aria-label="Relational integrity conceptual architecture">
+        <div class="architecture-thesis">
+          <p class="architecture-label">Central concern</p>
+          <h3>Authority migration</h3>
+          <p>
+            Authority migration names the subtle movement of framing, judgment, authorship, responsibility, or legitimacy from people and institutions into AI-mediated systems. Relational AI, in this sense, is not about treating AI as a person. It is about understanding when AI begins to participate in the relationships, roles, and decisions that shape human life.
+          </p>
+        </div>
   
-      <div class="grid">
-        <article class="card">
-          <h3>Interpretive authority</h3>
-          <p>
-            AI systems do more than provide information. They can frame what a situation means, which evidence appears relevant, what options feel reasonable, and how people understand their own judgment. This makes interpretation a central governance concern.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Role drift</h3>
-          <p>
-            Systems often begin as assistants, tutors, co-writers, or advisors, then gradually take on functions closer to evaluator, strategist, gatekeeper, confidant, or decision-shaper. Relational integrity requires making those role shifts visible and contestable.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Legitimate participation</h3>
-          <p>
-            The question is not simply whether an AI system is useful or aligned in a given moment. The question is whether its participation remains bounded, transparent, accountable, reversible, and appropriate to the context in which it is being used.
-          </p>
-        </article>
+        <div class="architecture-grid">
+          <article class="architecture-item">
+            <p class="architecture-number">01</p>
+            <h3>Interpretive authority</h3>
+            <p>
+              AI systems do more than provide information. They can frame what a situation means, which evidence appears relevant, what options feel reasonable, and how people understand their own judgment. This makes interpretation a central governance concern.
+            </p>
+          </article>
+  
+          <article class="architecture-item">
+            <p class="architecture-number">02</p>
+            <h3>Role drift</h3>
+            <p>
+              Systems often begin as assistants, tutors, co-writers, or advisors, then gradually take on functions closer to evaluator, strategist, gatekeeper, confidant, or decision-shaper. Relational integrity requires making those role shifts visible and contestable.
+            </p>
+          </article>
+  
+          <article class="architecture-item">
+            <p class="architecture-number">03</p>
+            <h3>Legitimate participation</h3>
+            <p>
+              The question is not simply whether an AI system is useful or aligned in a given moment. The question is whether its participation remains bounded, transparent, accountable, reversible, and appropriate to the context in which it is being used.
+            </p>
+          </article>
+        </div>
       </div>
     </div>
   </section>
