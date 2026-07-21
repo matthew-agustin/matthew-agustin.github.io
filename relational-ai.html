@@ -530,7 +530,7 @@ h1 {
 }
 
 .orientation-item {
-  padding: 24px 26px;
+  padding: 26px 28px;
   border-right: 1px solid var(--line);
 }
 
@@ -554,6 +554,52 @@ h1 {
 }
 
 .orientation-item p:not(.orientation-label) {
+  margin: 0;
+  color: var(--muted);
+  font-size: .98rem;
+  line-height: 1.62;
+}
+
+.frame-shift-panel {
+  display: grid;
+  gap: 0;
+  border: 1px solid color-mix(in srgb, var(--accent-2) 18%, var(--line));
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--accent-2) 6%, transparent),
+      transparent 58%
+    ),
+    color-mix(in srgb, var(--panel) 96%, transparent);
+  box-shadow: 0 12px 34px rgba(31, 41, 51, .05);
+  overflow: hidden;
+}
+
+.frame-shift-item {
+  display: grid;
+  grid-template-columns: minmax(180px, .35fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  padding: 22px 26px;
+  border-bottom: 1px solid var(--line);
+}
+
+.frame-shift-item:last-child {
+  border-bottom: 0;
+}
+
+.frame-shift-label {
+  margin: 0;
+  color: var(--accent-2);
+  font-size: .78rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.frame-shift-item p:not(.frame-shift-label) {
   margin: 0;
   color: var(--muted);
   font-size: .98rem;
@@ -879,6 +925,11 @@ button:focus-visible {
   .orientation-item:last-child {
     border-bottom: 0;
   }
+
+  .frame-shift-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
 }
 </style>
 </head>
@@ -1004,25 +1055,25 @@ button:focus-visible {
         This research program starts from a simple premise: AI does not need to feel like a companion to participate in human life. A tutor can shape how a learner understands their own ability. A research assistant can influence what evidence feels relevant. A writing system can shift authorship and voice. A workplace agent can redirect who appears responsible for action. A governance simulation can frame what futures seem plausible.
       </p>
   
-      <div class="grid">
-        <article class="card">
-          <h3>Beyond companion AI</h3>
+      <div class="frame-shift-panel content-column" aria-label="Relational AI frame shifts">
+        <article class="frame-shift-item">
+          <p class="frame-shift-label">Beyond companion AI</p>
           <p>
-            Companion systems make relational dynamics visible, but they do not define the full terrain. Relational AI also includes everyday systems that structure attention, mediate judgment, guide learning, scaffold decisions, or change how people understand their roles.
+            Companion systems make relational dynamics visible, but they do not define the full terrain. Everyday systems can also structure attention, mediate judgment, guide learning, scaffold decisions, or change how people understand their roles.
           </p>
         </article>
-        
-        <article class="card">
-          <h3>Beyond output alignment</h3>
+      
+        <article class="frame-shift-item">
+          <p class="frame-shift-label">Beyond output alignment</p>
           <p>
-            A system can produce acceptable outputs while still shaping a user’s assumptions, confidence, dependencies, or sense of responsibility over time. Relational evaluation therefore has to examine interaction patterns, not only isolated responses.
+            A system can produce acceptable outputs while still shaping a user’s assumptions, confidence, dependencies, or sense of responsibility over time. Relational evaluation therefore has to examine interaction patterns.
           </p>
         </article>
-        
-        <article class="card">
-          <h3>Beyond “just a tool”</h3>
+      
+        <article class="frame-shift-item">
+          <p class="frame-shift-label">Beyond “just a tool”</p>
           <p>
-            Tools become consequential when they help frame problems, rank options, mediate trust, or distribute accountability. The question is not whether AI is a person, but what kind of participation its design makes possible.
+            Tools become consequential when they help frame problems, rank options, mediate trust, or distribute accountability. The question is what kind of participation the system’s design makes possible.
           </p>
         </article>
       </div>
