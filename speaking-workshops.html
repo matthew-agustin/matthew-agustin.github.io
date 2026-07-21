@@ -138,7 +138,7 @@
   display: none !important; }
 html { scroll-behavior:smooth; }
 #top,
-#orientation,
+#invitation,
 #themes,
 #formats,
 #fit,
@@ -168,6 +168,11 @@ header { position:sticky; top:0; z-index:100; -webkit-backdrop-filter:blur(16px)
 .nav-links { display:flex; align-items:center; gap:18px; color:var(--muted); font-size:.95rem; }
 .nav-links a:hover { color:var(--text); }
 .nav-links a[aria-current="page"] { color: var(--text); font-weight: 750; }
+
+.nav-links a,
+.nav-actions .button {
+  white-space: nowrap;
+}
 
 .nav-actions {
   display: flex;
@@ -442,6 +447,74 @@ h1 {
   margin-right: auto;
 }
 
+.invitation-section {
+  padding-top: 42px;
+}
+
+.invitation-panel {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(260px, .42fr) minmax(0, 1fr);
+  gap: clamp(34px, 6vw, 72px);
+  align-items: start;
+  padding: clamp(30px, 5vw, 54px);
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line));
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 8%, transparent), transparent 52%),
+    color-mix(in srgb, var(--panel) 96%, transparent);
+  box-shadow: 0 16px 42px rgba(31, 41, 51, .065);
+}
+
+.invitation-copy p:not(.eyebrow) {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: clamp(1.02rem, 1.5vw, 1.14rem);
+  line-height: 1.72;
+}
+
+.invitation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.invitation-map {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.invitation-item {
+  display: grid;
+  grid-template-columns: minmax(150px, .34fr) minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.invitation-item h3 {
+  margin: 0;
+  font-size: 1.04rem;
+  line-height: 1.2;
+}
+
+.invitation-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .96rem;
+  line-height: 1.62;
+}
+
+
+.invitation-panel {
+  grid-template-columns: 1fr;
+  gap: 26px;
+}
+
 /* Cards need slightly more readable body text */
 .card {
   padding: 26px;
@@ -701,7 +774,7 @@ button:focus-visible {
   }
 
   #top,
-  #orientation,
+  #invitation,
   #themes,
   #formats,
   #fit,
@@ -709,6 +782,24 @@ button:focus-visible {
   #grounding,
   #contact {
     scroll-margin-top: 82px;
+  }
+
+  .invitation-section {
+    padding-top: 34px;
+  }
+  
+  .invitation-panel {
+    padding: 28px;
+    border-radius: 24px;
+  }
+  
+  .invitation-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  
+  .invitation-actions .button {
+    width: 100%;
   }
 }
 </style>
@@ -749,7 +840,7 @@ button:focus-visible {
         <h1>Speaking, workshops, and collaborative sessions for responsible AI futures.</h1>
         
         <p class="lead">
-          Available for invited talks, guest lectures, seminars, workshops, and collaborative sessions grounded in active research on responsible AI, relational AI, human agency, learning, governance, and public value.
+          I welcome invitations for talks, guest lectures, seminars, workshops, facilitated dialogue, and collaborative sessions grounded in active research on responsible AI, relational AI, human agency, learning, governance, and public value.
         </p>
         
         <p class="credibility-line">
@@ -760,11 +851,12 @@ button:focus-visible {
           <span>Invited talks</span>
           <span>Guest lectures</span>
           <span>Workshops</span>
-          <span>Strategy sensemaking</span>
+          <span>Facilitated dialogue</span>
+          <span>Collaborative sessions</span>
         </div>
         
         <div class="hero-actions">
-          <a class="button primary" href="#themes">Explore session themes</a>
+          <a class="button primary" href="#formats">Explore session formats</a>
           <a class="button" href="#contact">Start a conversation</a>
         </div>
       </div>
@@ -789,28 +881,58 @@ button:focus-visible {
     </div>
   </section>
 
-  <section class="section" id="orientation">
-    <div class="container grid">
-      <article class="card">
-        <h3>Reflective, not hype-driven</h3>
-        <p>
-          Sessions are designed to slow the conversation down enough for people to examine assumptions, surface tradeoffs, and make AI-related choices more discussable. The focus is not adoption for its own sake, but clearer judgment and more responsible practice.
-        </p>
-      </article>
-      
-      <article class="card">
-        <h3>Grounded in research</h3>
-        <p>
-          Topics draw from active research, writing, frameworks, prototypes, and public-interest innovation work on responsible AI, relational AI, human agency, learning, accountability, governance, and public value.
-        </p>
-      </article>
-      
-      <article class="card">
-        <h3>Adapted to context</h3>
-        <p>
-          Each session can be shaped around the audience, setting, and desired learning outcomes, whether the format is a guest lecture, invited talk, seminar, facilitated reflection, workshop, or strategy conversation.
-        </p>
-      </article>
+  <section class="section invitation-section" id="invitation">
+    <div class="container">
+      <div class="invitation-panel" aria-label="Invitation pathway">
+        <div class="invitation-copy">
+          <p class="eyebrow">Invitation pathway</p>
+          <h2>What you can invite me to contribute.</h2>
+          <p>
+            Sessions can be shaped for groups that need thoughtful framing, shared language, reflective practice, or research-informed sensemaking around AI and its effects on learning, agency, governance, responsibility, and public value.
+          </p>
+          <div class="invitation-actions">
+            <a class="button primary" href="#formats">View formats</a>
+            <a class="button" href="#themes">Browse themes</a>
+          </div>
+        </div>
+  
+        <div class="invitation-map" aria-label="Types of invitations">
+          <div class="invitation-item">
+            <h3>Talks</h3>
+            <p>
+              Framing sessions for conferences, convenings, seminars, panels, or public-interest conversations.
+            </p>
+          </div>
+  
+          <div class="invitation-item">
+            <h3>Guest sessions</h3>
+            <p>
+              Course-connected lectures or discussions for students, educators, and learning communities.
+            </p>
+          </div>
+  
+          <div class="invitation-item">
+            <h3>Workshops</h3>
+            <p>
+              Participatory sessions using questions, cases, frameworks, prompts, or reflective exercises.
+            </p>
+          </div>
+  
+          <div class="invitation-item">
+            <h3>Facilitated dialogue</h3>
+            <p>
+              Shared sensemaking for groups navigating ambiguity, tensions, tradeoffs, or AI-related decisions.
+            </p>
+          </div>
+  
+          <div class="invitation-item">
+            <h3>Collaborative sessions</h3>
+            <p>
+              Research-informed conversations around strategy, learning design, responsible AI direction, or public-interest innovation.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   
@@ -1193,6 +1315,7 @@ button:focus-visible {
       <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=9953996" target="_blank" rel="me noopener noreferrer">SSRN</a>
       <a href="https://arxiv.org/a/agustin_m_1.html" target="_blank" rel="me noopener noreferrer">arXiv</a>
       <a href="https://medium.com/@matt.agustin" target="_blank" rel="me noopener noreferrer">Medium</a>
+      <a href="https://bsky.app/profile/matthewagustin.bsky.social" target="_blank" rel="me noopener noreferrer">Bluesky</a>
       <a href="#top">Back to top ↑</a>
     </nav>
   </div>
@@ -1254,6 +1377,7 @@ const revealTargets = Array.from(
   new Set(
     document.querySelectorAll(`
       main > .section > .container.grid,
+      main > .section > .container > .invitation-panel,
       main > .section > .container > .section-head,
       main > .section > .container > .grid,
       main > .section > .container > .research-list,
