@@ -509,10 +509,51 @@ h1 {
   line-height: 1.62;
 }
 
+@media (max-width: 860px) {
+  .invitation-panel {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+}
 
-.invitation-panel {
-  grid-template-columns: 1fr;
-  gap: 26px;
+.format-grid {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.format-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+  padding: 28px;
+}
+
+.format-card p:not(.research-meta) {
+  margin: 0;
+}
+
+.format-card .tag-row {
+  margin-top: 18px;
+}
+
+.format-card.featured-format {
+  border-color: color-mix(in srgb, var(--accent-2) 36%, var(--line));
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--accent-2) 8%, transparent),
+      transparent 54%
+    ),
+    color-mix(in srgb, var(--panel) 96%, transparent);
+  box-shadow: 0 18px 46px rgba(20, 31, 43, .08);
+}
+
+.format-card.wide-format {
+  grid-column: 1 / -1;
+  min-height: 0;
 }
 
 /* Cards need slightly more readable body text */
@@ -801,6 +842,15 @@ button:focus-visible {
   .invitation-actions .button {
     width: 100%;
   }
+
+  .format-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .format-card {
+    min-height: 0;
+    padding: 26px;
+  }
 }
 </style>
 </head>
@@ -935,6 +985,87 @@ button:focus-visible {
       </div>
     </div>
   </section>
+
+  <section class="section" id="formats">
+    <div class="container">
+      <div class="section-head narrow-head">
+        <div>
+          <div class="eyebrow">Session formats</div>
+          <h2>Adaptable formats for talks, learning sessions, dialogue, and collaborative sensemaking.</h2>
+        </div>
+        <p>
+          These are not fixed packages. Each format can be shaped around the group’s questions, time available, desired depth, and whether the goal is framing, reflection, application, or shared direction.
+        </p>
+      </div>
+  
+      <div class="format-grid" aria-label="Session format options">
+        <article class="card format-card featured-format">
+          <p class="research-meta">Talk / seminar</p>
+          <h3>Invited talk or seminar</h3>
+          <p>
+            A focused session for conferences, convenings, seminars, panels, or public-interest conversations that need clear framing around responsible AI, relational AI, human agency, accountability, learning, governance, or public value.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Framing</span>
+            <span class="tag">Public conversation</span>
+            <span class="tag">Responsible AI</span>
+          </div>
+        </article>
+  
+        <article class="card format-card">
+          <p class="research-meta">Classroom / learning</p>
+          <h3>Guest lecture or classroom session</h3>
+          <p>
+            A course-connected session for students, educators, or learning communities exploring AI literacy, responsible innovation, human–AI interaction, technology and society, futures, ethics, learning, or governance.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Teaching</span>
+            <span class="tag">AI literacy</span>
+            <span class="tag">Student learning</span>
+          </div>
+        </article>
+  
+        <article class="card format-card">
+          <p class="research-meta">Participatory learning</p>
+          <h3>Workshop or learning session</h3>
+          <p>
+            A more participatory format for groups that want to work with questions, cases, frameworks, prompts, scenarios, or reflective exercises and leave with language or practices they can apply.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Workshop</span>
+            <span class="tag">Frameworks</span>
+            <span class="tag">Practice</span>
+          </div>
+        </article>
+  
+        <article class="card format-card">
+          <p class="research-meta">Facilitated dialogue</p>
+          <h3>Facilitated dialogue or sensemaking session</h3>
+          <p>
+            A guided conversation for groups navigating ambiguity, institutional tensions, tradeoffs, or AI-related decisions where the goal is shared understanding rather than a one-way presentation.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Dialogue</span>
+            <span class="tag">Tradeoffs</span>
+            <span class="tag">Shared sensemaking</span>
+          </div>
+        </article>
+  
+        <article class="card format-card wide-format">
+          <p class="research-meta">Collaborative / advisory</p>
+          <h3>Collaborative or advisory session</h3>
+          <p>
+            A research-informed conversation for teams exploring responsible AI direction, learning design, governance questions, public-interest innovation, curriculum framing, strategic reflection, or early-stage project development.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Strategy</span>
+            <span class="tag">Advisory conversation</span>
+            <span class="tag">Public-interest innovation</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
   
   <section class="section" id="themes">
     <div class="container">
@@ -993,51 +1124,7 @@ button:focus-visible {
       </div>
     </div>
   </section>
-
-  <section class="section" id="formats">
-    <div class="container">
-      <div class="section-head narrow-head">
-        <div>
-          <div class="eyebrow">Emerging session formats</div>
-          <h2>Adaptable formats for learning, reflection, and shared sensemaking.</h2>
-        </div>
-        <p>
-          These formats are intentionally flexible. A session can be shaped around the group’s questions, time available, desired depth, and whether the goal is framing, reflection, application, or shared direction.
-        </p>
-      </div>
   
-      <div class="grid">
-        <article class="card">
-          <h3>Invited talk or seminar</h3>
-          <p>
-            A focused session for groups looking to frame responsible AI, relational AI, human agency, accountability, learning, governance, or public value with clarity and nuance.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Guest lecture or classroom session</h3>
-          <p>
-            A course-connected session for students exploring AI literacy, responsible innovation, human–AI interaction, technology and society, futures, ethics, learning, or governance.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Workshop or facilitated reflection</h3>
-          <p>
-            A more participatory format for groups that want to move from broad AI concerns into shared language, reflective prompts, scenario discussion, or possible practices.
-          </p>
-        </article>
-  
-        <article class="card">
-          <h3>Strategy / sensemaking session</h3>
-          <p>
-            A collaborative conversation for teams exploring how AI-related questions connect to mission, trust, governance, learning, stakeholder responsibility, or public impact.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section class="section" id="fit">
     <div class="container">
       <div class="section-head narrow-head">
@@ -1380,6 +1467,7 @@ const revealTargets = Array.from(
       main > .section > .container > .invitation-panel,
       main > .section > .container > .section-head,
       main > .section > .container > .grid,
+      main > .section > .container > .format-grid,
       main > .section > .container > .research-list,
       main > .section > .container > .research-cta,
       main > .section > .container.contact > .contact-panel
