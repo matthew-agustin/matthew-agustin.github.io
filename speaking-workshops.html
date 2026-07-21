@@ -254,7 +254,6 @@ p { color:var(--muted); }
 .section { padding:72px 0; }
 .section-head { display:flex; justify-content:space-between; align-items:end; gap:24px; margin-bottom:26px; }
 .section-head p { max-width:560px; margin:0; }
-.grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
 .card { border:1px solid var(--line); border-radius:var(--radius); padding:24px; background:color-mix(in srgb,var(--panel) 95%,transparent); box-shadow:0 10px 32px rgba(31,41,51,.05); transition:transform 180ms ease; }
 .tag { 
   border:1px solid var(--line); 
@@ -318,7 +317,6 @@ footer {
 
 @media (max-width:860px) {
   .hero-grid,.contact { grid-template-columns:1fr; }
-  .grid { grid-template-columns:1fr; }
   .section-head,.contact-panel { display:grid; }
 
   .nav {
@@ -732,9 +730,108 @@ h1 {
   line-height: 1.62;
 }
 
+.grounding-panel {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(260px, .38fr) minmax(0, 1fr);
+  gap: clamp(34px, 6vw, 72px);
+  align-items: start;
+  padding: clamp(30px, 5vw, 54px);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--line));
+  border-radius: 24px;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--accent) 7%, transparent),
+      transparent 56%
+    ),
+    color-mix(in srgb, var(--panel) 96%, transparent);
+  box-shadow: 0 14px 38px rgba(31, 41, 51, .055);
+}
+
+.grounding-copy p:not(.eyebrow) {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: clamp(1.02rem, 1.5vw, 1.14rem);
+  line-height: 1.72;
+}
+
+.grounding-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.grounding-list {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.grounding-item {
+  display: grid;
+  grid-template-columns: minmax(150px, .28fr) minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.grounding-item:last-child {
+  border-bottom: 0;
+}
+
+.grounding-label {
+  margin: 0;
+  color: var(--accent-2);
+  font-size: .76rem;
+  font-weight: 850;
+  letter-spacing: .1em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.grounding-item h3 {
+  margin: 0 0 8px;
+  font-size: 1.06rem;
+  line-height: 1.2;
+}
+
+.grounding-item p:not(.grounding-label) {
+  margin: 0;
+  color: var(--muted);
+  font-size: .96rem;
+  line-height: 1.62;
+}
+
+.grounding-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-top: 12px;
+}
+
+.grounding-links a {
+  color: var(--text);
+  font-size: .9rem;
+  font-weight: 750;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, var(--accent) 34%, var(--line));
+}
+
+.grounding-links a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
 @media (max-width: 860px) {
   .fit-panel,
-  .process-panel {
+  .process-panel,
+  .grounding-panel {
     grid-template-columns: 1fr;
     gap: 26px;
   }
@@ -750,31 +847,6 @@ h1 {
   line-height: 1.65;
 }
 
-.research-list {
-  display: grid;
-  gap: 16px;
-  max-width: 920px;
-  margin: 0 auto;
-}
-
-.research-cta {
-  max-width: 920px;
-  margin: 24px auto 0;
-  border-color: color-mix(in srgb, var(--accent) 22%, var(--line));
-}
-
-.research-card {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 24px;
-  align-items: start;
-  padding: 30px 34px;
-}
-
-.research-card h3 {
-  margin: 0 0 10px;
-}
-
 .research-meta {
   margin: 0 0 10px;
   color: var(--accent-2);
@@ -782,50 +854,6 @@ h1 {
   font-weight: 850;
   letter-spacing: .08em;
   text-transform: uppercase;
-}
-
-.research-card p:not(.research-meta) {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.65;
-}
-
-.research-card {
-  background:
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--panel) 98%, transparent),
-      color-mix(in srgb, var(--paper) 96%, transparent)
-    );
-  border-color: color-mix(in srgb, var(--accent-2) 22%, var(--line));
-}
-
-.research-card:first-child {
-  border-color: color-mix(in srgb, var(--accent-2) 36%, var(--line));
-  box-shadow: 0 18px 46px rgba(20, 31, 43, .08);
-}
-
-.research-tags {
-  margin-top: 16px;
-}
-
-.research-actions {
-  display: flex;
-  justify-content: flex-end;
-  min-width: 180px;
-}
-
-.research-actions .button {
-  min-height: 42px;
-  font-size: .9rem;
-  box-shadow: none;
-  white-space: nowrap;
-}
-
-.framework-actions {
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
 }
 
 /* Contact block: stronger contrast and better button spacing */
@@ -968,23 +996,6 @@ button:focus-visible {
     max-width: 100%;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .research-card {
-    grid-template-columns: 1fr;
-  }
-
-  .research-actions {
-    justify-content: flex-start;
-    min-width: 0;
-  }
-
-  .framework-actions {
-    align-items: flex-start;
-  }
-
   .contact-panel {
     padding: 28px;
   }
@@ -1043,7 +1054,8 @@ button:focus-visible {
   }
 
   .fit-panel,
-  .process-panel {
+  .process-panel,
+  .grounding-panel {
     padding: 28px;
     border-radius: 24px;
   }
@@ -1051,6 +1063,11 @@ button:focus-visible {
   .process-step {
     grid-template-columns: 40px minmax(0, 1fr);
     gap: 14px;
+  }
+
+  .grounding-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 }
 </style>
@@ -1460,142 +1477,79 @@ button:focus-visible {
 
   <section class="section" id="grounding">
     <div class="container">
-      <div class="section-head narrow-head">
-        <div>
-          <div class="eyebrow">Grounding research and frameworks</div>
-          <h2>Sessions are grounded in active research, writing, and framework development.</h2>
-        </div>
-        <p>
-          The work below provides conceptual and applied foundations for possible talks, guest sessions, workshops, and collaborative learning conversations.
-        </p>
-      </div>
-  
-      <div class="research-list">
-        <article class="card research-card">
-          <div>
-            <p class="research-meta">Site page</p>
-            <h3>Relational AI</h3>
-            <p>
-              A conceptual spine for understanding how AI systems participate in human judgment, agency, responsibility, and institutional life.
-            </p>
-            <div class="tag-row research-tags">
-              <span class="tag">Relational AI</span>
-              <span class="tag">Agency</span>
-              <span class="tag">Accountability</span>
-            </div>
-          </div>
-          <div class="research-actions">
-            <a class="button" href="relational-ai.html">Explore page</a>
-          </div>
-        </article>
-  
-        <article class="card research-card">
-          <div>
-            <p class="research-meta">Site page</p>
-            <h3>AI-Era Readiness</h3>
-            <p>
-              A public and programmatic frame for helping people and institutions preserve judgment, agency, ethical imagination, and responsible participation in AI-shaped futures.
-            </p>
-            <div class="tag-row research-tags">
-              <span class="tag">AI literacy</span>
-              <span class="tag">Learning</span>
-              <span class="tag">Future readiness</span>
-            </div>
-          </div>
-          <div class="research-actions">
-            <a class="button" href="ai-era-readiness.html">Explore page</a>
-          </div>
-        </article>
-  
-        <article class="card research-card">
-          <div>
-            <p class="research-meta">Frameworks · Published preprints</p>
-            <h3>Relational AI Depth Framework and Relational Integrity in AI Framework</h3>
-            <p>
-              Two linked frameworks for examining relational depth, human agency, responsibility, role clarity, accountability, meaning, and trust in AI-mediated contexts.
-            </p>
-            <div class="tag-row research-tags">
-              <span class="tag">Relational depth</span>
-              <span class="tag">Relational integrity</span>
-              <span class="tag">Responsibility</span>
-            </div>
-          </div>
-          <div class="research-actions framework-actions">
-            <a class="button" href="https://ssrn.com/abstract=6714758" target="_blank" rel="noopener noreferrer">Read RADF</a>
-            <a class="button" href="https://ssrn.com/abstract=6075449" target="_blank" rel="noopener noreferrer">Read RIAF</a>
-          </div>
-        </article>
-  
-        <article class="card research-card">
-          <div>
-            <p class="research-meta">Prototype study · Published preprint</p>
-            <h3>TextWalk and epistemic guardrails</h3>
-            <p>
-              A behavioral audit of a minimal AI reading assistant designed to support close reading, structure-first engagement, interpretive humility, and learner-led meaning-making.
-            </p>
-            <div class="tag-row research-tags">
-              <span class="tag">Epistemic guardrails</span>
-              <span class="tag">Reading support</span>
-              <span class="tag">Interpretive agency</span>
-            </div>
-          </div>
-          <div class="research-actions">
-            <a class="button" href="https://arxiv.org/abs/2604.27275" target="_blank" rel="noopener noreferrer">Read preprint</a>
-          </div>
-        </article>
-  
-        <article class="card research-card">
-          <div>
-            <p class="research-meta">Journal article · Published</p>
-            <h3>AI as a Co-Regulator</h3>
-            <p>
-              A learning-focused article examining how AI can participate in reflection, self-regulation, judgment, and learner agency over time.
-            </p>
-            <div class="tag-row research-tags">
-              <span class="tag">Learning</span>
-              <span class="tag">Co-regulation</span>
-              <span class="tag">Learner agency</span>
-            </div>
-          </div>
-          <div class="research-actions">
-            <a class="button" href="https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1761602/full" target="_blank" rel="noopener noreferrer">Read article</a>
-          </div>
-        </article>
-  
-        <article class="card research-card">
-          <div>
-            <p class="research-meta">Simulation method · Prototype</p>
-            <h3>AI Governance Simulation Lab</h3>
-            <p>
-              A role-based simulation environment for rehearsing technology governance decisions, surfacing stakeholder tensions, and examining how AI can support responsible foresight.
-            </p>
-            <div class="tag-row research-tags">
-              <span class="tag">Governance</span>
-              <span class="tag">Simulation</span>
-              <span class="tag">Responsible foresight</span>
-            </div>
-          </div>
-          <div class="research-actions">
-            <a class="button" href="index.html#work">View portfolio</a>
-          </div>
-        </article>
-      </div>
-  
-      <article class="card research-card research-cta">
-        <div>
-          <p class="research-meta">Full writing record</p>
-          <h3>Explore the broader research and publication record.</h3>
+      <div class="grounding-panel" aria-label="Research grounding and frameworks">
+        <div class="grounding-copy">
+          <p class="eyebrow">Research grounding</p>
+          <h2>Conceptual and applied work behind these sessions.</h2>
           <p>
-            This page offers an invitation pathway into talks, guest sessions, workshops, and collaborative learning conversations. The Writing &amp; Publications page provides the broader record of publications, preprints, manuscripts, and public scholarship behind the work.
+            Sessions draw from active research, writing, and framework development rather than a generic AI speaking catalog. The broader record remains available through the Writing &amp; Publications page.
           </p>
+          <div class="grounding-actions">
+            <a class="button primary" href="writing-publications.html">View writing &amp; publications</a>
+            <a class="button" href="relational-ai.html">Explore Relational AI</a>
+          </div>
         </div>
-        <div class="research-actions">
-          <a class="button primary" href="writing-publications.html">View writing &amp; publications</a>
+  
+        <div class="grounding-list" aria-label="Selected research foundations">
+          <article class="grounding-item">
+            <p class="grounding-label">Conceptual frames</p>
+            <div>
+              <h3>Relational AI and AI-Era Readiness</h3>
+              <p>
+                Public-facing frames for examining how AI participates in human judgment, agency, learning, responsibility, and future readiness.
+              </p>
+              <div class="grounding-links">
+                <a href="relational-ai.html">Relational AI</a>
+                <a href="ai-era-readiness.html">AI-Era Readiness</a>
+              </div>
+            </div>
+          </article>
+  
+          <article class="grounding-item">
+            <p class="grounding-label">Frameworks</p>
+            <div>
+              <h3>RADF, RIAF, and relational integrity</h3>
+              <p>
+                Published preprints supporting questions about relational depth, human agency, accountability, responsibility, trust, and meaning in AI-mediated contexts.
+              </p>
+              <div class="grounding-links">
+                <a href="https://ssrn.com/abstract=6714758" target="_blank" rel="noopener noreferrer">Read RADF</a>
+                <a href="https://ssrn.com/abstract=6075449" target="_blank" rel="noopener noreferrer">Read RIAF</a>
+              </div>
+            </div>
+          </article>
+  
+          <article class="grounding-item">
+            <p class="grounding-label">Learning research</p>
+            <div>
+              <h3>TextWalk and AI as a Co-Regulator</h3>
+              <p>
+                Research on close reading support, epistemic guardrails, interpretive humility, learner-led meaning-making, reflection, self-regulation, and learner agency.
+              </p>
+              <div class="grounding-links">
+                <a href="https://arxiv.org/abs/2604.27275" target="_blank" rel="noopener noreferrer">Read TextWalk</a>
+                <a href="https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1761602/full" target="_blank" rel="noopener noreferrer">Read article</a>
+              </div>
+            </div>
+          </article>
+  
+          <article class="grounding-item">
+            <p class="grounding-label">Applied work</p>
+            <div>
+              <h3>Governance simulation and public-interest innovation</h3>
+              <p>
+                Applied portfolio work on role-based simulation, stakeholder tensions, responsible foresight, strategic reflection, and public-value-oriented AI decision making.
+              </p>
+              <div class="grounding-links">
+                <a href="index.html#work">View portfolio work</a>
+              </div>
+            </div>
+          </article>
         </div>
-      </article>
+      </div>
     </div>
   </section>
-  
+
   <section class="section" id="contact">
     <div class="container contact">
       <div class="contact-panel">
@@ -1693,13 +1647,11 @@ const revealTargets = Array.from(
       main > .section > .container.grid,
       main > .section > .container > .invitation-panel,
       main > .section > .container > .section-head,
-      main > .section > .container > .grid,
       main > .section > .container > .format-grid,
       main > .section > .container > .theme-panel,
       main > .section > .container > .fit-panel,
       main > .section > .container > .process-panel,
-      main > .section > .container > .research-list,
-      main > .section > .container > .research-cta,
+      main > .section > .container > .grounding-panel,
       main > .section > .container.contact > .contact-panel
     `)
   )
