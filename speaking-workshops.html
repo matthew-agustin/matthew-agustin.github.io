@@ -75,7 +75,7 @@
         "Collaborative sessions",
         "Guest lectures",
         "Workshops",
-        "Facilitated reflection",
+        "Facilitated dialogue",
         "Public value"
       ]
     },
@@ -113,7 +113,7 @@
         "Responsible participation",
         "Interpretive integrity",
         "Legitimate participation",
-        "Facilitated reflection",
+        "Facilitated dialogue",
         "Collaborative learning",
         "Public value"
       ]
@@ -335,6 +335,7 @@ footer {
     font-size: .88rem;
   }
 }
+
 @media (max-width: 430px) {
   .brand-name {
     display: none;
@@ -554,6 +555,189 @@ h1 {
 .format-card.wide-format {
   grid-column: 1 / -1;
   min-height: 0;
+}
+
+.theme-panel {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  border: 1px solid color-mix(in srgb, var(--accent-2) 22%, var(--line));
+  border-radius: 24px;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--accent-2) 7%, transparent),
+      transparent 58%
+    ),
+    color-mix(in srgb, var(--panel) 96%, transparent);
+  box-shadow: 0 14px 38px rgba(31, 41, 51, .055);
+  overflow: hidden;
+}
+
+.theme-item {
+  display: grid;
+  grid-template-columns: minmax(190px, .34fr) minmax(0, 1fr);
+  gap: 26px;
+  align-items: start;
+  padding: 22px 26px;
+  border-bottom: 1px solid var(--line);
+}
+
+.theme-item:last-child {
+  border-bottom: 0;
+}
+
+.theme-label {
+  margin: 0;
+  color: var(--accent-2);
+  font-size: .76rem;
+  font-weight: 850;
+  letter-spacing: .1em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.theme-item h3 {
+  margin: 0 0 8px;
+  font-size: 1.08rem;
+  line-height: 1.2;
+}
+
+.theme-item p:not(.theme-label) {
+  margin: 0;
+  color: var(--muted);
+  font-size: .98rem;
+  line-height: 1.62;
+}
+
+.fit-panel {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(260px, .38fr) minmax(0, 1fr);
+  gap: clamp(34px, 6vw, 72px);
+  align-items: start;
+  padding: clamp(30px, 5vw, 54px);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--line));
+  border-radius: 24px;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--accent) 7%, transparent),
+      transparent 56%
+    ),
+    color-mix(in srgb, var(--panel) 96%, transparent);
+  box-shadow: 0 14px 38px rgba(31, 41, 51, .055);
+}
+
+.fit-copy p:not(.eyebrow) {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: clamp(1.02rem, 1.5vw, 1.14rem);
+  line-height: 1.72;
+}
+
+.fit-list {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.fit-item {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.fit-item h3 {
+  margin: 0 0 7px;
+  font-size: 1.04rem;
+  line-height: 1.2;
+}
+
+.fit-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .96rem;
+  line-height: 1.62;
+}
+
+.process-panel {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(260px, .38fr) minmax(0, 1fr);
+  gap: clamp(34px, 6vw, 72px);
+  align-items: start;
+  padding: clamp(30px, 5vw, 54px);
+  border: 1px solid color-mix(in srgb, var(--accent-2) 20%, var(--line));
+  border-radius: 24px;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--accent-2) 7%, transparent),
+      transparent 56%
+    ),
+    color-mix(in srgb, var(--panel) 96%, transparent);
+  box-shadow: 0 14px 38px rgba(31, 41, 51, .055);
+}
+
+.process-copy p:not(.eyebrow) {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: clamp(1.02rem, 1.5vw, 1.14rem);
+  line-height: 1.72;
+}
+
+.process-list {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.process-step {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.process-step:last-child {
+  border-bottom: 0;
+}
+
+.step-number {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--accent-2) 34%, var(--line));
+  border-radius: 999px;
+  color: var(--accent-2);
+  background: color-mix(in srgb, var(--panel) 92%, transparent);
+  font-size: .86rem;
+  font-weight: 850;
+}
+
+.process-step h3 {
+  margin: 0 0 7px;
+  font-size: 1.04rem;
+  line-height: 1.2;
+}
+
+.process-step p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .96rem;
+  line-height: 1.62;
+}
+
+@media (max-width: 860px) {
+  .fit-panel,
+  .process-panel {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
 }
 
 /* Cards need slightly more readable body text */
@@ -851,6 +1035,23 @@ button:focus-visible {
     min-height: 0;
     padding: 26px;
   }
+
+  .theme-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 22px;
+  }
+
+  .fit-panel,
+  .process-panel {
+    padding: 28px;
+    border-radius: 24px;
+  }
+  
+  .process-step {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 14px;
+  }
 }
 </style>
 </head>
@@ -1071,55 +1272,73 @@ button:focus-visible {
     <div class="container">
       <div class="section-head narrow-head">
         <div>
-          <div class="eyebrow">Possible session themes</div>
-          <h2>Topics for groups making sense of AI, agency, learning, and public value.</h2>
+          <div class="eyebrow">Session themes</div>
+          <h2>Themes and questions that can shape a session.</h2>
         </div>
         <p>
           These themes can stand alone or be combined depending on the audience, setting, and purpose of the session. They are starting points for inquiry, not fixed packages.
         </p>
       </div>
   
-      <div class="grid">
-        <article class="card">
-          <h3>AI, agency, and responsible participation</h3>
-          <p>
-            How AI systems shape judgment, choice, authorship, responsibility, and the conditions under which people remain meaningfully involved in AI-mediated work.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Relational AI and human–AI co-creation</h3>
-          <p>
-            How AI changes relationships among people, tools, institutions, communities, and their own thinking, especially when systems begin to influence interpretation and action.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>AI-era readiness and future-facing learning</h3>
-          <p>
-            How learners, educators, and organizations can prepare for AI-shaped contexts with discernment, ethical imagination, authorship, and long-term responsibility.
-          </p>
+      <div class="theme-panel" aria-label="Session themes">
+        <article class="theme-item">
+          <p class="theme-label">Agency</p>
+          <div>
+            <h3>AI, agency, and responsible participation</h3>
+            <p>
+              How AI systems shape judgment, choice, authorship, responsibility, and the conditions under which people remain meaningfully involved in AI-mediated work.
+            </p>
+          </div>
         </article>
   
-        <article class="card">
-          <h3>AI literacy beyond tool fluency</h3>
-          <p>
-            Why responsible AI literacy requires more than prompt skills, including uncertainty awareness, interpretive judgment, values reflection, and public-purpose thinking.
-          </p>
+        <article class="theme-item">
+          <p class="theme-label">Relational AI</p>
+          <div>
+            <h3>Relational AI and human–AI co-creation</h3>
+            <p>
+              How AI changes relationships among people, tools, institutions, communities, and their own thinking, especially when systems begin to influence interpretation and action.
+            </p>
+          </div>
         </article>
-        
-        <article class="card">
-          <h3>Governance, legitimacy, and public value</h3>
-          <p>
-            How AI systems raise questions of authority, accountability, trust, institutional participation, and responsible foresight as they enter organizational and civic life.
-          </p>
+  
+        <article class="theme-item">
+          <p class="theme-label">Readiness</p>
+          <div>
+            <h3>AI-era readiness and future-facing learning</h3>
+            <p>
+              How learners, educators, and organizations can prepare for AI-shaped contexts with discernment, ethical imagination, authorship, and long-term responsibility.
+            </p>
+          </div>
         </article>
-        
-        <article class="card">
-          <h3>Youth futures and ethical imagination</h3>
-          <p>
-            How young people can be supported as future-shapers, not only future workers, through reflective approaches to technology, learning, identity, and social change.
-          </p>
+  
+        <article class="theme-item">
+          <p class="theme-label">Literacy</p>
+          <div>
+            <h3>AI literacy beyond tool fluency</h3>
+            <p>
+              Why responsible AI literacy requires more than prompt skills, including uncertainty awareness, interpretive judgment, values reflection, and public-purpose thinking.
+            </p>
+          </div>
+        </article>
+  
+        <article class="theme-item">
+          <p class="theme-label">Governance</p>
+          <div>
+            <h3>Governance, legitimacy, and public value</h3>
+            <p>
+              How AI systems raise questions of authority, accountability, trust, institutional participation, and responsible foresight as they enter organizational and civic life.
+            </p>
+          </div>
+        </article>
+  
+        <article class="theme-item">
+          <p class="theme-label">Youth futures</p>
+          <div>
+            <h3>Youth futures and ethical imagination</h3>
+            <p>
+              How young people can be supported as future-shapers, not only future workers, through reflective approaches to technology, learning, identity, and social change.
+            </p>
+          </div>
         </article>
       </div>
     </div>
@@ -1127,106 +1346,114 @@ button:focus-visible {
   
   <section class="section" id="fit">
     <div class="container">
-      <div class="section-head narrow-head">
-        <div>
-          <div class="eyebrow">Where sessions may fit</div>
+      <div class="fit-panel" aria-label="Where sessions may fit">
+        <div class="fit-copy">
+          <p class="eyebrow">Where sessions may fit</p>
           <h2>Useful for classrooms, labs, learning communities, and mission-driven teams.</h2>
+          <p>
+            These are examples of fit, not a closed list. The strongest settings are groups looking for thoughtful framing, reflective practice, and responsible direction rather than generic AI adoption guidance.
+          </p>
         </div>
-        <p>
-          These are examples of fit, not a closed list. The strongest settings are groups looking for thoughtful framing, reflective practice, and responsible direction rather than generic AI adoption guidance.
-        </p>
-      </div>
   
-      <div class="grid">
-        <article class="card">
-          <h3>University classrooms</h3>
-          <p>
-            For students exploring AI, society, ethics, innovation, learning, futures, governance, or public-interest technology.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Research groups or labs</h3>
-          <p>
-            For teams studying, designing, evaluating, or governing AI systems in socially consequential contexts.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Educator/faculty learning communities</h3>
-          <p>
-            For educators navigating AI literacy, academic integrity, learner agency, and responsible pedagogical change.
-          </p>
-        </article>
+        <div class="fit-list" aria-label="Possible session settings">
+          <article class="fit-item">
+            <h3>University classrooms</h3>
+            <p>
+              For students exploring AI, society, ethics, innovation, learning, futures, governance, or public-interest technology.
+            </p>
+          </article>
   
-        <article class="card">
-          <h3>Public-interest organizations</h3>
-          <p>
-            For nonprofits, civic groups, and mission-driven organizations exploring AI in relation to trust, service, and public value.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Responsible AI or innovation teams</h3>
-          <p>
-            For teams working through questions of adoption, governance, participation, legitimacy, accountability, and stakeholder trust.
-          </p>
-        </article>
-        
-        <article class="card">
-          <h3>Student leadership / youth futures programs</h3>
-          <p>
-            For programs helping young people connect AI, agency, ethical imagination, identity, and future-shaping capacity.
-          </p>
-        </article>
+          <article class="fit-item">
+            <h3>Research groups or labs</h3>
+            <p>
+              For teams studying, designing, evaluating, or governing AI systems in socially consequential contexts.
+            </p>
+          </article>
+  
+          <article class="fit-item">
+            <h3>Educator/faculty learning communities</h3>
+            <p>
+              For educators navigating AI literacy, academic integrity, learner agency, and responsible pedagogical change.
+            </p>
+          </article>
+  
+          <article class="fit-item">
+            <h3>Public-interest organizations</h3>
+            <p>
+              For nonprofits, civic groups, and mission-driven organizations exploring AI in relation to trust, service, and public value.
+            </p>
+          </article>
+  
+          <article class="fit-item">
+            <h3>Responsible AI or innovation teams</h3>
+            <p>
+              For teams working through questions of adoption, governance, participation, legitimacy, accountability, and stakeholder trust.
+            </p>
+          </article>
+  
+          <article class="fit-item">
+            <h3>Student leadership / youth futures programs</h3>
+            <p>
+              For programs helping young people connect AI, agency, ethical imagination, identity, and future-shaping capacity.
+            </p>
+          </article>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section" id="process">
     <div class="container">
-      <div class="section-head narrow-head">
-        <div>
-          <div class="eyebrow">How sessions are shaped</div>
+      <div class="process-panel" aria-label="How sessions are shaped">
+        <div class="process-copy">
+          <p class="eyebrow">How sessions are shaped</p>
           <h2>A lightweight process for adapting the session to the group.</h2>
+          <p>
+            Session planning begins with fit: who the group is, what they are navigating, and what kind of reflection, framing, or application would be most useful.
+          </p>
         </div>
-        <p>
-          Session planning begins with fit: who the group is, what they are navigating, and what kind of reflection, framing, or application would be most useful.
-        </p>
-      </div>
   
-      <div class="grid">
-        <article class="card">
-          <p class="research-meta">Step 1</p>
-          <h3>Clarify the context</h3>
-          <p>
-            Name the audience, setting, current questions, and the AI-related tensions or opportunities the group is trying to understand more clearly.
-          </p>
-        </article>
-        
-        <article class="card">
-          <p class="research-meta">Step 2</p>
-          <h3>Choose the focus</h3>
-          <p>
-            Select a theme or combination of themes, such as relational AI, AI literacy, agency, governance, learning, youth futures, responsible innovation, or public value.
-          </p>
-        </article>
-        
-        <article class="card">
-          <p class="research-meta">Step 3</p>
-          <h3>Adapt the format</h3>
-          <p>
-            Shape the session as a talk, guest lecture, seminar, workshop, facilitated reflection, or strategy-oriented sensemaking conversation.
-          </p>
-        </article>
+        <div class="process-list" aria-label="Session planning process">
+          <article class="process-step">
+            <div class="step-number" aria-hidden="true">1</div>
+            <div>
+              <h3>Clarify the context</h3>
+              <p>
+                Name the audience, setting, current questions, and the AI-related tensions or opportunities the group is trying to understand more clearly.
+              </p>
+            </div>
+          </article>
   
-        <article class="card">
-          <p class="research-meta">Step 4</p>
-          <h3>Support reflection and application</h3>
-          <p>
-            Leave participants with questions, language, frameworks, practices, or next-step reflections they can carry back into their own context.
-          </p>
-        </article>
+          <article class="process-step">
+            <div class="step-number" aria-hidden="true">2</div>
+            <div>
+              <h3>Choose the focus</h3>
+              <p>
+                Select a theme or combination of themes, such as relational AI, AI literacy, agency, governance, learning, youth futures, responsible innovation, or public value.
+              </p>
+            </div>
+          </article>
+  
+          <article class="process-step">
+            <div class="step-number" aria-hidden="true">3</div>
+            <div>
+              <h3>Adapt the format</h3>
+              <p>
+                Shape the session as a talk, guest lecture, seminar, workshop, facilitated reflection, collaborative dialogue, or strategy-oriented sensemaking conversation.
+              </p>
+            </div>
+          </article>
+  
+          <article class="process-step">
+            <div class="step-number" aria-hidden="true">4</div>
+            <div>
+              <h3>Support reflection and application</h3>
+              <p>
+                Leave participants with questions, language, frameworks, practices, or next-step reflections they can carry back into their own context.
+              </p>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
   </section>
@@ -1468,6 +1695,9 @@ const revealTargets = Array.from(
       main > .section > .container > .section-head,
       main > .section > .container > .grid,
       main > .section > .container > .format-grid,
+      main > .section > .container > .theme-panel,
+      main > .section > .container > .fit-panel,
+      main > .section > .container > .process-panel,
       main > .section > .container > .research-list,
       main > .section > .container > .research-cta,
       main > .section > .container.contact > .contact-panel
