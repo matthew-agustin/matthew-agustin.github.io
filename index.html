@@ -1294,37 +1294,54 @@ h1 {
   white-space: nowrap;
 }
 
-/* Temporary square-corner preview */
+/* Refined corner-radius system */
 
 :root {
-  --radius: 0;
-  --radius-lg: 0;
+  --radius: 10px;
+  --radius-lg: 14px;
 }
 
-.logo,
+/* Keep identity and interface elements warm and legible */
+.logo {
+  border-radius: 12px;
+}
+
 .skip-link,
 .button,
 .tag,
 .filter,
 .evidence-strip span,
+.artifact-badge {
+  border-radius: 999px;
+}
+
+/* Keep major editorial objects lightly rounded, not plush */
 .feature-card,
-.feature-inner,
-.artifact-preview,
-.artifact-badge,
-.project-card .artifact-preview::before,
-.work-bridge,
-.work-bridge::before,
 .architecture-panel,
 .research-pathway-panel,
-.principles-panel,
 .engagement-panel,
 .collaborate-panel,
-.step-number,
+.contact-panel {
+  border-radius: 18px;
+}
+
+.feature-inner,
+.artifact-preview,
+.project-card .artifact-preview::before,
+.work-bridge,
 .quote-card,
-.about-card,
-.contact-panel,
-.footer-link-disabled {
-  border-radius: 0;
+.about-card {
+  border-radius: 14px;
+}
+
+/* Process numbers should remain tactile, but less rounded */
+.step-number {
+  border-radius: 12px;
+}
+
+/* Decorative vertical rule should stay softly capped */
+.work-bridge::before {
+  border-radius: 99px;
 }
 
 /* Keyboard accessibility */
