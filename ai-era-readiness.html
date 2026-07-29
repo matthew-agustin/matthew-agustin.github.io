@@ -1022,6 +1022,49 @@ h1 {
   white-space: nowrap;
 }
 
+/* Refined corner-radius system */
+
+:root {
+  --radius: 10px;
+}
+
+.logo {
+  border-radius: 12px;
+}
+
+.skip-link,
+.button,
+.tag,
+.evidence-strip span,
+.status-chip {
+  border-radius: 999px;
+}
+
+.feature-card,
+.readiness-frame-panel,
+.frame-shift-panel,
+.commitment-matrix,
+.readiness-pathway-panel,
+.application-map,
+.question-panel,
+.research-cta,
+.contact-panel {
+  border-radius: 18px;
+}
+
+.feature-inner,
+.work-bridge,
+.related-note,
+.quote-card,
+.about-card {
+  border-radius: 14px;
+}
+
+.work-bridge::before,
+.related-note::before {
+  border-radius: 99px;
+}
+
 /* Keyboard accessibility */
 a:focus-visible,
 button:focus-visible {
