@@ -1011,6 +1011,47 @@ h1 {
   white-space: nowrap;
 }
 
+/* Refined corner-radius system */
+
+:root {
+  --radius: 10px;
+}
+
+.logo {
+  border-radius: 12px;
+}
+
+.skip-link,
+.button,
+.tag,
+.evidence-strip span {
+  border-radius: 999px;
+}
+
+.feature-card,
+.record-index,
+.publication-group,
+.status-group,
+.public-scholarship-note,
+.throughline-record,
+.profile-record,
+.contact-panel {
+  border-radius: 18px;
+}
+
+.feature-inner,
+.work-bridge,
+.record-index-link,
+.scholarship-pathways div,
+.throughline-list article,
+.profile-link-list a {
+  border-radius: 14px;
+}
+
+.work-bridge::before {
+  border-radius: 99px;
+}
+
 /* Keyboard accessibility */
 a:focus-visible,
 button:focus-visible {
