@@ -936,6 +936,26 @@ h1 {
   box-shadow: 0 10px 32px rgba(31, 41, 51, .045);
 }
 
+.prototype-card {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.prototype-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--accent-2) 30%, var(--line));
+  box-shadow: 0 14px 34px rgba(31, 41, 51, .075);
+}
+
+@media (hover: none) {
+  .prototype-card:hover {
+    transform: none;
+  }
+}
+
 .prototype-card h3 {
   margin: 0 0 10px;
 }
@@ -2438,51 +2458,51 @@ button:focus-visible {
 
   <section class="section prototype-lab-section" id="prototype-lab">
     <div class="container">
-       <div class="prototype-panel">
+      <div class="prototype-panel">
         <div class="prototype-copy">
-           <p class="eyebrow">Applied Prototype Lab</p>
-           <h2>From research concepts to working tools.</h2>
-           <p>
-             I translate selected responsible AI, learning, and judgment frameworks into interactive prototypes. Current builds use Lovable for rapid interface development, GitHub for versioned iteration, and manual code refinement to preserve conceptual fidelity, usability, accessibility, and responsible AI design judgment.
-           </p>
-         </div>
- 
-         <div class="prototype-grid" aria-label="Current applied prototype work">
-           <article class="prototype-card">
-             <p class="research-meta">Learning prototype · Lovable + GitHub workflow</p>
-             <h3>Interpretation Detective</h3>
-             <p>
-               A learning prototype for practicing interpretation, perspective-taking, and reflective judgment. The tool helps users move from observation to investigation, interpretation, reconsideration, and reflection.
-             </p>
-             <div class="tag-row">
-               <span class="tag">Interpretation</span>
-               <span class="tag">Reflective judgment</span>
-               <span class="tag">Learning design</span>
-             </div>
-           </article>
-           
-           <article class="prototype-card">
-             <p class="research-meta">Repair-analysis prototype · Lovable + GitHub workflow</p>
-             <h3>AI Repair Commons</h3>
-             <p>
-                A repair-analysis prototype for identifying what went wrong in problematic AI responses and supporting better follow-up. The tool is designed around repair, transfer, uncertainty, and responsible use boundaries.
-              </p>
-              <div class="tag-row">
-               <span class="tag">AI repair</span>
-               <span class="tag">Responsible use</span>
-               <span class="tag">Transfer</span>
-             </div>
-           </article>
-         </div>
-  
-         <div class="prototype-stack-note">
-           <span>Build workflow</span>
-           <p>
-             Lovable for interface prototyping · GitHub for versioned iteration · manual refinement for accessibility, usability, and conceptual fidelity.
-           </p>
-         </div>
-       </div>
-     </div>
+          <p class="eyebrow">Applied Prototype Lab</p>
+          <h2>From research concepts to working tools.</h2>
+          <p>
+            I turn selected responsible AI, learning, and judgment frameworks into interactive tools for practice and reflection. Current builds use Lovable for rapid interface development, GitHub for versioned iteration, and manual code refinement to keep the experience usable, accessible, and faithful to the underlying concept.
+          </p>
+        </div>
+
+        <div class="prototype-grid" aria-label="Current applied prototype work">
+          <article class="prototype-card">
+            <p class="research-meta">Learning prototype · Active build</p>
+            <h3>Interpretation Detective</h3>
+            <p>
+              A learning environment for practicing interpretation, perspective-taking, and reflective judgment. The tool guides users from observation and investigation toward interpretation, reconsideration, and reflection.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Interpretation</span>
+              <span class="tag">Reflective judgment</span>
+              <span class="tag">Learning design</span>
+            </div>
+          </article>
+
+          <article class="prototype-card">
+            <p class="research-meta">Repair-analysis prototype · Active build</p>
+            <h3>AI Repair Commons</h3>
+            <p>
+              A repair-analysis environment for examining problematic AI responses and shaping better follow-up. The tool focuses on what went wrong, what can be repaired, what transfers to future use, and where boundaries or uncertainty should remain visible.
+            </p>
+            <div class="tag-row">
+              <span class="tag">AI repair</span>
+              <span class="tag">Responsible use</span>
+              <span class="tag">Transfer</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="prototype-stack-note">
+          <span>Build workflow</span>
+          <p>
+            Lovable for interface prototyping · GitHub for versioned iteration · manual refinement for accessibility, usability, and conceptual fidelity.
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="section" id="research">
