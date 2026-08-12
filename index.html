@@ -843,19 +843,6 @@ h1 {
   line-height: 1.65;
 }
 
-.project-meta-detail {
-  margin: 16px 0 0;
-  padding-top: 14px;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-size: .9rem;
-  line-height: 1.55;
-}
-
-.project-meta-detail strong {
-  color: var(--text);
-}
-
 .project-card {
   display: flex;
   flex-direction: column;
@@ -884,6 +871,68 @@ h1 {
 
 .project-actions .button:hover {
   background: color-mix(in srgb, var(--accent) 8%, var(--panel));
+}
+
+/* Expandable project details */
+
+.project-detail {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.project-detail summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-2);
+  font-size: .82rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  list-style: none;
+}
+
+.project-detail summary::-webkit-details-marker {
+  display: none;
+}
+
+.project-detail summary::after {
+  content: "+";
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid color-mix(in srgb, var(--accent-2) 35%, var(--line));
+  border-radius: 999px;
+  color: var(--accent-2);
+  font-size: .9rem;
+  line-height: 1;
+}
+
+.project-detail[open] summary::after {
+  content: "–";
+}
+
+.project-detail-body {
+  margin-top: 12px;
+}
+
+.project-detail-body p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .94rem;
+  line-height: 1.58;
+}
+
+.project-detail .project-actions {
+  margin-top: 16px;
+  padding-top: 0;
+}
+
+.project-detail .project-actions .button {
+  width: 100%;
 }
 
 /* Applied prototype lab section */
@@ -2944,6 +2993,47 @@ document.querySelector("#year").textContent = new Date().getFullYear();
 const projectFilters = document.querySelectorAll("[data-filter]");
 const projectGrid = document.querySelector("#projectGrid");
 const projects = Array.from(document.querySelectorAll("[data-project]"));
+
+function setupExpandableProjectDetails() {
+  projects.forEach((project) => {
+    const detailText = project.querySelector(".project-meta-detail");
+    const actions = project.querySelector(".project-actions");
+    const tags = project.querySelector(".tag-row");
+
+    if (!detailText || !actions || !tags) {
+      return;
+    }
+
+    const details = document.createElement("details");
+    details.className = "project-detail";
+
+    const summary = document.createElement("summary");
+    summary.textContent = "Use context";
+
+    const body = document.createElement("div");
+    body.className = "project-detail-body";
+
+    const context = document.createElement("p");
+    context.innerHTML = detailText.innerHTML;
+    const label = context.querySelector("strong");
+
+    if (label) {
+      label.remove();
+    }
+
+    context.innerHTML = context.innerHTML.trim();
+
+    body.appendChild(context);
+    body.appendChild(actions);
+    details.appendChild(summary);
+    details.appendChild(body);
+
+    detailText.remove();
+    tags.insertAdjacentElement("afterend", details);
+  });
+}
+
+setupExpandableProjectDetails();
 
 const projectOrders = {
   featured: [
