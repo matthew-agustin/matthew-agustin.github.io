@@ -161,6 +161,28 @@ header {
 .nav-links a,
 .nav-actions .button { white-space: nowrap; }
 
+.nav-links a {
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: color-mix(in srgb, var(--accent-2) 70%, var(--line));
+  transition: transform 180ms ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
 .nav-actions {
   display: flex;
   align-items: center;
