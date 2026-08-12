@@ -1462,6 +1462,89 @@ h1 {
   }
 }
 
+/* Support section */
+
+.support-section {
+  padding-top: 54px;
+  padding-bottom: 54px;
+}
+
+.support-panel {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: center;
+  padding: clamp(28px, 4vw, 42px);
+  border: 1px solid color-mix(in srgb, var(--accent-2) 22%, var(--line));
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent-2) 7%, transparent), transparent 58%),
+    color-mix(in srgb, var(--panel) 96%, transparent);
+  box-shadow: 0 12px 34px rgba(31, 41, 51, .055);
+}
+
+.support-panel h2 {
+  max-width: 720px;
+  font-size: clamp(1.8rem, 3.4vw, 2.65rem);
+}
+
+.support-panel p:not(.eyebrow) {
+  max-width: 720px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.support-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 210px;
+}
+
+.support-actions .button {
+  width: 100%;
+  min-height: 42px;
+  font-size: .9rem;
+  box-shadow: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 860px) {
+  .support-panel {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .support-actions {
+    min-width: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .support-actions .button {
+    width: auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .support-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .support-panel {
+    padding: 28px;
+  }
+
+  .support-actions .button {
+    width: 100%;
+  }
+}
+
 /* Process cards currently feel a bit stretched horizontally */
 .step {
   align-items: start;
@@ -1521,6 +1604,7 @@ h1 {
 .research-pathway-panel,
 .engagement-panel,
 .collaborate-panel,
+.support-panel,
 .contact-panel {
   border-radius: 18px;
 }
@@ -2942,6 +3026,25 @@ button:focus-visible {
       </div>
     </div>
   </section>
+
+  <section class="section support-section" id="support">
+    <div class="container">
+      <div class="support-panel">
+        <div>
+          <p class="eyebrow">Support</p>
+          <h2>Support open research, learning, and prototype work.</h2>
+          <p>
+            Much of this work is public-facing, volunteer-led, and developed outside formal funding cycles. Modest support helps cover practical costs such as software tools, API credits, conference travel, journal publication fees, and the infrastructure needed to keep open research, learning materials, and responsible AI prototypes available.
+          </p>
+        </div>
+
+        <div class="support-actions">
+          <a class="button primary" href="https://ko-fi.com/matthewagustin" target="_blank" rel="noopener noreferrer">Support this work</a>
+          <a class="button" href="#contact">Discuss collaboration</a>
+        </div>
+      </div>
+    </div>
+  </section>
   
   <section class="section" id="contact">
     <div class="container contact">
@@ -3161,6 +3264,7 @@ const revealTargets = Array.from(
       main > .section > .container > .engagement-panel,
       main > .section > .container > .principles-panel,
       main > .section > .container > .collaborate-panel,
+      main > .section > .container > .support-panel,
       main > .section > .container.about > *,
       main > .section > .container.contact > .contact-panel
     `)
