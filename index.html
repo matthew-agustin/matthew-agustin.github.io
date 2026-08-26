@@ -724,6 +724,147 @@ h1 {
   max-width: 760px;
 }
 
+/* Recent & Upcoming section */
+
+.recent-section {
+  padding-top: 24px;
+  padding-bottom: 38px;
+}
+
+.recent-panel {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  padding: clamp(26px, 4vw, 40px);
+  border: 1px solid color-mix(in srgb, var(--accent-2) 22%, var(--line));
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent-2) 7%, transparent), transparent 58%),
+    color-mix(in srgb, var(--panel) 96%, transparent);
+  box-shadow: 0 12px 34px rgba(31, 41, 51, .055);
+}
+
+.recent-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, .72fr);
+  gap: 28px;
+  align-items: end;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.recent-head h2 {
+  max-width: 620px;
+  font-size: clamp(1.85rem, 3.4vw, 2.75rem);
+}
+
+.recent-head p:not(.eyebrow) {
+  margin: 0;
+  max-width: 430px;
+  justify-self: end;
+  color: var(--muted);
+  font-size: .98rem;
+  line-height: 1.65;
+}
+
+.recent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.recent-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  padding: 22px;
+  border: 1px solid color-mix(in srgb, var(--accent-2) 18%, var(--line));
+  border-radius: 14px;
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--panel) 98%, transparent),
+      color-mix(in srgb, var(--paper) 96%, transparent)
+    );
+  box-shadow: 0 10px 28px rgba(31, 41, 51, .04);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.recent-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--accent-2) 30%, var(--line));
+  box-shadow: 0 14px 34px rgba(31, 41, 51, .07);
+}
+
+.recent-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.08rem;
+  line-height: 1.18;
+}
+
+.recent-card p:not(.research-meta) {
+  margin: 0;
+  color: var(--muted);
+  font-size: .96rem;
+  line-height: 1.6;
+}
+
+.recent-actions {
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.recent-actions .button {
+  width: 100%;
+  min-height: 40px;
+  font-size: .88rem;
+  box-shadow: none;
+}
+
+@media (hover: none) {
+  .recent-card:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .recent-head {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .recent-head p:not(.eyebrow) {
+    justify-self: start;
+    max-width: 620px;
+  }
+
+  .recent-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recent-card {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .recent-section {
+    padding-top: 22px;
+    padding-bottom: 34px;
+  }
+
+  .recent-panel {
+    padding: 24px;
+  }
+
+  .recent-actions .button {
+    width: 100%;
+  }
+}
+
 /* Editorial research architecture section */
 
 .architecture-section {
@@ -1599,6 +1740,7 @@ h1 {
 
 /* Keep major editorial objects lightly rounded, not plush */
 .feature-card,
+.recent-panel,
 .architecture-panel,
 .prototype-panel,
 .research-pathway-panel,
@@ -1613,6 +1755,7 @@ h1 {
 .artifact-preview,
 .project-card .artifact-preview::before,
 .work-bridge,
+.recent-card,
 .prototype-card,
 .quote-card,
 .about-card {
@@ -1868,59 +2011,111 @@ button:focus-visible {
 </header>
 <main id="main">
   <section class="hero" id="top">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow">Matthew Agustin</div>
-      
-      <h1>Responsible Futures Designer &amp; Innovation Architect</h1>
-      
-      <p class="lead">
-        Research, strategy, and relational design for AI-enabled systems that protect human agency and public good.
-      </p>
-      
-      <p class="credibility-line">
-        Currently Director of Innovation at Responsible Innovation Lab, where I develop approaches for governing, designing, and implementing AI in ways grounded in context, accountability, and long-term public value.
-      </p>
-      
-      <div class="evidence-strip" aria-label="Practice evidence">
-        <span>Responsible Innovation Lab</span>
-        <span>AI governance & implementation</span>
-        <span>Research on AI, learning & agency</span>
-        <span>Frameworks, fieldwork & reflective tools</span>
-      </div>
-      
-      <div class="hero-actions">
-        <a class="button primary" href="#work">Explore the work</a>
-        <a class="button" href="#contact">Start a conversation</a>
-      </div>
-    </div>
-
-    <div class="hero-side">
-      <aside class="feature-card" aria-label="Portfolio highlight">
-        <div class="feature-inner">
-          <div>
-            <p class="eyebrow">Practice focus</p>
-            <h2>Relational AI practice</h2>
-          </div>
-    
-          <div>
-            <div class="metric">AI × Society</div>
-            <p>
-              My practice sits where ethical design, strategic foresight, relational accountability, and public-interest innovation meet.
-            </p>
-            <a class="button" href="relational-ai.html">Explore Relational AI</a>
-          </div>
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Matthew Agustin</div>
+        
+        <h1>Responsible Futures Designer &amp; Innovation Architect</h1>
+        
+        <p class="lead">
+          Research, strategy, and relational design for AI-enabled systems that protect human agency and public good.
+        </p>
+        
+        <p class="credibility-line">
+          Currently Director of Innovation at Responsible Innovation Lab, where I develop approaches for governing, designing, and implementing AI in ways grounded in context, accountability, and long-term public value.
+        </p>
+        
+        <div class="evidence-strip" aria-label="Practice evidence">
+          <span>Responsible Innovation Lab</span>
+          <span>AI governance & implementation</span>
+          <span>Research on AI, learning & agency</span>
+          <span>Frameworks, fieldwork & reflective tools</span>
         </div>
-      </aside>
-    
-      <nav class="hero-side-links" aria-label="Selected profile links">
-        <span>Profiles</span>
-        <a href="https://scholar.google.com/citations?user=E4G17PkAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="me noopener noreferrer">Scholar</a>
-        <a href="https://www.linkedin.com/in/matthew-agustin/" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
-      </nav>
+        
+        <div class="hero-actions">
+          <a class="button primary" href="#work">Explore the work</a>
+          <a class="button" href="#contact">Start a conversation</a>
+        </div>
+      </div>
+  
+      <div class="hero-side">
+        <aside class="feature-card" aria-label="Portfolio highlight">
+          <div class="feature-inner">
+            <div>
+              <p class="eyebrow">Practice focus</p>
+              <h2>Relational AI practice</h2>
+            </div>
+      
+            <div>
+              <div class="metric">AI × Society</div>
+              <p>
+                My practice sits where ethical design, strategic foresight, relational accountability, and public-interest innovation meet.
+              </p>
+              <a class="button" href="relational-ai.html">Explore Relational AI</a>
+            </div>
+          </div>
+        </aside>
+      
+        <nav class="hero-side-links" aria-label="Selected profile links">
+          <span>Profiles</span>
+          <a href="https://scholar.google.com/citations?user=E4G17PkAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="me noopener noreferrer">Scholar</a>
+          <a href="https://www.linkedin.com/in/matthew-agustin/" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
+        </nav>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="section recent-section" id="recent">
+    <div class="container">
+      <div class="recent-panel">
+        <div class="recent-head">
+          <div>
+            <p class="eyebrow">Recent &amp; Upcoming</p>
+            <h2>Current signals from the work.</h2>
+          </div>
+          <p>
+            Selected recent publications, prototype updates, talks, and timely developments from across the portfolio.
+          </p>
+        </div>
+
+        <div class="recent-grid" aria-label="Recent and upcoming highlights">
+          <article class="recent-card">
+            <p class="research-meta">Published research · New Directions for Student Leadership · 2026</p>
+            <h3>Legitimacy Under Algorithmic Authority</h3>
+            <p>
+              A relational diagnostic of leadership education in AI-mediated contexts, introducing the SCIS framework for examining legitimacy across surface, cultural, institutional, and systemic domains.
+            </p>
+            <div class="recent-actions">
+              <a class="button" href="https://doi.org/10.1002/yd.70066" target="_blank" rel="noopener noreferrer">Read publication</a>
+            </div>
+          </article>
+
+          <article class="recent-card">
+            <p class="research-meta">Upcoming talk · Cambridge AI in Education Summit · Oct 2026</p>
+            <h3>Readiness for Persuasion-Capable AI</h3>
+            <p>
+              A short conference presentation on preparing learners for AI systems that explain, advise, and influence, with attention to judgment, agency, and readiness.
+            </p>
+            <div class="recent-actions">
+              <a class="button" href="speaking-workshops.html">Explore talks</a>
+            </div>
+          </article>
+
+          <article class="recent-card">
+            <p class="research-meta">Prototype update · Active build</p>
+            <h3>Interpretation Detective</h3>
+            <p>
+              A learning prototype for practicing interpretation, perspective-taking, and reflective judgment through a guided movement from observation to reconsideration.
+            </p>
+            <div class="recent-actions">
+              <a class="button" href="#prototype-lab">View prototype work</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section architecture-section" id="architecture">
     <div class="container">
       <div class="architecture-panel">
@@ -3277,6 +3472,7 @@ const revealTargets = Array.from(
       main > .section > .container > .content-column,
       main > .section > .container > .grid,
       main > .section > .container > .research-list,
+      main > .section > .container > .recent-panel,
       main > .section > .container > .prototype-panel,
       main > .section > .container > .research-pathway-panel,
       main > .section > .container > .engagement-panel,
